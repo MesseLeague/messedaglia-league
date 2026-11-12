@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iscrizioni · Messedaglia League</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="nav.css">
+<style>
+  /* Pagina iscrizioni: stesso stile del sito */
+  :root {
+    --bg: #05070f; --panel: #0d1120; --line: #1d2335; --text: #fff; --muted: #9aa3b5; --grey: #4a4d55;
+    --blue: #1f74d0; --red: #d6303f; --gold: #f5b301; --green: #3fcf7f;
+    --display: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Archivo", "Segoe UI", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--text); font: 400 16px/1.55 var(--body); min-height: 100vh;
+    background:
+      radial-gradient(45% 30% at 6% 0, rgba(31, 116, 208, 0.35), transparent 70%),
+      radial-gradient(45% 30% at 94% 0, rgba(214, 48, 63, 0.35), transparent 70%),
+      var(--bg);
+  }
+  main { max-width: 780px; margin: 0 auto; padding: 34px max(16px, env(safe-area-inset-right, 0px)) 70px max(16px, env(safe-area-inset-left, 0px)); }
+  h1 { font: 400 clamp(2rem, 7vw, 3.2rem)/1.02 var(--display); text-transform: uppercase; margin: 10px 0 8px; }
+  .lead { color: var(--muted); font-size: 1.1rem; margin: 0 0 26px; max-width: 58ch; }
+  .chip { display: inline-block; padding: 6px 12px; background: #fff; color: #000; font: 400 .78rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .06em; }
+  .chip.gold { background: var(--gold); } .chip.red { background: var(--red); color: #fff; } .chip.blue { background: var(--blue); color: #fff; }
+  .muted { color: var(--muted); }
+  .note { padding: 10px 14px; margin-bottom: 16px; background: rgba(245, 179, 1, 0.12); box-shadow: inset 4px 0 0 var(--gold); font-size: .92rem; }
+
+  /* Profilo: chi ha fatto l'accesso */
+  .profile { display: flex; align-items: center; gap: 16px; padding: 18px; background: linear-gradient(90deg, #0e4f99, var(--blue)); margin-bottom: 14px; min-width: 0; }
+  .profile .pic { position: relative; flex: none; width: 64px; height: 64px; border-radius: 50%; overflow: hidden; display: grid; place-items: center;
+                  background: linear-gradient(135deg, #0b3d78, #9d1f2b); font: 400 1.3rem/1 var(--display); box-shadow: 0 0 0 3px #fff; }
+  .profile .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .profile .who { min-width: 0; display: grid; gap: 2px; }
+  .profile b { font: 400 1.35rem/1.1 var(--display); overflow-wrap: anywhere; }
+  .profile .who span { color: rgba(255,255,255,.85); overflow-wrap: anywhere; }
+  .profile .state { margin-left: auto; }
+
+  .box { padding: 22px; background: var(--panel); overflow-wrap: anywhere; }
+  .box.bad { box-shadow: inset 5px 0 0 var(--red); }
+  .box.good { box-shadow: inset 5px 0 0 var(--green); }
+  .box h2 { font: 400 1.5rem/1.1 var(--display); text-transform: uppercase; margin: 12px 0 8px; }
+  .box p { margin: 0 0 12px; }
+  form { display: grid; gap: 16px; }
+  .field { display: grid; gap: 6px; }
+  label, .q { font-weight: 800; }
+  .hint { font-weight: 400; color: var(--muted); font-size: .9rem; }
+  input[type=text] { width: 100%; padding: 13px 14px; background: #000; color: #fff; border: 1px solid var(--grey); border-radius: 0; font: inherit; }
+  input[type=text]:focus { outline: 3px solid var(--gold); outline-offset: -1px; border-color: transparent; }
+  #tag { font: 600 1.15rem/1 ui-monospace, Consolas, monospace; letter-spacing: .06em; text-transform: uppercase; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .choice { display: flex; gap: 6px; flex-wrap: wrap; }
+  .choice label { position: relative; font-weight: 400; }
+  .choice input { position: absolute; opacity: 0; inset: 0; }
+  .choice span { display: inline-block; padding: 10px 20px; background: #000; border: 1px solid var(--grey); cursor: pointer; font: 400 .9rem/1 var(--display); text-transform: uppercase; }
+  .choice input:checked + span { background: #fff; color: #000; border-color: #fff; }
+  .choice input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .check { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; cursor: pointer; }
+  .check input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--gold); flex: none; }
+  .tagcheck { min-height: 1.4em; font-size: .9rem; }
+  .ok { color: var(--green); } .err { color: #ff8a93; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .btn { border: 0; padding: 16px 26px; cursor: pointer; font: 400 1rem/1 var(--display); text-transform: uppercase; color: #fff; background: var(--blue); }
+  .btn:hover { filter: brightness(1.12); }
+  .btn:disabled { opacity: .5; cursor: default; filter: none; }
+  .btn.ghost { background: transparent; color: var(--muted); padding: 10px 6px; font-size: .8rem; text-decoration: underline; }
+  .btn.ghost.sure { color: #ff8a93; }
+  #msg { min-height: 1.4em; font-weight: 600; margin: 0; }
+  .loading { padding: 40px 0; text-align: center; color: var(--muted); }
+  @media (max-width: 560px) { .two { grid-template-columns: 1fr; } .profile { flex-wrap: wrap; } .profile .state { margin-left: 0; } }
+</style>
+</head>
+<body>
+<nav id="topbar" data-page="iscrizioni" aria-label="Sito"></nav>
+
+<main>
+  <span class="chip">Finali Mondiali</span>
+  <h1>Iscrizioni</h1>
+  <p class="lead">Ci si iscrive con l'account della scuola. Gli organizzatori controllano gli account di Clash Royale e pubblicano la lista dei finalisti.</p>
+  <div id="app"><p class="loading">Caricamento…</p></div>
+</main>
+
+<template id="t-form">
+  <form id="form" class="box" novalidate>
+    <div class="two">
+      <div class="field">
+        <label for="nome">Nome e cognome</label>
+        <input type="text" id="nome" autocomplete="name" maxlength="60" required>
+      </div>
+      <div class="field">
+        <label for="classe">Classe e sezione <span class="hint">es. 4B</span></label>
+        <input type="text" id="classe" maxlength="6" required>
+      </div>
+    </div>
+    <div class="field">
+      <label for="tag">Tag giocatore <span class="hint">in Clash Royale, sotto il tuo nome</span></label>
+      <input type="text" id="tag" placeholder="#JL9V9LJVJ" maxlength="14" autocomplete="off" spellcheck="false" required>
+      <span class="tagcheck" id="tagcheck" aria-live="polite"></span>
+    </div>
+    <div class="two">
+      <div class="field">
+        <label for="soprannome">Soprannome per la telecronaca <span class="hint">facoltativo</span></label>
+        <input type="text" id="soprannome" maxlength="30">
+      </div>
+      <div class="field">
+        <label for="mazzo">Mazzo o archetipo preferito <span class="hint">facoltativo</span></label>
+        <input type="text" id="mazzo" maxlength="60" placeholder="es. Hog 2.6">
+      </div>
+    </div>
+    <div class="field">
+      <label for="motto">Motto per la tua scheda giocatore <span class="hint">facoltativo</span></label>
+      <input type="text" id="motto" maxlength="80">
+    </div>
+    <div class="field" role="radiogroup" aria-labelledby="q-giorni">
+      <span class="q" id="q-giorni">Ci sei in entrambi i giorni del torneo?</span>
+      <div class="choice"><label><input type="radio" name="giorni" value="Sì"><span>Sì</span></label><label><input type="radio" name="giorni" value="No"><span>No</span></label></div>
+    </div>
+    <div class="field" role="radiogroup" aria-labelledby="q-wild">
+      <span class="q" id="q-wild">Se non entri tra i primi 6 per stats, vuoi giocare le qualificazioni per le 2 wildcard?</span>
+      <div class="choice"><label><input type="radio" name="wildcard" value="Sì"><span>Sì</span></label><label><input type="radio" name="wildcard" value="No"><span>No</span></label></div>
+    </div>
+    <div class="field" role="radiogroup" aria-labelledby="q-foto">
+      <span class="q" id="q-foto">Acconsenti alla pubblicazione di foto e video sui canali della scuola o dei rappresentanti?</span>
+      <div class="choice"><label><input type="radio" name="foto" value="Sì"><span>Sì</span></label><label><input type="radio" name="foto" value="No"><span>No</span></label></div>
+    </div>
+    <label class="check"><input type="checkbox" id="regolamento"> <span>Ho letto e accetto il <a href="./#regole" style="color:#fff">regolamento</a></span></label>
+    <label class="check"><input type="checkbox" id="riprese"> <span>Accetto di essere ripreso e proiettato durante le partite</span></label>
+    <div class="actions">
+      <button type="submit" class="btn" id="send">Iscriviti</button>
+      <button type="button" class="btn ghost" id="withdraw" hidden>Ritira l'iscrizione</button>
+    </div>
+    <p id="msg" aria-live="polite"></p>
+  </form>
+</template>
+
+<script src="config.js"></script>
+<script src="nav.js"></script>
+<script>
+// =================================================================
+// ISCRIZIONI – parla con l'app Apps Script (config.js → API_URL)
+// mandando il token dell'accesso Google. In anteprima simula tutto.
+// =================================================================
+const CFG = window.ML_CONFIG || {};
+const app = document.getElementById('app');
+const TAG_CHARS = /^[0289PYLQGRJCUV]{3,12}$/;
+const cleanTag = t => t.toUpperCase().replace(/\s/g, '').replace(/^#/, '').replace(/O/g, '0');
+const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+// Anteprima: tiene l'iscrizione solo in memoria
+let demoData = null;
+function demoApi(action, data) {
+  return new Promise((resolve, reject) => setTimeout(() => {
+    if (action === 'stato') return resolve({ aperte: true, nome: MLAuth.user.name, dati: demoData });
+    if (action === 'ritira') { demoData = null; return resolve(true); }
+    const t = cleanTag(data.tag);
+    if (!TAG_CHARS.test(t)) return reject(new Error('Il tag non è valido: contiene solo i caratteri 0 2 8 9 P Y L Q G R J C U V.'));
+    if (!/^[1-5][A-Z]{1,2}$/i.test(data.classe.trim())) return reject(new Error('Classe e sezione non valide: scrivi ad esempio 4B.'));
+    if (!data.giorni || !data.wildcard || !data.foto) return reject(new Error('Rispondi a tutte le domande Sì/No.'));
+    if (!data.regolamento || !data.riprese) return reject(new Error('Per iscriverti devi accettare regolamento e riprese.'));
+    const aggiornata = !!demoData;
+    demoData = { ...data, tag: '#' + t, classe: data.classe.toUpperCase(), quando: new Date().toLocaleString('it-IT') };
+    resolve({ aggiornata, tag: '#' + t });
+  }, 350));
+}
+
+function api(action, data) {
+  return MLAuth.demo ? demoApi(action, data) : MLAuth.api(action, data);
+}
+
+function profileHtml(u, dati) {
+  const pic = u.picture ? `<img src="${esc(u.picture)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : '';
+  const state = dati ? '<span class="chip gold state">Iscritto</span>' : '<span class="chip state">Non iscritto</span>';
+  return `<section class="profile" id="profilo" aria-label="Il tuo profilo">
+    <span class="pic" aria-hidden="true">${esc(u.initials)}${pic}</span>
+    <div class="who"><b>${esc(u.name)}</b><span>${esc(u.email)}</span>${dati ? `<span>${esc(dati.classe)} · ${esc(dati.tag)}${dati.soprannome ? ` · "${esc(dati.soprannome)}"` : ''}</span>` : ''}</div>
+    ${state}
+  </section>`;
+}
+
+function showMessage(chip, title, text, kind) {
+  app.innerHTML = `<div class="box ${kind || ''}"><span class="chip ${kind === 'bad' ? 'red' : kind === 'good' ? 'gold' : ''}">${chip}</span><h2>${title}</h2><p class="muted">${text}</p></div>`;
+}
+
+function showLoggedOut() {
+  app.innerHTML = `<div class="box">
+      <span class="chip blue">Accesso</span>
+      <h2>Accedi con l'account della scuola</h2>
+      <p class="muted">Solo gli account <b style="color:#fff">nome.cognome@${esc(CFG.DOMINIO || 'messedaglia.edu.it')}</b> possono iscriversi.</p>
+      <button type="button" class="btn" id="go-login">Accedi</button>
+    </div>`;
+  document.getElementById('go-login').onclick = e => { e.stopPropagation(); MLAuth.login(); scrollTo({ top: 0, behavior: 'smooth' }); };
+}
+
+function showForm(u, s) {
+  const d = s.dati;
+  app.innerHTML = (MLAuth.demo ? '<p class="note"><b>Anteprima:</b> account finto, l\'iscrizione resta solo su questa pagina e non viene salvata.</p>' : '') + profileHtml(u, d);
+  app.appendChild(document.getElementById('t-form').content.cloneNode(true));
+  const $ = id => document.getElementById(id);
+
+  $('nome').value = d ? d.nome : s.nome || u.name;
+  if (d) {
+    for (const k of ['classe', 'tag', 'soprannome', 'motto', 'mazzo']) $(k).value = d[k] || '';
+    $('regolamento').checked = !!d.regolamento;
+    $('riprese').checked = !!d.riprese;
+    for (const name of ['giorni', 'wildcard', 'foto']) {
+      const r = document.querySelector(`input[name="${name}"][value="${d[name]}"]`);
+      if (r) r.checked = true;
+    }
+    $('send').textContent = 'Aggiorna iscrizione';
+    $('withdraw').hidden = false;
+    $('msg').className = 'muted';
+    $('msg').textContent = `Sei iscritto dal ${d.quando}. Puoi modificare i dati qui sotto.`;
+  }
+
+  const checkTag = () => {
+    const t = cleanTag($('tag').value), el = $('tagcheck');
+    if (!t) { el.textContent = ''; return; }
+    const bad = [...new Set(t.replace(/[0289PYLQGRJCUV]/g, ''))];
+    if (bad.length) { el.className = 'tagcheck err'; el.textContent = `Questi caratteri non possono stare in un tag: ${bad.join(' ')}`; }
+    else if (!TAG_CHARS.test(t)) { el.className = 'tagcheck err'; el.textContent = 'Lunghezza strana: un tag ha di solito 8-10 caratteri dopo il #'; }
+    else { el.className = 'tagcheck ok'; el.textContent = `✓ #${t}`; }
+  };
+  $('tag').addEventListener('input', checkTag);
+  checkTag();
+
+  $('form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const pick = name => (document.querySelector(`input[name="${name}"]:checked`) || {}).value || '';
+    const data = {
+      nome: $('nome').value, classe: $('classe').value, tag: $('tag').value,
+      soprannome: $('soprannome').value, motto: $('motto').value, mazzo: $('mazzo').value,
+      giorni: pick('giorni'), wildcard: pick('wildcard'), foto: pick('foto'),
+      regolamento: $('regolamento').checked, riprese: $('riprese').checked,
+    };
+    $('send').disabled = true;
+    $('msg').className = 'muted';
+    $('msg').textContent = 'Invio…';
+    try {
+      const res = await api('iscrivi', data);
+      MLAuth.toast && document.getElementById('ml-toast')?.classList.remove('show');
+      load(u, `${res.aggiornata ? 'Iscrizione aggiornata' : 'Sei iscritto!'} Tag ${res.tag}.`);
+    } catch (err) {
+      $('send').disabled = false;
+      $('msg').className = 'err';
+      $('msg').textContent = err.message;
+    }
+  });
+
+  // Ritiro in due tocchi (niente finestre di conferma del browser)
+  $('withdraw').addEventListener('click', async e => {
+    const b = e.currentTarget;
+    if (!b.classList.contains('sure')) { b.classList.add('sure'); b.textContent = 'Sicuro? Tocca di nuovo per ritirarti'; return; }
+    try { await api('ritira'); load(u, 'Iscrizione ritirata.'); }
+    catch (err) { $('msg').className = 'err'; $('msg').textContent = err.message; }
+  });
+}
+
+async function load(u, flash) {
+  app.innerHTML = '<p class="loading">Controllo la tua iscrizione…</p>';
+  try {
+    const s = await api('stato');
+    if (!s.aperte && !s.dati) return showMessage('Chiuse', 'Le iscrizioni sono chiuse', 'Segui il sito per la lista dei finalisti.', 'bad');
+    showForm(u, s);
+    if (flash) { const m = document.getElementById('msg'); m.className = 'ok'; m.textContent = flash; }
+  } catch (err) {
+    showMessage('Errore', 'Non riesco a caricare l\'iscrizione', esc(err.message), 'bad');
+  }
+}
+
+MLAuth.onChange(u => (u ? load(u) : showLoggedOut()));
+if (location.hash === '#profilo') addEventListener('load', () => document.getElementById('profilo')?.scrollIntoView());
+</script>
+</body>
+</html>

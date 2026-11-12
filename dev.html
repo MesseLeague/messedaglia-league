@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dev · Messedaglia League</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="nav.css">
+<style>
+  /* Pannello organizzatori: stesso stile del sito */
+  :root {
+    --bg: #05070f; --panel: #0d1120; --panel-2: #141a2e; --line: #1d2335; --text: #fff; --muted: #9aa3b5; --grey: #4a4d55;
+    --blue: #1f74d0; --red: #d6303f; --gold: #f5b301; --green: #3fcf7f;
+    --display: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Archivo", "Segoe UI", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--text); font: 400 15px/1.5 var(--body); min-height: 100vh;
+    background:
+      radial-gradient(45% 30% at 6% 0, rgba(245, 179, 1, 0.18), transparent 70%),
+      radial-gradient(45% 30% at 94% 0, rgba(214, 48, 63, 0.3), transparent 70%),
+      var(--bg);
+  }
+  main { max-width: 1180px; margin: 0 auto; padding: 30px max(16px, env(safe-area-inset-right, 0px)) 70px max(16px, env(safe-area-inset-left, 0px)); }
+  h1 { font: 400 clamp(1.9rem, 6vw, 3rem)/1.02 var(--display); text-transform: uppercase; margin: 10px 0 20px; }
+  h2 { font: 400 1rem/1.2 var(--display); text-transform: uppercase; margin: 0; letter-spacing: .03em; }
+  .chip { display: inline-block; padding: 6px 12px; background: #fff; color: #000; font: 400 .75rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+  .chip.gold { background: var(--gold); } .chip.red { background: var(--red); color: #fff; } .chip.green { background: #1d6b45; color: #fff; }
+  .muted { color: var(--muted); }
+  .note { padding: 10px 14px; margin-bottom: 16px; background: rgba(245, 179, 1, 0.12); box-shadow: inset 4px 0 0 var(--gold); font-size: .92rem; }
+  .btn { border: 0; padding: 11px 16px; cursor: pointer; font: 400 .8rem/1 var(--display); text-transform: uppercase; color: #fff; background: var(--grey); }
+  .btn:hover { filter: brightness(1.15); }
+  .btn.gold { background: var(--gold); color: #000; } .btn.blue { background: var(--blue); } .btn.red { background: var(--red); }
+  .btn:disabled { opacity: .5; cursor: default; filter: none; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin-bottom: 14px; }
+  .tile { background: var(--panel); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+  .tile strong { font: 400 2rem/1 var(--display); font-variant-numeric: tabular-nums; }
+  .tile small { color: var(--muted); }
+
+  .card { background: var(--panel); padding: 18px; margin-bottom: 14px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .grow { flex: 1; }
+  .switch { display: flex; align-items: center; gap: 14px; }
+  .state { font: 400 1.2rem/1 var(--display); text-transform: uppercase; }
+  .state.on { color: var(--green); } .state.off { color: #ff8a93; }
+  input[type=search] { background: #000; color: #fff; border: 1px solid var(--grey); padding: 10px 12px; font: inherit; min-width: 0; width: min(320px, 100%); }
+
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; min-width: 820px; }
+  th { text-align: left; padding: 9px 10px; background: #fff; color: #000; font: 400 .7rem/1.2 var(--display); text-transform: uppercase; white-space: nowrap; }
+  td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:hover td { background: var(--panel-2); }
+  td.name b { display: block; font: 400 .95rem/1.2 var(--display); }
+  td.name { min-width: 250px; }
+  td.name span { color: var(--muted); font-size: .85rem; }
+  td.tag { font: 600 .95rem/1.2 ui-monospace, Consolas, monospace; white-space: nowrap; }
+  .yn { display: inline-block; min-width: 26px; padding: 3px 6px; text-align: center; font: 400 .7rem/1.2 var(--display); }
+  .yn.si { background: #1d6b45; } .yn.no { background: var(--red); } .yn.na { background: var(--grey); }
+  .del { background: none; border: 0; color: var(--muted); cursor: pointer; font: 600 .82rem/1 var(--body); text-decoration: underline; padding: 4px 0; }
+  .del.sure { color: #ff8a93; }
+  .empty { padding: 30px; text-align: center; color: var(--muted); }
+  #msg:empty { display: none; }
+  #msg { margin: 0 0 14px; padding: 10px 14px; background: var(--panel); box-shadow: inset 4px 0 0 var(--gold); }
+  .box { padding: 22px; background: var(--panel); box-shadow: inset 5px 0 0 var(--red); }
+  .box h2 { font-size: 1.4rem; margin: 10px 0 6px; }
+</style>
+</head>
+<body>
+<nav id="topbar" data-page="dev" aria-label="Sito"></nav>
+
+<main>
+  <span class="chip gold">Modalità organizzatori</span>
+  <h1>Pannello Dev</h1>
+  <div id="app"><p class="muted">Caricamento…</p></div>
+</main>
+
+<template id="t-panel">
+  <p id="msg" aria-live="polite"></p>
+  <div class="tiles" id="tiles"></div>
+
+  <section class="card" aria-labelledby="h-stato">
+    <div class="row">
+      <div class="switch"><h2 id="h-stato">Iscrizioni</h2><span class="state" id="state"></span></div>
+      <span class="grow"></span>
+      <button type="button" class="btn" id="toggle"></button>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="h-lista">
+    <div class="row">
+      <h2 id="h-lista">Iscritti</h2>
+      <span class="grow"></span>
+      <input type="search" id="q" placeholder="Cerca nome, classe, tag…" aria-label="Cerca tra gli iscritti">
+      <button type="button" class="btn blue" id="copy-tags" title="Lista dei tag pronta per v2/torneo.py">Copia tag per torneo.py</button>
+      <button type="button" class="btn gold" id="csv">Scarica CSV</button>
+      <button type="button" class="btn" id="reload">↻ Aggiorna</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Iscritto</th><th>Classe</th><th>Tag</th><th>Soprannome</th><th>Mazzo</th><th>2 giorni</th><th>Wildcard</th><th>Foto</th><th>Quando</th><th></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</template>
+
+<script src="config.js"></script>
+<script src="nav.js"></script>
+<script>
+// =================================================================
+// PANNELLO DEV – vede tutte le iscrizioni, apre/chiude, elimina.
+// I permessi li controlla il server (Code.gs → ORGANIZZATORI);
+// in anteprima i dati sono finti e restano solo su questa pagina.
+// =================================================================
+const app = document.getElementById('app');
+const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let data = { aperte: true, iscritti: [] };
+
+// ---------- Anteprima ----------
+const demo = {
+  aperte: true,
+  iscritti: [
+    ['Mario Rossi', '4B', '#JL9V9LJVJ', 'Blax', 'Royal Hogs 2.9', 'Sì', 'Sì', 'Sì'],
+    ['Giulia Verdi', '3C', '#CRCV9CC29', '', 'Hog 2.6', 'Sì', 'No', 'Sì'],
+    ['Luca Bianchi', '5A', '#GU2YR209R', 'Lampadina', 'Log bait', 'No', 'Sì', 'No'],
+    ['Anna Neri', '2D', '#G9YV9GR8R', '', 'Golem', 'Sì', 'Sì', 'Sì'],
+    ['Paolo Gialli', '4I', '#C0V0UQ9UY', 'PG', 'X-Bow 3.0', 'Sì', 'Sì', 'Sì'],
+  ].map(([nome, classe, tag, soprannome, mazzo, giorni, wildcard, foto], i) => ({
+    nome, classe, tag, soprannome, mazzo, giorni, wildcard, foto,
+    email: nome.toLowerCase().replace(' ', '.') + '@messedaglia.edu.it',
+    quando: `1${i}/11/2026 1${i}:0${i}`,
+  })),
+};
+function demoApi(action, d) {
+  return new Promise(resolve => setTimeout(() => {
+    if (action === 'admin_aperte') demo.aperte = !!d.aperte;
+    if (action === 'admin_elimina') demo.iscritti = demo.iscritti.filter(r => r.email !== d.email);
+    resolve(action === 'admin_lista' ? JSON.parse(JSON.stringify(demo)) : { aperte: demo.aperte });
+  }, 250));
+}
+const api = (action, d) => (MLAuth.demo ? demoApi(action, d) : MLAuth.api(action, d));
+
+// ---------- Vista ----------
+function msg(text) { document.getElementById('msg').textContent = text; }
+const yn = v => `<span class="yn ${v === 'Sì' ? 'si' : v === 'No' ? 'no' : 'na'}">${esc(v || '–')}</span>`;
+
+function renderTiles() {
+  const list = data.iscritti;
+  const count = (k, v) => list.filter(r => r[k] === v).length;
+  const classes = new Set(list.map(r => r.classe)).size;
+  const dupTags = list.length - new Set(list.map(r => r.tag)).size;
+  document.getElementById('tiles').innerHTML = `
+    <div class="tile"><span class="chip">Iscritti</span><strong>${list.length}</strong><small>${classes} classi diverse</small></div>
+    <div class="tile"><span class="chip green">Entrambi i giorni</span><strong>${count('giorni', 'Sì')}</strong><small>${count('giorni', 'No')} solo un giorno</small></div>
+    <div class="tile"><span class="chip gold">Wildcard</span><strong>${count('wildcard', 'Sì')}</strong><small>vogliono le qualificazioni</small></div>
+    <div class="tile"><span class="chip red">Niente foto</span><strong>${count('foto', 'No')}</strong><small>da non pubblicare</small></div>
+    ${dupTags ? `<div class="tile"><span class="chip red">Tag doppi</span><strong>${dupTags}</strong><small>da controllare</small></div>` : ''}`;
+}
+
+function renderState() {
+  const st = document.getElementById('state');
+  st.className = 'state ' + (data.aperte ? 'on' : 'off');
+  st.textContent = data.aperte ? '● Aperte' : '● Chiuse';
+  const b = document.getElementById('toggle');
+  b.textContent = data.aperte ? 'Chiudi iscrizioni' : 'Apri iscrizioni';
+  b.className = 'btn ' + (data.aperte ? 'red' : 'gold');
+}
+
+function renderRows() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const list = data.iscritti.filter(r => !q || [r.nome, r.email, r.classe, r.tag, r.soprannome, r.mazzo].some(v => (v || '').toLowerCase().includes(q)));
+  const body = document.getElementById('rows');
+  body.innerHTML = list.length ? list.map(r => `<tr>
+      <td class="name"><b>${esc(r.nome)}</b><span>${esc(r.email)}</span></td>
+      <td>${esc(r.classe)}</td>
+      <td class="tag">${esc(r.tag)}</td>
+      <td>${esc(r.soprannome || '–')}</td>
+      <td>${esc(r.mazzo || '–')}</td>
+      <td>${yn(r.giorni)}</td><td>${yn(r.wildcard)}</td><td>${yn(r.foto)}</td>
+      <td class="muted">${esc(r.quando)}</td>
+      <td><button type="button" class="del" data-email="${esc(r.email)}">Elimina</button></td>
+    </tr>`).join('')
+    : `<tr><td colspan="10" class="empty">${data.iscritti.length ? 'Nessun iscritto corrisponde alla ricerca.' : 'Ancora nessun iscritto.'}</td></tr>`;
+  body.querySelectorAll('.del').forEach(b => b.addEventListener('click', () => removeRow(b)));
+}
+
+function renderAll() { renderTiles(); renderState(); renderRows(); }
+
+// ---------- Azioni ----------
+async function load() {
+  try {
+    data = await api('admin_lista');
+    renderAll();
+  } catch (e) { msg('⚠️ ' + e.message); }
+}
+
+async function removeRow(b) {
+  // Due tocchi: le finestre di conferma del browser non sempre funzionano
+  if (!b.classList.contains('sure')) { b.classList.add('sure'); b.textContent = 'Sicuro? Tocca di nuovo'; return; }
+  try {
+    await api('admin_elimina', { email: b.dataset.email });
+    msg(`Iscrizione di ${b.dataset.email} eliminata.`);
+    load();
+  } catch (e) { msg('⚠️ ' + e.message); }
+}
+
+function csvText() {
+  const head = ['Informazioni cronologiche', 'Email', 'Nome e cognome', 'Classe e sezione', 'Soprannome per la telecronaca', 'Tag giocatore', 'Mazzo o archetipo preferito',
+    'Ci sei in entrambi i giorni del torneo?', 'Se non entri tra i primi 6 per stats, vuoi giocare le qualificazioni per le 2 wildcard?', 'Acconsenti alla pubblicazione di foto e video sui canali della scuola o dei rappresentanti?'];
+  const cell = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
+  return [head, ...data.iscritti.map(r => [r.quando, r.email, r.nome, r.classe, r.soprannome, r.tag, r.mazzo, r.giorni, r.wildcard, r.foto])]
+    .map(row => row.map(cell).join(',')).join('\n');
+}
+
+function showPanel() {
+  app.innerHTML = MLAuth.demo ? '<p class="note"><b>Anteprima:</b> iscritti di esempio, le modifiche restano solo su questa pagina.</p>' : '';
+  app.appendChild(document.getElementById('t-panel').content.cloneNode(true));
+  document.getElementById('q').addEventListener('input', renderRows);
+  document.getElementById('reload').addEventListener('click', load);
+  document.getElementById('toggle').addEventListener('click', async e => {
+    e.currentTarget.disabled = true;
+    try {
+      const r = await api('admin_aperte', { aperte: !data.aperte });
+      data.aperte = r.aperte;
+      renderState();
+      msg(data.aperte ? 'Iscrizioni aperte: il modulo è di nuovo disponibile.' : 'Iscrizioni chiuse: il modulo non accetta più invii.');
+    } catch (err) { msg('⚠️ ' + err.message); }
+    e.currentTarget.disabled = false;
+  });
+  document.getElementById('csv').addEventListener('click', () => {
+    const url = URL.createObjectURL(new Blob(['﻿' + csvText()], { type: 'text/csv' }));
+    const a = Object.assign(document.createElement('a'), { href: url, download: 'iscrizioni.csv' });
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+  // Righe già pronte da incollare in GIOCATORI di v2/torneo.py
+  document.getElementById('copy-tags').addEventListener('click', async () => {
+    const text = data.iscritti.map(r => `    "${r.tag}",`.padEnd(18) + `# ${r.nome} (${r.classe})`).join('\n');
+    try { await navigator.clipboard.writeText(text); msg(`Copiati ${data.iscritti.length} tag: incollali nella lista GIOCATORI di v2/torneo.py (massimo 8).`); }
+    catch { msg('Copia non riuscita: seleziona i tag dalla tabella.'); }
+  });
+  load();
+}
+
+function showDenied(title, text) {
+  app.innerHTML = `<div class="box"><span class="chip red">Accesso riservato</span><h2>${title}</h2><p class="muted">${text}</p></div>`;
+}
+
+MLAuth.onChange(u => {
+  if (!u) return showDenied('Accedi come organizzatore', 'Usa il bottone Accedi in alto con un account organizzatore della scuola.');
+  if (!MLAuth.adminChecked) { app.innerHTML = '<p class="muted">Controllo i permessi…</p>'; return; }
+  if (!MLAuth.admin) return showDenied('Non sei un organizzatore', 'Questa pagina è solo per gli organizzatori del torneo. Se dovresti esserlo, chiedi di aggiungere la tua mail in ORGANIZZATORI (Code.gs).');
+  if (!document.getElementById('rows')) showPanel();
+});
+</script>
+</body>
+</html>
