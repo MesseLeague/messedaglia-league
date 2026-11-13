@@ -206,7 +206,7 @@ a { color: var(--text); }
 .slots8 i.rep { background: var(--red); box-shadow: none; }
 
 /* ---------------- Tabellone (come in diretta) ---------------- */
-.bracket-scroll { overflow-x: auto; padding: 6px 0 14px; }
+.bracket-scroll { overflow-x: auto; padding: 6px 0 14px; max-width: none; }
 .bk { position: relative; margin: 0 auto; font-family: var(--display); }
 .bk svg { position: absolute; inset: 0; overflow: visible; }
 .bk-wire { fill: none; stroke: var(--grey); stroke-width: 6; }
@@ -874,6 +874,22 @@ renderSim();
   root.style.width = width + 'px';
   root.style.height = height + 'px';
   root.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" aria-hidden="true">${paths}</svg>${html}`;
+
+  // Il tabellone esce dalla colonna del sito e usa tutta la larghezza dello schermo (max 1440 px);
+  // se non basta si rimpicciolisce fino al 75% per starci tutto. Sotto, cioè sui telefoni, si scorre.
+  const box = root.parentElement;
+  const MIN = 0.75, MAX_W = 1440, GAP = 16;
+  function fit() {
+    const vw = document.documentElement.clientWidth;
+    const avail = Math.min(vw - 2 * GAP, MAX_W);
+    box.style.width = avail + 'px';
+    box.style.marginLeft = '0px';
+    box.style.marginLeft = ((vw - avail) / 2 - box.getBoundingClientRect().left) + 'px';
+    const scale = Math.max(MIN, Math.min(1, (avail - 8) / width));
+    root.style.zoom = scale < 1 ? scale : '';
+  }
+  fit();
+  addEventListener('resize', fit);
 })();
 setupReveal();
 </script>
