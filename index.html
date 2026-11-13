@@ -189,11 +189,12 @@ a { color: var(--text); }
 .duel-copy p { color: var(--muted); font-size: var(--step-1); }
 .bars { display: grid; gap: 34px; width: 100%; margin-top: 10px; }
 .bar { position: relative; display: grid; grid-template-columns: 1fr 1fr; }
-.bar .chip { position: absolute; left: 50%; top: -17px; transform: translateX(-50%); }
+.bar .chip { position: absolute; left: 50%; top: -17px; transform: translateX(-50%); z-index: 2; white-space: nowrap; }
 .bar b { display: grid; place-items: center; padding: 22px 8px 12px; font: 400 clamp(1.8rem, 4vw, 2.6rem)/1 var(--display); }
 .bar b:first-of-type { background: var(--blue); }
 .bar b:last-of-type { background: var(--red); }
 .bar b small { font: 600 0.8rem/1.3 var(--body); text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; margin-top: 4px; }
+.duel-copy .penalty { color: #fff; }
 .penalty { width: 100%; padding: 16px 20px; background: var(--red-dark); box-shadow: inset 6px 0 0 var(--red); font: 400 var(--step-1)/1.3 var(--display); text-transform: uppercase; }
 .decks { display: grid; gap: 12px; min-width: 0; }
 .deck-row { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr); gap: 10px; align-items: center; }
