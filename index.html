@@ -4,6 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Messedaglia League</title>
+<meta name="description" content="Il torneo di Clash Royale del Liceo Messedaglia: 8 giocatori, uno contro uno, doppia eliminazione e regola del duello. Iscriviti con la mail della scuola.">
+<!-- Anteprima quando il link viene condiviso (WhatsApp, Instagram, Telegram, Discord…) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Messedaglia League">
+<meta property="og:title" content="Messedaglia League · Finali Mondiali">
+<meta property="og:description" content="Il torneo di Clash Royale del Liceo Messedaglia: 8 giocatori, uno contro uno, doppia eliminazione e regola del duello. Iscriviti con la mail della scuola.">
+<meta property="og:url" content="https://messeleague.github.io/messedaglia-league/">
+<meta property="og:image" content="https://messeleague.github.io/messedaglia-league/img/anteprima.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Messedaglia League · Finali Mondiali">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05070f">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -240,6 +254,22 @@ a { color: var(--text); }
 .rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; }
 .rule { display: grid; gap: 10px; justify-items: start; align-content: start; padding: 22px; background: var(--panel); min-width: 0; }
 .rule dd { margin: 0; color: var(--muted); }
+
+/* FAQ: domande a tendina */
+.faq { display: grid; gap: 6px; max-width: 900px; }
+.faq-item { background: var(--panel); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 16px; padding: 18px 20px; font: 400 var(--step-0, 1rem)/1.3 var(--display); text-transform: uppercase; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; margin-left: auto; flex: none; display: grid; place-items: center; width: 30px; height: 30px; background: var(--blue); font: 400 1.2rem/1 var(--display); transition: background .3s; }
+.faq-item[open] summary::after { content: "2"; background: var(--red); }
+.faq-item summary:hover { background: #121830; }
+.faq-item[open] { box-shadow: inset 4px 0 0 var(--gold); }
+.faq-a { padding: 0 20px 20px; color: var(--muted); max-width: 72ch; }
+.faq-a p { margin: 0; }
+.faq-a strong { color: var(--text); }
+.faq-item[open] .faq-a { animation: faq-in .35s cubic-bezier(.12,.9,.2,1); }
+@keyframes faq-in { from { opacity: 0; transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) { .faq-item[open] .faq-a { animation: none; } .faq-item summary::after { transition: none; } }
 .rule dd strong { color: var(--text); }
 
 /* ---------------- Chiusura ---------------- */
@@ -536,6 +566,62 @@ footer a { color: var(--text); }
         <div class="rule"><dt class="chip blue">Pareggi</dt><dd>Una partita finita in parità <strong>non conta</strong> e si rigioca.</dd></div>
         <div class="rule"><dt class="chip red">Fair play</dt><dd>Rispetto per avversari e pubblico, in chat e dal vivo.</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <section class="band glow" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <span class="chip">FAQ</span>
+        <h2 id="faq-title">Domande frequenti</h2>
+        <p>Le risposte alle domande che ci fate più spesso. Tocca una domanda per aprirla.</p>
+      </div>
+      <div class="faq" data-reveal="stagger">
+        <details class="faq-item">
+          <summary>Chi può iscriversi?</summary>
+          <div class="faq-a"><p>Tutti gli studenti del Liceo Messedaglia. Ci si iscrive con l'account della scuola (<code>nome.cognome@messedaglia.edu.it</code>), così ogni iscrizione è sicuramente di uno studente.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Serve un livello minimo o una lega minima?</summary>
+          <div class="faq-a"><p>No, può iscriversi chiunque. Però i posti sono solo 8: le stats dell'account contano per decidere chi entra direttamente (vedi la domanda qui sotto).</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Come vengono scelti gli 8 finalisti?</summary>
+          <div class="faq-a"><p>I primi <strong>6</strong> per stats entrano direttamente nel tabellone. Il punteggio guarda la miglior lega in classificata (con le medaglie), i trofei, la percentuale di vittorie e le carte a livello 16. Gli ultimi <strong>2 posti</strong> si giocano nelle qualificazioni wildcard tra gli altri iscritti che le hanno scelte nel modulo.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Dove trovo il mio tag giocatore?</summary>
+          <div class="faq-a"><p>In Clash Royale tocca il tuo nome in alto a sinistra: il tag è sotto il nome e inizia con <strong>#</strong> (per esempio <code>#JL9V9LJVJ</code>). Mentre lo scrivi nel modulo compare la scheda del tuo account, così controlli che sia quello giusto.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Posso giocare con un altro account?</summary>
+          <div class="faq-a"><p>No: si gioca con l'account del tag che hai iscritto, dal tuo telefono. Le stats usate per la classifica sono quelle di quell'account.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Come funziona la regola del duello?</summary>
+          <div class="faq-a"><p>Ogni partita di una serie si gioca con un mazzo nuovo, e nessuna carta può comparire in due mazzi della stessa serie. Preparati quindi 3 mazzi diversi per le BO3 e 5 per le BO5. Una carta ripetuta fa perdere subito il round.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Se perdo una serie sono fuori?</summary>
+          <div class="faq-a"><p>No, il tabellone è a doppia eliminazione: alla prima serie persa scendi nel Losers Bracket e continui a giocare. Sei fuori solo alla seconda sconfitta.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Che succede se una partita finisce in pareggio?</summary>
+          <div class="faq-a"><p>Non conta e si rigioca.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Quando e dove si gioca?</summary>
+          <div class="faq-a"><p>Le date vengono annunciate qui sul sito. Nel modulo ti chiediamo se sei disponibile per due giorni, perché il tabellone potrebbe essere diviso in due giornate.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Le partite vengono riprese?</summary>
+          <div class="faq-a"><p>Sì, le partite vengono trasmesse in diretta con la grafica del torneo. Nel modulo chiediamo il permesso per le riprese e per le foto.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Posso modificare o ritirare l'iscrizione?</summary>
+          <div class="faq-a"><p>Sì: accedi in alto e apri <strong>La mia iscrizione</strong>. Finché le iscrizioni sono aperte puoi correggere i dati o ritirarti.</p></div>
+        </details>
+      </div>
     </div>
   </section>
 

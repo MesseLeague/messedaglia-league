@@ -16,6 +16,7 @@
     ['formato', 'Formato', './#formato'],
     ['tabellone', 'Tabellone', './#tabellone'],
     ['regole', 'Regole', './#regole'],
+    ['faq', 'FAQ', './#faq'],
     ['iscrizioni', 'Iscrizioni', 'iscrizioni.html'],
   ];
 
