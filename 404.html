@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- GitHub Pages mostra questa pagina per qualsiasi indirizzo che non esiste, anche dentro
+     cartelle inventate: con <base> immagini, stili e link puntano sempre alla radice del sito. -->
+<base href="/messedaglia-league/">
+<title>Pagina non trovata · Messedaglia League</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#05070f">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="nav.css">
+<style>
+  :root {
+    --bg: #05070f; --panel: #0d1120; --muted: #9aa3b5; --blue: #1f74d0; --red: #d6303f; --gold: #f5b301;
+    --display: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Archivo", "Segoe UI", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; flex-direction: column; color: #fff; font: 400 16px/1.55 var(--body);
+    background:
+      radial-gradient(50% 45% at 0% 50%, rgba(31, 116, 208, 0.4), transparent 70%),
+      radial-gradient(50% 45% at 100% 50%, rgba(214, 48, 63, 0.4), transparent 70%),
+      var(--bg);
+  }
+  main { flex: 1; display: grid; place-items: center; padding: 40px 16px 60px; text-align: center; }
+  .box { display: grid; justify-items: center; gap: 16px; max-width: 640px; }
+  .band { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; width: min(92vw, 640px); background: linear-gradient(90deg, var(--blue) 50%, var(--red) 50%); margin: 30px 0 10px; }
+  .band span { font: 400 clamp(3rem, 14vw, 6.5rem)/1 var(--display); padding: 10px 0; }
+  .band img { width: clamp(110px, 28vw, 190px); margin: -40px 0; filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.7)); animation: wobble 3s ease-in-out infinite; }
+  @keyframes wobble { 0%, 100% { transform: rotate(-6deg) translateY(0); } 50% { transform: rotate(6deg) translateY(-8px); } }
+  h1 { font: 400 clamp(1.6rem, 6vw, 2.4rem)/1.1 var(--display); text-transform: uppercase; margin: 0; }
+  p { margin: 0; color: var(--muted); font-size: 1.1rem; max-width: 46ch; }
+  .chip { display: inline-block; padding: 6px 12px; background: #fff; color: #000; font: 400 .78rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .06em; }
+  .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 8px; }
+  .links a { padding: 14px 22px; color: #fff; text-decoration: none; font: 400 .95rem/1 var(--display); text-transform: uppercase; background: var(--panel); }
+  .links a.blue { background: var(--blue); } .links a.red { background: var(--red); }
+  .links a:hover { filter: brightness(1.15); }
+  .links a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .band img { animation: none; } }
+</style>
+</head>
+<body>
+<nav id="topbar" data-page="404" aria-label="Sito"></nav>
+<main>
+  <div class="box">
+    <div class="band" aria-hidden="true"><span>4</span><img src="img/logo.png" alt=""><span>4</span></div>
+    <span class="chip">Errore 404</span>
+    <h1>Questa arena non esiste</h1>
+    <p>La pagina che cerchi non c'è, oppure il link è sbagliato. Torna al sito e riprova da lì.</p>
+    <div class="links">
+      <a class="blue" href="./">Torna alla home</a>
+      <a class="red" href="iscrizioni.html">Iscrizioni</a>
+      <a href="regolamento.html">Regolamento</a>
+    </div>
+  </div>
+</main>
+<script src="config.js"></script>
+<script src="pubblico.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iscritti · Messedaglia League</title>
+<meta name="description" content="La classifica degli iscritti alle Finali d'Istituto della Messedaglia League: i 6 qualificati per statistiche, gli aspiranti agli spareggi e tutti gli altri iscritti.">
+<!-- Anteprima quando il link viene condiviso (WhatsApp, Instagram, Telegram, Discord…) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Messedaglia League">
+<meta property="og:title" content="Iscritti · Messedaglia League">
+<meta property="og:description" content="Chi è già dentro, chi si gioca gli spareggi e tutti gli iscritti alle Finali d'Istituto della Messedaglia League.">
+<meta property="og:url" content="https://messeleague.github.io/messedaglia-league/iscritti.html">
+<meta property="og:image" content="https://messeleague.github.io/messedaglia-league/img/anteprima-2.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Messedaglia League · Finali d'Istituto">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05070f">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="nav.css">
+<style>
+  /* Iscritti: stesso stile del sito */
+  :root {
+    --bg: #05070f; --panel: #0d1120; --panel-2: #121830; --line: #1d2335; --text: #fff; --muted: #9aa3b5; --grey: #4a4d55;
+    --blue: #1f74d0; --red: #d6303f; --gold: #f5b301; --green: #3fcf7f;
+    --display: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Archivo", "Segoe UI", system-ui, sans-serif;
+    --ease: cubic-bezier(.12, .9, .2, 1);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--text); font: 400 16px/1.55 var(--body); min-height: 100vh;
+    background:
+      radial-gradient(45% 26% at 6% 0, rgba(31, 116, 208, 0.35), transparent 70%),
+      radial-gradient(45% 26% at 94% 0, rgba(214, 48, 63, 0.35), transparent 70%),
+      var(--bg);
+  }
+  main { max-width: 1000px; margin: 0 auto; padding: 34px max(16px, env(safe-area-inset-right, 0px)) 80px max(16px, env(safe-area-inset-left, 0px)); }
+  h1 { font: 400 clamp(2.2rem, 8vw, 3.6rem)/1 var(--display); text-transform: uppercase; margin: 12px 0 10px; }
+  h2 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font: 400 clamp(1.3rem, 4vw, 1.7rem)/1.1 var(--display); text-transform: uppercase; margin: 40px 0 6px; }
+  h2 + p { margin: 0 0 14px; color: var(--muted); }
+  .lead { color: var(--muted); font-size: 1.1rem; margin: 0 0 18px; max-width: 62ch; }
+  .chip { display: inline-block; padding: 6px 12px; background: #fff; color: #000; font: 400 .78rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .06em; }
+  .chip.gold { background: var(--gold); } .chip.red { background: var(--red); color: #fff; } .chip.blue { background: var(--blue); color: #fff; }
+  .muted { color: var(--muted); }
+
+  /* Stato iscrizioni + numeri */
+  .stato { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding: 14px 16px; background: var(--panel); box-shadow: inset 4px 0 0 var(--green); }
+  .stato.chiuse { box-shadow: inset 4px 0 0 var(--red); }
+  .stato b { font: 400 1rem/1.2 var(--display); text-transform: uppercase; }
+  .stato .grow { flex: 1; }
+  .stato a { color: #fff; font-weight: 800; }
+  .nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 6px; }
+  .num { padding: 14px 16px; background: var(--panel); }
+  .num strong { display: block; font: 400 2rem/1 var(--display); }
+  .num span { color: var(--muted); font-size: .9rem; }
+
+  /* Qualificati: carte grandi */
+  .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .card { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: center; padding: 16px 14px; background: linear-gradient(180deg, rgba(245, 179, 1, 0.16), var(--panel) 70%); box-shadow: inset 0 3px 0 var(--gold); min-width: 0; animation: in .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 60ms); }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } }
+  .card img, .card .noimg { width: 64px; height: 64px; object-fit: contain; }
+  .noimg { display: block; width: 34px; height: 34px; border-radius: 50%; background: var(--panel-2); }
+  .side .noimg { width: 40px; height: 40px; }
+  .who { min-width: 0; display: grid; gap: 2px; }
+  .who b { font: 400 1.1rem/1.15 var(--display); overflow-wrap: anywhere; }
+  .who .nick { color: var(--gold); font-weight: 800; overflow-wrap: anywhere; }
+  .who small { color: var(--muted); font-size: .85rem; }
+  .pos { position: absolute; top: 10px; right: 10px; min-width: 30px; height: 30px; padding: 0 6px; display: grid; place-items: center; background: #fff; color: #000; font: 400 .95rem/1 var(--display); }
+  .card .pos { background: var(--gold); }
+
+  /* Aspiranti: i due spareggi */
+  .duels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .duel { background: var(--panel); padding: 12px; display: grid; gap: 6px; min-width: 0; }
+  .duel-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .duel-head b { font: 400 1.1rem/1 var(--display); }
+  .side { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 10px; min-width: 0; }
+  .side.blue { background: rgba(31, 116, 208, 0.35); } .side.red { background: rgba(214, 48, 63, 0.35); }
+  .side img { width: 40px; height: 40px; object-fit: contain; }
+  .side .seed { font: 400 1rem/1 var(--display); }
+  .side.empty { color: var(--muted); font-style: italic; }
+  .vs { justify-self: center; font: 400 .8rem/1 var(--display); color: var(--muted); }
+
+  /* Tutti gli altri: righe */
+  .rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+  .row { display: grid; grid-template-columns: 42px 34px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 12px; background: var(--panel); }
+  .row .n { font: 400 .95rem/1 var(--display); color: var(--muted); text-align: center; }
+  .row img { width: 34px; height: 34px; object-fit: contain; }
+  .row .who b { font-size: .95rem; }
+  .row .rec { text-align: right; font: 400 .9rem/1.2 var(--display); white-space: nowrap; }
+  .row .rec small { display: block; font: 600 .75rem/1.2 var(--body); color: var(--muted); }
+
+  .empty-box { padding: 30px 20px; background: var(--panel); text-align: center; color: var(--muted); }
+  .empty-box b { display: block; color: #fff; font: 400 1.2rem/1.2 var(--display); text-transform: uppercase; margin-bottom: 6px; }
+  .note { margin-top: 26px; color: var(--muted); font-size: .9rem; }
+  .note a { color: #fff; }
+  .btn { display: inline-block; margin-top: 10px; padding: 14px 22px; background: var(--blue); color: #fff; text-decoration: none; font: 400 .95rem/1 var(--display); text-transform: uppercase; }
+  footer { max-width: 1000px; margin: 0 auto; padding: 26px 16px 40px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
+  footer a { color: #c9cfdb; }
+  @media (max-width: 820px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .cards, .duels { grid-template-columns: 1fr; } .nums .num strong { font-size: 1.5rem; } }
+  @media (prefers-reduced-motion: reduce) { .card { animation: none; } }
+</style>
+</head>
+<body>
+<nav id="topbar" data-page="iscritti" aria-label="Sito"></nav>
+
+<main>
+  <span class="chip">Finali d'Istituto</span>
+  <h1>Iscritti</h1>
+  <p class="lead">La classifica segue il regolamento: conta la lega più alta raggiunta in Classificata, poi il record di trofei, poi i trofei attuali. I primi 6 entrano, dal 7º al 10º si giocano gli ultimi 2 posti.</p>
+  <div id="app"></div>
+  <p class="note" id="note"></p>
+</main>
+
+<footer>
+  <strong>Messedaglia League · Finali d'Istituto</strong> · Torneo studentesco del Liceo Messedaglia.<br>
+  Questo materiale non è ufficiale e non è approvato da Supercell. Per maggiori informazioni consulta la <a href="https://supercell.com/en/fan-content-policy/" target="_blank" rel="noopener">Fan Content Policy di Supercell</a>.
+</footer>
+
+<script src="config.js"></script>
+<script src="pubblico.js"></script>
+<script src="nav.js"></script>
+<script>
+(function () {
+  const P = window.ML_PUBBLICO || { iscrizioni: { aperte: true }, classifica: [] };
+  const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmt = n => Number(n || 0).toLocaleString('it-IT');
+  const img = g => g.lega
+    ? `<img src="img/${esc(g.lega)}.png" alt="${esc(g.legaNome || '')}" title="Miglior lega: ${esc(g.legaNome || '')}" loading="lazy">`
+    : '<span class="noimg" aria-hidden="true"></span>';
+  const who = g => `<div class="who"><b>${esc(g.nome)}</b>${g.soprannome ? `<span class="nick">"${esc(g.soprannome)}"</span>` : ''}<small>${esc(g.legaNome || '')} · record ${fmt(g.record)}</small></div>`;
+
+  const app = document.getElementById('app');
+  const lista = P.classifica || [];
+  const qual = lista.filter(g => g.esito === 'qual');
+  const asp = lista.filter(g => g.esito === 'asp');
+  const altri = lista.filter(g => g.esito !== 'qual' && g.esito !== 'asp');
+  const aperte = P.iscrizioni ? P.iscrizioni.aperte !== false : true;
+  const scad = P.iscrizioni && P.iscrizioni.scadenza;
+  const url = (window.ML_CONFIG || {}).ISCRIZIONI_URL;
+
+  let html = `<div class="stato${aperte ? '' : ' chiuse'}">
+      <span class="chip ${aperte ? 'gold' : 'red'}">${aperte ? 'Iscrizioni aperte' : 'Iscrizioni chiuse'}</span>
+      <b>${aperte ? (scad ? 'Chiudono ' + esc(scad) : 'Puoi ancora entrare in classifica') : 'Classifica definitiva'}</b>
+      <span class="grow"></span>
+      ${aperte && url ? '<a href="iscrizioni.html">Iscriviti →</a>' : ''}
+    </div>
+    <div class="nums">
+      <div class="num"><strong>${P.totale || lista.length}</strong><span>iscritti</span></div>
+      <div class="num"><strong>${qual.length}<span class="muted" style="font-size:.55em"> / 6</span></strong><span>qualificati</span></div>
+      <div class="num"><strong>${asp.length}<span class="muted" style="font-size:.55em"> / 4</span></strong><span>aspiranti</span></div>
+    </div>`;
+
+  if (!lista.length) {
+    html += `<div class="empty-box" style="margin-top:20px"><b>La classifica arriva presto</b>Gli organizzatori la pubblicano dopo aver controllato i primi account.${aperte && url ? '<br><a class="btn" href="iscrizioni.html">Iscriviti</a>' : ''}</div>`;
+  } else {
+    html += `<h2><span class="chip gold">1º-6º</span>Qualificati</h2><p>Entrano direttamente nel tabellone, ai posti dall'1 al 6.</p>
+      <ol class="cards">${qual.map((g, i) => `<li class="card" style="--i:${i}"><span class="pos">${g.pos}</span>${img(g)}${who(g)}</li>`).join('')}</ol>`;
+
+    // Spareggi: AS1 = posto 7 contro posto 10, AS2 = posto 8 contro posto 9
+    const byPosto = p => asp.find(g => g.posto === p);
+    const side = (p, color) => {
+      const g = byPosto(p);
+      return g ? `<div class="side ${color}"><span class="seed">${p}º</span>${who(g)}${img(g)}</div>`
+               : `<div class="side ${color} empty"><span class="seed">${p}º</span><span>Posto libero</span><span></span></div>`;
+    };
+    html += `<h2><span class="chip">7º-10º</span>Aspiranti</h2><p>Due spareggi al meglio delle 5 prima del torneo: chi vince entra nel tabellone come 7º o 8º, chi perde è riserva.</p>
+      <div class="duels">
+        <div class="duel"><div class="duel-head"><b>AS1</b><span class="chip blue">Bo5</span></div>${side(7, 'blue')}<span class="vs">VS</span>${side(10, 'red')}</div>
+        <div class="duel"><div class="duel-head"><b>AS2</b><span class="chip blue">Bo5</span></div>${side(8, 'blue')}<span class="vs">VS</span>${side(9, 'red')}</div>
+      </div>`;
+
+    if (altri.length) {
+      html += `<h2>Altri iscritti</h2><p>${aperte ? 'Per ora fuori dai primi 10 disponibili: la classifica cambia finché le iscrizioni sono aperte.' : 'Fuori dal tabellone, in ordine di classifica: i primi possono essere chiamati come riserve.'}</p>
+        <ol class="rows">${altri.map(g => `<li class="row"><span class="n" title="Posizione in classifica">#${g.pos}</span>${img(g)}${who(g)}<span class="rec">${fmt(g.trofei)}<small>trofei</small></span></li>`).join('')}</ol>`;
+    }
+  }
+  app.innerHTML = html;
+
+  const quando = P.aggiornato ? new Date(P.aggiornato) : null;
+  document.getElementById('note').innerHTML =
+    (quando && !isNaN(quando) ? `Aggiornata il ${quando.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' })} alle ${quando.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })}. ` : '')
+    + 'I dati arrivano dall\'API ufficiale di Clash Royale. Sono mostrati solo il nome in gioco e il soprannome scelto nel modulo. Regole complete nel <a href="regolamento.html">regolamento</a>.';
+})();
+</script>
+</body>
+</html>

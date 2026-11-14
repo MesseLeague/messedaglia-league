@@ -17,6 +17,7 @@
     ['tabellone', 'Tabellone', './#tabellone'],
     ['faq', 'FAQ', './#faq'],
     ['regolamento', 'Regolamento', 'regolamento.html'],
+    ['iscritti', 'Iscritti', 'iscritti.html'],
     ['iscrizioni', 'Iscrizioni', 'iscrizioni.html'],
   ];
 
@@ -37,6 +38,11 @@
     history.replaceState(null, '', location.pathname + location.search + (m[2] ? '#' + m[2] : ''));
     if (m[2]) addEventListener('load', () => document.getElementById(m[2])?.scrollIntoView());
   }
+
+  // Stato delle iscrizioni, da pubblico.js (lo crea il pannello Dev): null se il file non c'è
+  const PUB = window.ML_PUBBLICO && window.ML_PUBBLICO.iscrizioni;
+  const STATO = FORM && PUB ? { aperte: PUB.aperte !== false, scadenza: String(PUB.scadenza || '') } : null;
+  window.MLStato = STATO;
 
   readReturn();
   let user = store.get();
@@ -69,7 +75,7 @@
         <a class="ml-brand" href="./"><img src="img/logo.png" alt="" width="40" height="40"><span>Messedaglia League</span></a>
         <button type="button" class="ml-burger" id="ml-burger" aria-expanded="false" aria-controls="ml-links" aria-label="Menu">☰</button>
         <ul class="ml-links" id="ml-links">
-          ${PAGES.map(([id, label, href]) => `<li><a href="${href}"${id === page ? ' aria-current="page"' : ''}${id === 'iscrizioni' ? ' class="ml-cta"' : ''}>${label}</a></li>`).join('')}
+          ${PAGES.map(([id, label, href]) => `<li><a href="${href}"${id === page ? ' aria-current="page"' : ''}${id === 'iscrizioni' ? ' class="ml-cta"' : ''}>${id === 'iscrizioni' && STATO ? `<i class="ml-dot ${STATO.aperte ? 'on' : 'off'}" title="Iscrizioni ${STATO.aperte ? 'aperte' : 'chiuse'}"></i>` : ''}${label}</a></li>`).join('')}
           ${user && user.admin && FORM ? `<li><a href="${FORM}?pagina=dev" class="ml-dev">Dev</a></li>` : ''}
         </ul>
         <div class="ml-account">${account}</div>
@@ -99,4 +105,12 @@
     }
   }
   render();
+
+  // Ogni elemento con data-ml-stato mostra lo stato delle iscrizioni (home, pagine…)
+  document.querySelectorAll('[data-ml-stato]').forEach(el => {
+    if (!STATO) { el.hidden = true; return; }
+    el.classList.add(STATO.aperte ? 'on' : 'off');
+    el.innerHTML = `<i class="ml-dot ${STATO.aperte ? 'on' : 'off'}" aria-hidden="true"></i>`
+      + (STATO.aperte ? 'Iscrizioni aperte' + (STATO.scadenza ? ` · chiudono ${esc(STATO.scadenza)}` : '') : 'Iscrizioni chiuse');
+  });
 })();

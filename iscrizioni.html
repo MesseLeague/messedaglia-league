@@ -118,18 +118,24 @@
 </main>
 
 <script src="config.js"></script>
+<script src="pubblico.js"></script>
 <script src="nav.js"></script>
 <script>
   const url = (window.ML_CONFIG || {}).ISCRIZIONI_URL;
   function showGo() {
     const u = window.MLUser;
     const go = document.getElementById('go');
+    const st = window.MLStato;
     if (!url) {
       go.innerHTML = '<span class="chip">In arrivo</span><h2>Le iscrizioni apriranno a breve</h2><p class="muted">Torna su questa pagina nei prossimi giorni.</p>';
+    } else if (st && !st.aperte) {
+      go.innerHTML = u && u.iscritto
+        ? `<span class="chip red">Chiuse</span><h2>Iscrizioni chiuse: sei dentro</h2><p class="muted">La tua iscrizione è confermata così com'è e non si può più modificare. Guarda dove sei in classifica.</p><a class="btn" href="iscritti.html">Vedi gli iscritti</a>`
+        : `<span class="chip red">Chiuse</span><h2>Le iscrizioni sono chiuse</h2><p class="muted">Non è più possibile iscriversi. Puoi seguire la classifica e il torneo qui sul sito.</p><a class="btn" href="iscritti.html">Vedi gli iscritti</a>`;
     } else if (u && u.iscritto) {
       go.innerHTML = `<span class="chip gold">Iscritto</span><h2>Ciao ${u.name.replace(/[<>&"]/g, '')}, sei iscritto</h2><p class="muted">Puoi modificare i dati o ritirarti dal modulo.</p><a class="btn" href="${url}">La mia iscrizione</a>`;
     } else {
-      go.innerHTML = `<span class="chip gold">Aperte</span><h2>${u ? `Ciao ${u.name.replace(/[<>&"]/g, '')}, ` : ''}pronto a iscriverti?</h2><p class="muted">${u ? "Hai già fatto l'accesso: il modulo si apre subito." : "Ti verrà chiesto l'account della scuola."}</p><a class="btn" href="${url}">Apri il modulo</a>`;
+      go.innerHTML = `<span class="chip gold">Aperte${st && st.scadenza ? ' · chiudono ' + st.scadenza.replace(/[<>&"]/g, '') : ''}</span><h2>${u ? `Ciao ${u.name.replace(/[<>&"]/g, '')}, ` : ''}pronto a iscriverti?</h2><p class="muted">${u ? "Hai già fatto l'accesso: il modulo si apre subito." : "Ti verrà chiesto l'account della scuola."}</p><a class="btn" href="${url}">Apri il modulo</a>`;
     }
   }
   showGo();
