@@ -382,6 +382,12 @@ footer a { color: var(--text); }
 
 /* Podio: leggera parallasse sullo sfondo (posizione impostata dallo script) */
 .podium { background-position: center calc(30% + var(--py, 0px)); }
+/* Telefono: l'immagine del podio intera in larghezza (niente parallasse, che scopriva una striscia
+   in fondo), con i testi sotto che sfumano nel nero */
+@media (max-width: 700px) {
+  .podium { min-height: 0; padding-top: 50vw; background: #000 url("img/podio.jpg") center top / 100% auto no-repeat !important; }
+  .podium::after { background: linear-gradient(180deg, var(--bg) 0, rgba(5, 7, 15, 0) 8%, rgba(5, 7, 15, 0) 32vw, rgba(0, 0, 0, 0.85) 52vw, #000 61vw); }
+}
 .places span { transition: transform 0.25s var(--ease); }
 .places span:hover { transform: translateY(-4px); }
 .places .p1 { animation: gold-pulse 2.6s ease-in-out infinite; }
