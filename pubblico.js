@@ -4,9 +4,9 @@
 // Contiene solo dati da mostrare a tutti (niente nomi veri né mail).
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-14T15:08:40.006Z",
+  "aggiornato": "2026-11-14T18:31:55.071Z",
   "iscrizioni": {
-    "aperte": true,
+    "aperte": false,
     "scadenza": ""
   },
   "totale": 1,
