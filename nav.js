@@ -18,6 +18,7 @@
     ['faq', 'FAQ', './#faq'],
     ['regolamento', 'Regolamento', 'regolamento.html'],
     ['iscritti', 'Iscritti', 'iscritti.html'],
+    ['contatti', 'Contatti', 'contatti.html'],
     ['iscrizioni', 'Iscrizioni', 'iscrizioni.html'],
   ];
 

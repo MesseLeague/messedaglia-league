@@ -102,3 +102,9 @@ body::before {
   #topbar.open .ml-links { display: flex; }
   .ml-links a { padding: 14px 12px; font-size: .9rem; }
 }
+
+/* Schermi medi: voci più strette prima di passare al menu a tendina */
+@media (max-width: 1300px) and (min-width: 1121px) {
+  .ml-links a { padding: 9px 8px; letter-spacing: .02em; }
+  .ml-bar-in, #topbar > div { gap: 12px; }
+}

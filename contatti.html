@@ -101,6 +101,12 @@
   .dev small { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
   .dev a { color: #c9cfdb; overflow-wrap: anywhere; font-size: .9rem; }
   .dev a:hover { color: #fff; }
+  .write { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; margin: 10px 0 8px; padding: 22px; background: linear-gradient(90deg, rgba(31, 116, 208, 0.25), var(--panel) 60%); box-shadow: inset 4px 0 0 var(--gold); }
+  .write > div { flex: 1 1 340px; }
+  .write .wt { display: block; margin: 10px 0 6px; font: 400 1.4rem/1.1 var(--display); text-transform: uppercase; }
+  .write p { margin: 0; color: var(--muted); }
+  .wbtn { flex: none; padding: 16px 24px; background: var(--gold); color: #000; text-decoration: none; font: 400 1rem/1 var(--display); text-transform: uppercase; }
+  .wbtn:hover { filter: brightness(1.1); }
 </style>
 </head>
 <body>
@@ -109,7 +115,13 @@
 <main>
   <span class="chip">Finali d'Istituto</span>
   <h1>Contatti</h1>
-  <p class="lead">Dubbi su iscrizioni, regolamento, classifica o sui tuoi dati? Scrivi a uno degli organizzatori, <b>dalla tua mail della scuola</b> così sappiamo chi sei.</p>
+  <p class="lead">Dubbi su iscrizioni, regolamento, classifica o sui tuoi dati? Scrivi agli organizzatori dal modulo qui sotto oppure direttamente alla loro mail, <b>sempre dalla tua mail della scuola</b>.</p>
+
+  <div class="write" id="write">
+    <div><span class="chip gold">Messaggio diretto</span><h2 class="wt">Scrivi agli organizzatori</h2>
+    <p>Scrivi dal sito, anche con screenshot: il messaggio arriva a tutti gli organizzatori con il tuo nome, la classe e il tag di gioco. Serve l'accesso con la mail della scuola.</p></div>
+    <a class="wbtn" id="write-btn" href="iscrizioni.html">✉️ Scrivi un messaggio</a>
+  </div>
 
   <section aria-labelledby="c-1" style="margin-top:20px">
     <h2 id="c-1"><span class="n">1</span>Organizzatori</h2>
@@ -144,6 +156,13 @@
 <script src="nav.js"></script>
 <script>
 (function () {
+  // Il modulo per scrivere è nell'app Google (verifica la mail della scuola)
+  const app = (window.ML_CONFIG || {}).ISCRIZIONI_URL;
+  const u = window.MLUser;
+  const btn = document.getElementById('write-btn');
+  if (app) btn.href = app + '?pagina=contatti';
+  else document.getElementById('write').hidden = true;
+  if (u && u.name) btn.textContent = '✉️ Scrivi come ' + u.name.split(' ')[0];
   const c = (window.ML_PUBBLICO || {}).contatti;
   if (!Array.isArray(c) || !c.length) return;   // resta la lista scritta sopra
   const esc = t => String(t ?? '').replace(/[&<>"']/g, x => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[x]));
