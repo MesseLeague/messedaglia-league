@@ -8,13 +8,13 @@
 <!-- Anteprima quando il link viene condiviso (WhatsApp, Instagram, Telegram, Discord…) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Messedaglia League">
-<meta property="og:title" content="Messedaglia League · Finali Mondiali">
+<meta property="og:title" content="Messedaglia League · Finali d'Istituto">
 <meta property="og:description" content="Il torneo di Clash Royale del Liceo Messedaglia: 8 giocatori, uno contro uno, doppia eliminazione e regola del duello. Iscriviti con la mail della scuola.">
 <meta property="og:url" content="https://messeleague.github.io/messedaglia-league/">
 <meta property="og:image" content="https://messeleague.github.io/messedaglia-league/img/anteprima.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Messedaglia League · Finali Mondiali">
+<meta property="og:image:alt" content="Messedaglia League · Finali d'Istituto">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#05070f">
@@ -261,8 +261,8 @@ a { color: var(--text); }
 .faq-item { background: var(--panel); }
 .faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 16px; padding: 18px 20px; font: 400 var(--step-0, 1rem)/1.3 var(--display); text-transform: uppercase; }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after { content: "+"; margin-left: auto; flex: none; display: grid; place-items: center; width: 30px; height: 30px; background: var(--blue); font: 400 1.2rem/1 var(--display); transition: background .3s; }
-.faq-item[open] summary::after { content: "2"; background: var(--red); }
+.faq-item summary::after { content: ""; margin-left: auto; flex: none; width: 30px; height: 30px; background: linear-gradient(#fff, #fff) center / 12px 3px no-repeat, linear-gradient(#fff, #fff) center / 3px 12px no-repeat, var(--blue); transition: background-color .3s; }
+.faq-item[open] summary::after { background: linear-gradient(#fff, #fff) center / 12px 3px no-repeat, var(--red); }
 .faq-item summary:hover { background: #121830; }
 .faq-item[open] { box-shadow: inset 4px 0 0 var(--gold); }
 .faq-a { padding: 0 20px 20px; color: var(--muted); max-width: 72ch; }
@@ -422,8 +422,8 @@ footer a { color: var(--text); }
     <div class="hero-band">
       <h1>
         <span class="hero-word">Finali</span>
-        <img class="hero-logo" src="img/logo.png" alt="Messedaglia League, Finali Mondiali" width="395" height="389">
-        <span class="hero-word right">Mondiali</span>
+        <img class="hero-logo" src="img/logo.png" alt="Messedaglia League, Finali d'Istituto" width="395" height="389">
+        <span class="hero-word right">d'Istituto</span>
       </h1>
     </div>
     <p class="hero-sub">Otto giocatori della scuola, uno contro uno, in un tabellone a doppia eliminazione. Un mazzo nuovo a ogni round, fino alla Grand Final.</p>
@@ -438,7 +438,7 @@ footer a { color: var(--text); }
   <div class="fact"><dt class="chip gold">Quando</dt><dd>Da annunciare</dd></div>
   <div class="fact"><dt class="chip">Giocatori</dt><dd>8<small>tutti 1 contro 1</small></dd></div>
   <div class="fact"><dt class="chip">Tabellone</dt><dd>Doppia<small>eliminazione, con rivincita in Grand Final</small></dd></div>
-  <div class="fact"><dt class="chip">Serie</dt><dd>BO3<small>e BO5 nelle tre finali</small></dd></div>
+  <div class="fact"><dt class="chip">Match</dt><dd>BO3<small>e BO5 nelle tre finali</small></dd></div>
 </dl>
 
 <main>
@@ -446,8 +446,8 @@ footer a { color: var(--text); }
     <div class="wrap">
       <div class="head" data-reveal>
         <span class="chip">Il formato</span>
-        <h2 id="formato-title">Si vince la serie, non la singola partita</h2>
-        <p>Ogni sfida è una serie di partite tra due giocatori. Una giornata storta non basta a perdere, e una partita fortunata non basta a vincere.</p>
+        <h2 id="formato-title">Si vince il match, non la singola partita</h2>
+        <p>Ogni sfida è un match di più partite tra due giocatori. Una giornata storta non basta a perdere, e una partita fortunata non basta a vincere.</p>
       </div>
 
       <div class="formats" data-reveal="stagger">
@@ -457,7 +457,7 @@ footer a { color: var(--text); }
         </article>
         <article class="format three">
           <div class="format-top">BO3</div>
-          <div class="format-body"><h3>Al meglio delle 3</h3><p>Tutte le serie del tabellone. Vince chi arriva per primo a <strong>2 vittorie</strong>.</p></div>
+          <div class="format-body"><h3>Al meglio delle 3</h3><p>Tutti i match del tabellone. Vince chi arriva per primo a <strong>2 vittorie</strong>.</p></div>
         </article>
         <article class="format five">
           <div class="format-top">BO5</div>
@@ -469,13 +469,13 @@ footer a { color: var(--text); }
         <div class="sim-copy">
           <span class="chip">Prova tu</span>
           <h3>Ogni corona è un round</h3>
-          <p>In diretta il punteggio della serie è una fila di corone: bianca finché il round non si gioca, poi del colore di chi lo vince.</p>
+          <p>In diretta il punteggio del match è una fila di corone: bianca finché il round non si gioca, poi del colore di chi lo vince.</p>
           <ul class="legend">
             <li><svg viewBox="0 0 64 48" class="crown-empty" aria-hidden="true"><use href="#crown"/></svg><span><strong>Bianca:</strong> da giocare</span></li>
             <li><svg viewBox="0 0 64 48" class="crown-blue" aria-hidden="true"><use href="#crown"/></svg><span><strong>Blu:</strong> vinto dal giocatore blu</span></li>
             <li><svg viewBox="0 0 64 48" class="crown-red" aria-hidden="true"><use href="#crown"/></svg><span><strong>Rossa:</strong> vinto dal giocatore rosso</span></li>
           </ul>
-          <div class="controls" role="group" aria-label="Simula una serie">
+          <div class="controls" role="group" aria-label="Simula un match">
             <button type="button" class="btn" id="fmt-3" aria-pressed="false">BO3</button>
             <button type="button" class="btn on" id="fmt-5" aria-pressed="true">BO5</button>
             <button type="button" class="btn blue" id="win-blue">Vince il blu</button>
@@ -483,7 +483,7 @@ footer a { color: var(--text); }
             <button type="button" class="btn" id="reset">Ricomincia</button>
           </div>
         </div>
-        <div class="sim-board" aria-label="Punteggio della serie d'esempio">
+        <div class="sim-board" aria-label="Punteggio del match d'esempio">
           <div class="score"><span class="b" id="score-b">0</span><span class="r" id="score-r">0</span></div>
           <div class="crowns" id="crowns"></div>
           <p class="status" id="status" aria-live="polite"></p>
@@ -497,7 +497,7 @@ footer a { color: var(--text); }
       <div class="duel-copy" data-reveal>
         <span class="chip">Regola del duello</span>
         <h3 id="duello-title">Un mazzo nuovo a ogni round</h3>
-        <p>Ogni round è una normale partita 1 contro 1. Però nella stessa serie non puoi riusare nessuna carta che hai già giocato in un round precedente.</p>
+        <p>Ogni round è una normale partita 1 contro 1. Però nello stesso match non puoi riusare nessuna carta che hai già giocato in un round precedente.</p>
         <div class="bars">
           <div class="bar"><span class="chip">Carte diverse al massimo</span><b>24<small>in un BO3</small></b><b>40<small>in un BO5</small></b></div>
         </div>
@@ -516,12 +516,12 @@ footer a { color: var(--text); }
       <div class="head" data-reveal>
         <span class="chip">Il tabellone</span>
         <h2 id="tabellone-title">Otto giocatori, due vite</h2>
-        <p>Se perdi una serie nel Winners non sei fuori: scendi nel Losers e ti giochi la seconda possibilità. Alla seconda serie persa sei eliminato. Se la Grand Final la vince chi arriva dal Losers, si gioca la rivincita.</p>
+        <p>Se perdi un match nel Winners non sei fuori: scendi nel Losers e ti giochi la seconda possibilità. Al secondo match perso sei eliminato. Se la Grand Final la vince chi arriva dal Losers, si gioca la rivincita.</p>
       </div>
       <div class="bracket-scroll" tabindex="0" role="region" aria-label="Tabellone a doppia eliminazione">
         <div class="bk" id="bracket"></div>
       </div>
-      <p class="bracket-note">Le linee seguono chi vince; chi perde nel Winners scende nella casella "Perdente" del Losers. Tutte le serie sono BO3, le tre finali e l'eventuale rivincita sono BO5.</p>
+      <p class="bracket-note">Le linee seguono chi vince; chi perde nel Winners scende nella casella "Perdente" del Losers. Tutti i match sono BO3, le tre finali e l'eventuale rivincita sono BO5.</p>
     </div>
   </section>
 
@@ -529,7 +529,7 @@ footer a { color: var(--text); }
     <div class="wrap">
       <span class="chip gold">La posta in gioco</span>
       <h2 id="podio-title">Chi sarà il re del Messedaglia?</h2>
-      <p>Alla fine delle Finali Mondiali restano tre statue sul podio. Solo una è d'oro.</p>
+      <p>Alla fine delle Finali d'Istituto restano tre statue sul podio. Solo una è d'oro.</p>
       <div class="places" data-reveal="stagger" aria-label="Posti sul podio"><span class="p1">1° Oro</span><span class="p2">2° Argento</span><span class="p3">3° Bronzo</span></div>
     </div>
   </section>
@@ -539,7 +539,7 @@ footer a { color: var(--text); }
       <div class="head" data-reveal>
         <span class="chip">In arena</span>
         <h2 id="leghe-title">Dai Maestri ai Campioni Supremi</h2>
-        <p>Nel tabellone la lega non conta: vince chi vince la serie. Ma in diretta ognuno porta con sé il suo stemma.</p>
+        <p>Nel tabellone la lega non conta: vince chi vince il match. Ma in diretta ognuno porta con sé il suo stemma.</p>
       </div>
       <ul class="leagues" data-reveal="stagger">
         <li><img src="img/master_1.png" alt="" width="240" height="240"><span>Maestro I</span></li>
@@ -561,8 +561,8 @@ footer a { color: var(--text); }
       </div>
       <dl class="rules" data-reveal="stagger">
         <div class="rule"><dt class="chip blue">Partite</dt><dd>Tutte <strong>1 contro 1</strong>, amichevoli tra i due sfidanti, ognuno dal proprio account.</dd></div>
-        <div class="rule"><dt class="chip red">Serie</dt><dd><strong>BO3</strong> (prima a 2) in tutto il tabellone, <strong>BO5</strong> (prima a 3) nelle tre finali.</dd></div>
-        <div class="rule"><dt class="chip blue">Eliminazione</dt><dd>Doppia: sei fuori solo alla <strong>seconda serie persa</strong>. Vale anche in Grand Final: se la vince chi arriva dal Losers, <strong>si rigioca</strong>.</dd></div>
+        <div class="rule"><dt class="chip red">Match</dt><dd><strong>BO3</strong> (prima a 2) in tutto il tabellone, <strong>BO5</strong> (prima a 3) nelle tre finali.</dd></div>
+        <div class="rule"><dt class="chip blue">Eliminazione</dt><dd>Doppia: sei fuori solo al <strong>secondo match perso</strong>. Vale anche in Grand Final: se la vince chi arriva dal Losers, <strong>si rigioca</strong>.</dd></div>
         <div class="rule"><dt class="chip red">Mazzi</dt><dd>Regola del duello: ogni round si gioca con un mazzo nuovo, senza carte già usate. Chi viene beccato con una carta ripetuta <strong>perde subito il round</strong>.</dd></div>
         <div class="rule"><dt class="chip blue">Pareggi</dt><dd>Una partita finita in parità <strong>non conta</strong> e si rigioca.</dd></div>
         <div class="rule"><dt class="chip red">Fair play</dt><dd>Rispetto per avversari e pubblico, in chat e dal vivo.</dd></div>
@@ -600,11 +600,11 @@ footer a { color: var(--text); }
         </details>
         <details class="faq-item">
           <summary>Come funziona la regola del duello?</summary>
-          <div class="faq-a"><p>Ogni partita di una serie si gioca con un mazzo nuovo, e nessuna carta può comparire in due mazzi della stessa serie. Preparati quindi 3 mazzi diversi per le BO3 e 5 per le BO5. Una carta ripetuta fa perdere subito il round.</p></div>
+          <div class="faq-a"><p>Ogni partita di un match si gioca con un mazzo nuovo, e nessuna carta può comparire in due mazzi dello stesso match. Preparati quindi 3 mazzi diversi per le BO3 e 5 per le BO5. Una carta ripetuta fa perdere subito il round.</p></div>
         </details>
         <details class="faq-item">
-          <summary>Se perdo una serie sono fuori?</summary>
-          <div class="faq-a"><p>No, il tabellone è a doppia eliminazione: alla prima serie persa scendi nel Losers Bracket e continui a giocare. Sei fuori solo alla seconda sconfitta.</p></div>
+          <summary>Se perdo un match sono fuori?</summary>
+          <div class="faq-a"><p>No, il tabellone è a doppia eliminazione: al primo match perso scendi nel Losers Bracket e continui a giocare. Sei fuori solo alla seconda sconfitta.</p></div>
         </details>
         <details class="faq-item">
           <summary>Che succede se una partita finisce in pareggio?</summary>
@@ -650,7 +650,7 @@ footer a { color: var(--text); }
 
 <footer>
   <div class="wrap">
-    <strong>Messedaglia League · Finali Mondiali</strong>
+    <strong>Messedaglia League · Finali d'Istituto</strong>
     <p>Torneo studentesco del Liceo Messedaglia.</p>
     <p>Questo materiale non è ufficiale e non è approvato da Supercell. Per maggiori informazioni consulta la <a href="https://supercell.com/en/fan-content-policy/" target="_blank" rel="noopener">Fan Content Policy di Supercell</a>.</p>
   </div>
