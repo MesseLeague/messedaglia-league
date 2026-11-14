@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Regolamento · Messedaglia League</title>
+<meta name="description" content="Il regolamento completo delle Finali d'Istituto della Messedaglia League: selezione, aspiranti, formato, programma, regole di gioco, problemi tecnici e sanzioni.">
+<!-- Anteprima quando il link viene condiviso (WhatsApp, Instagram, Telegram, Discord…) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Messedaglia League">
+<meta property="og:title" content="Regolamento · Messedaglia League">
+<meta property="og:description" content="Il regolamento completo delle Finali d'Istituto della Messedaglia League: selezione, aspiranti, formato, programma, regole di gioco e sanzioni.">
+<meta property="og:url" content="https://messeleague.github.io/messedaglia-league/regolamento.html">
+<meta property="og:image" content="https://messeleague.github.io/messedaglia-league/img/anteprima-2.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Messedaglia League · Finali d'Istituto">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05070f">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="nav.css">
+<style>
+  /* Regolamento: stesso stile del sito, pensato per essere letto (anche da telefono) */
+  :root {
+    --bg: #05070f; --panel: #0d1120; --panel-2: #121830; --line: #1d2335; --text: #fff; --muted: #9aa3b5; --grey: #4a4d55;
+    --blue: #1f74d0; --red: #d6303f; --gold: #f5b301;
+    --display: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Archivo", "Segoe UI", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    margin: 0; color: var(--text); font: 400 16px/1.6 var(--body);
+    background:
+      radial-gradient(45% 22% at 6% 0, rgba(31, 116, 208, 0.35), transparent 70%),
+      radial-gradient(45% 22% at 94% 0, rgba(214, 48, 63, 0.35), transparent 70%),
+      var(--bg);
+  }
+  main { max-width: 900px; margin: 0 auto; padding: 34px max(16px, env(safe-area-inset-right, 0px)) 80px max(16px, env(safe-area-inset-left, 0px)); }
+  h1 { font: 400 clamp(2.2rem, 8vw, 3.6rem)/1 var(--display); text-transform: uppercase; margin: 12px 0 10px; }
+  .lead { color: var(--muted); font-size: 1.1rem; margin: 0 0 22px; max-width: 62ch; }
+  .lead b { color: var(--text); }
+  .chip { display: inline-block; padding: 6px 12px; background: #fff; color: #000; font: 400 .78rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .06em; }
+
+  /* Indice */
+  .toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 34px; padding: 0; list-style: none; }
+  .toc a { display: block; padding: 9px 12px; background: var(--panel); color: #c9cfdb; text-decoration: none; font: 400 .74rem/1 var(--display); text-transform: uppercase; }
+  .toc a:hover, .toc a:focus-visible { background: var(--blue); color: #fff; }
+
+  section { margin-top: 44px; }
+  h2 { display: flex; align-items: center; gap: 12px; font: 400 clamp(1.35rem, 4vw, 1.8rem)/1.1 var(--display); text-transform: uppercase; margin: 0 0 14px; }
+  h2 .n { flex: none; display: grid; place-items: center; width: 40px; height: 40px; background: var(--blue); font-size: 1.1rem; }
+  section:nth-of-type(even) h2 .n { background: var(--red); }
+  h3 { font: 400 1rem/1.3 var(--display); text-transform: uppercase; margin: 22px 0 8px; }
+  h3 small { font: 600 .85rem/1 var(--body); color: var(--muted); text-transform: none; }
+  p { margin: 0 0 12px; }
+  .muted { color: var(--muted); }
+  strong { color: #fff; }
+
+  /* Regole numerate e puntate: blocchi come sul sito */
+  .rules { margin: 0 0 12px; padding: 0; list-style: none; display: grid; gap: 6px; counter-reset: r; }
+  .rules > li { position: relative; padding: 14px 16px 14px 56px; background: var(--panel); color: #d5dae4; }
+  .rules > li::before { counter-increment: r; content: counter(r); position: absolute; left: 14px; top: 13px; width: 28px; height: 28px; display: grid; place-items: center; background: #fff; color: #000; font: 400 .85rem/1 var(--display); }
+  .rules.dots > li::before { content: ""; width: 10px; height: 10px; top: 21px; left: 23px; background: var(--gold); }
+  .rules b { color: #fff; }
+
+  /* Tabelle */
+  .tw { overflow-x: auto; margin: 0 0 12px; }
+  table { width: 100%; border-collapse: collapse; min-width: 480px; }
+  th { text-align: left; padding: 9px 12px; background: #fff; color: #000; font: 400 .72rem/1.2 var(--display); text-transform: uppercase; white-space: nowrap; }
+  td { padding: 10px 12px; background: var(--panel); border-bottom: 2px solid var(--bg); vertical-align: top; }
+  td.c { white-space: nowrap; font: 400 .9rem/1.3 var(--display); }
+  .bo { display: inline-block; padding: 3px 7px; background: var(--blue); font: 400 .72rem/1.2 var(--display); }
+  .bo.five { background: var(--gold); color: #000; }
+  tr.gf td { background: linear-gradient(90deg, rgba(245, 179, 1, 0.18), var(--panel)); }
+
+  .callout { padding: 14px 16px; background: rgba(245, 179, 1, 0.1); box-shadow: inset 4px 0 0 var(--gold); }
+  .callout.red { background: rgba(214, 48, 63, 0.12); box-shadow: inset 4px 0 0 var(--red); }
+  .back { display: inline-block; margin-top: 46px; padding: 16px 26px; background: var(--blue); color: #fff; text-decoration: none; font: 400 1rem/1 var(--display); text-transform: uppercase; }
+  .back:hover { filter: brightness(1.12); }
+  footer { max-width: 900px; margin: 0 auto; padding: 26px 16px 40px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
+  footer a { color: #c9cfdb; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<nav id="topbar" data-page="regolamento" aria-label="Sito"></nav>
+
+<main>
+  <span class="chip">Finali d'Istituto</span>
+  <h1>Regolamento</h1>
+  <p class="lead">8 giocatori, doppia eliminazione, due mattine durante l'autogestione. <b>Chi si iscrive accetta queste regole</b>, e le decisioni della regia sono definitive.</p>
+
+  <nav aria-label="Indice del regolamento">
+    <ol class="toc">
+      <li><a href="#partecipazione">1 · Partecipazione</a></li>
+      <li><a href="#formato">2 · Formato</a></li>
+      <li><a href="#programma">3 · Programma</a></li>
+      <li><a href="#gioco">4 · Regole di gioco</a></li>
+      <li><a href="#svolgimento">5 · Svolgimento</a></li>
+      <li><a href="#tecnici">6 · Problemi tecnici</a></li>
+      <li><a href="#fairplay">7 · Fair play</a></li>
+      <li><a href="#regia">8 · Regia</a></li>
+      <li><a href="#premi">9 · Premi e foto</a></li>
+    </ol>
+  </nav>
+
+  <section id="partecipazione" aria-labelledby="h1-1">
+    <h2 id="h1-1"><span class="n">1</span>Partecipazione</h2>
+    <p>Partecipano 8 giocatori: 6 scelti per statistiche e 2 tramite gli spareggi tra aspiranti.</p>
+    <ol class="rules">
+      <li><b>Chi può iscriversi.</b> Tutti gli studenti della scuola, con un solo account Clash Royale personale. L'iscrizione si fa con il modulo online entro la scadenza indicata.</li>
+      <li><b>Un account, un giocatore.</b> L'account usato al torneo deve essere quello indicato nel modulo (stesso tag). È vietato giocare con l'account di un altro o farlo giocare a qualcun altro.</li>
+      <li><b>Selezione per statistiche (6 posti).</b> La regia verifica le statistiche tramite il tag giocatore, usando i dati ufficiali dell'API di Clash Royale e non screenshot. Contano, in quest'ordine: lega più alta raggiunta in Classificata, record di trofei, trofei attuali.</li>
+      <li><b>Aspiranti (2 posti).</b> I 4 iscritti successivi in classifica (dal 7º al 10º) sono gli aspiranti e giocano due match in Bo5 prima del torneo: <b>AS1</b>, 7º contro 10º, e <b>AS2</b>, 8º contro 9º. Può essere aspirante solo chi nel modulo ha dato disponibilità per gli spareggi; se qualcuno non l'ha data o rinuncia, si scala al successivo in classifica. I 2 vincitori entrano nel tabellone, gli sconfitti sono le prime riserve.</li>
+      <li><b>Seeding.</b> I 6 qualificati per statistiche occupano i posti 1-6 in ordine di classifica, il vincitore di AS1 il posto 7 e il vincitore di AS2 il posto 8. Il tabellone è costruito in modo che i giocatori più forti si incontrino il più tardi possibile.</li>
+      <li><b>Rinunce.</b> Chi si ritira prima dell'inizio viene sostituito dal primo escluso in classifica. Chi si ritira a torneo iniziato perde a tavolino tutti i match rimanenti.</li>
+      <li><b>Presenza.</b> Ogni giocatore deve essere presente in entrambi i giorni del torneo, se ancora in gara.</li>
+    </ol>
+  </section>
+
+  <section id="formato" aria-labelledby="h1-2">
+    <h2 id="h1-2"><span class="n">2</span>Formato</h2>
+    <p>Doppia eliminazione: si viene eliminati solo dopo il secondo match perso.</p>
+    <ul class="rules dots">
+      <li><b>Winners bracket.</b> Tutti partono qui. Chi vince resta, chi perde scende nel Losers bracket.</li>
+      <li><b>Losers bracket.</b> Chi perde qui è eliminato.</li>
+      <li><b>Quarti di finale.</b> 1º contro 8º (W1), 4º contro 5º (W2), 2º contro 7º (W3), 3º contro 6º (W4).</li>
+      <li><b>Grand Final.</b> Il vincitore del Winners bracket (W7) affronta il vincitore del Losers bracket (L6).</li>
+      <li><b>Reset.</b> Chi arriva dal Winners bracket non ha mai perso. Se perde la Grand Final, si gioca una seconda Grand Final che decide il campione.</li>
+    </ul>
+    <div class="tw"><table>
+      <thead><tr><th>Match</th><th>Formato</th><th>Per vincere</th></tr></thead>
+      <tbody>
+        <tr><td>Tutti i match fino a L5</td><td><span class="bo">Bo3</span></td><td>2 game</td></tr>
+        <tr><td>Finale Winners (W7)</td><td><span class="bo five">Bo5</span></td><td>3 game</td></tr>
+        <tr><td>Finale Losers (L6)</td><td><span class="bo five">Bo5</span></td><td>3 game</td></tr>
+        <tr class="gf"><td>Gran Finale ed eventuale reset</td><td><span class="bo five">Bo5</span></td><td>3 game</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Il tabellone aggiornato viene proiettato tra un match e l'altro.</p>
+  </section>
+
+  <section id="programma" aria-labelledby="h1-3">
+    <h2 id="h1-3"><span class="n">3</span>Programma</h2>
+    <p>Il torneo si gioca in due mattine, un match alla volta e sempre proiettato. Gli orari sono indicativi e possono slittare in avanti, mai indietro: <strong>ogni giocatore deve essere pronto 10 minuti prima del proprio match.</strong></p>
+
+    <h3>Aspiranti <small>nei giorni prima del torneo</small></h3>
+    <div class="tw"><table>
+      <thead><tr><th>Match</th><th>Chi gioca</th><th>Formato</th></tr></thead>
+      <tbody>
+        <tr><td class="c">AS1</td><td>7º vs 10º per statistiche</td><td><span class="bo five">Bo5</span></td></tr>
+        <tr><td class="c">AS2</td><td>8º vs 9º per statistiche</td><td><span class="bo five">Bo5</span></td></tr>
+      </tbody>
+    </table></div>
+    <p>I match degli aspiranti si giocano in amichevole nel clan del torneo, online o a scuola, entro la data comunicata dalla regia. I risultati vengono verificati dal battlelog.</p>
+
+    <h3>Giorno 1 <small>Winners bracket e primi turni del Losers</small></h3>
+    <div class="tw"><table>
+      <thead><tr><th>Ora</th><th>Match</th><th>Chi gioca</th><th>Formato</th></tr></thead>
+      <tbody>
+        <tr><td class="c">8:15</td><td class="c">W1</td><td>1º vs 8º</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">8:35</td><td class="c">W2</td><td>4º vs 5º</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">8:55</td><td class="c">W3</td><td>2º vs 7º</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">9:15</td><td class="c">W4</td><td>3º vs 6º</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">9:35</td><td class="c">W5</td><td>Vincente W1 vs vincente W2</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">9:55</td><td class="c">L1</td><td>Perdente W1 vs perdente W2</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">10:15</td><td class="c">W6</td><td>Vincente W3 vs vincente W4</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">10:35</td><td class="c">L2</td><td>Perdente W3 vs perdente W4</td><td><span class="bo">Bo3</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Giorno 2 <small>le finali, in aula magna</small></h3>
+    <div class="tw"><table>
+      <thead><tr><th>Ora</th><th>Match</th><th>Chi gioca</th><th>Formato</th></tr></thead>
+      <tbody>
+        <tr><td class="c">8:15</td><td class="c">L3</td><td>Vincente L1 vs perdente W6</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">8:35</td><td class="c">L4</td><td>Vincente L2 vs perdente W5</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">8:55</td><td class="c">W7 · Finale Winners</td><td>Vincente W5 vs vincente W6</td><td><span class="bo five">Bo5</span></td></tr>
+        <tr><td class="c">9:25</td><td class="c">L5</td><td>Vincente L3 vs vincente L4</td><td><span class="bo">Bo3</span></td></tr>
+        <tr><td class="c">9:45</td><td class="c">L6 · Finale Losers</td><td>Vincente L5 vs perdente W7</td><td><span class="bo five">Bo5</span></td></tr>
+        <tr class="gf"><td class="c">10:15</td><td class="c">Gran Finale</td><td>Vincente W7 vs vincente L6</td><td><span class="bo five">Bo5</span></td></tr>
+        <tr class="gf"><td class="c">10:45</td><td class="c">Gran Finale 2</td><td>Solo se vince chi arriva da L6</td><td><span class="bo five">Bo5</span></td></tr>
+        <tr><td class="c">11:15</td><td class="c">Premiazione</td><td></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Nel turno 2 del Losers i perdenti sono incrociati (L3 con il perdente di W6, L4 con il perdente di W5) per evitare rivincite immediate. Date e orari definitivi vengono comunicati quando la scuola conferma il calendario dell'autogestione.</p>
+  </section>
+
+  <section id="gioco" aria-labelledby="h1-4">
+    <h2 id="h1-4"><span class="n">4</span>Regole di gioco</h2>
+    <p>Si gioca in battaglia amichevole 1v1 standard, con le stesse condizioni per tutti.</p>
+    <ol class="rules">
+      <li><b>Clan del torneo.</b> Tutti i giocatori entrano nel clan ufficiale del torneo prima dell'inizio e ci restano fino all'eliminazione. Le partite si giocano come amichevoli nel clan, così la regia può seguirle come spettatore.</li>
+      <li><b>Modalità.</b> Battaglia amichevole 1v1 classica, non la modalità Duello del gioco. Nessuna modalità speciale (triplo elisir, draft, ecc.).</li>
+      <li><b>Livelli.</b> Le amichevoli portano tutte le carte al livello torneo (11), quindi i livelli sono uguali per tutti.</li>
+      <li><b>Mazzi: regola del duello.</b> Ogni game di un match si gioca con un mazzo nuovo: <b>nessuna carta può essere usata in due game dello stesso match</b>. Servono quindi fino a 3 mazzi diversi in un Bo3 e fino a 5 in un Bo5. Il mazzo successivo si prepara tra un game e l'altro, con 1 minuto e 30 secondi di tempo (vedi sezione 5).</li>
+      <li><b>Chi invita.</b> La sfida la lancia il giocatore blu (indicato dalla regia). Il rosso accetta solo quando la regia dà il via.</li>
+      <li><b>Emote.</b> Consentite, ma senza spam continuo: la regia può richiamare chi esagera (vedi sezione 7).</li>
+    </ol>
+    <p class="callout red"><strong>Carta già usata in un game precedente dello stesso match?</strong> Il game è perso a tavolino.</p>
+  </section>
+
+  <section id="svolgimento" aria-labelledby="h1-5">
+    <h2 id="h1-5"><span class="n">5</span>Svolgimento dei match</h2>
+    <p>Ogni match segue la stessa sequenza, così il pubblico non aspetta e i giocatori sanno sempre cosa succede.</p>
+    <ol class="rules">
+      <li><b>Chiamata.</b> La regia chiama i due giocatori sul palco 5 minuti prima del match. Durante la chiamata viene proiettata la presentazione dei giocatori.</li>
+      <li><b>Postazione.</b> I giocatori siedono uno di fronte all'altro, con le spalle o il fianco rivolti al proiettore. Lato blu e lato rosso sono indicati dalla regia.</li>
+      <li><b>Preparazione.</b> Telefono carico, notifiche e chiamate silenziate (modalità Non disturbare), audio del gioco libero.</li>
+      <li><b>Via.</b> La regia dà il via, il blu invita, il rosso accetta.</li>
+      <li><b>Tra un game e l'altro.</b> Massimo 1 minuto e 30 secondi per preparare il mazzo nuovo e lanciare la sfida successiva.</li>
+      <li><b>Tra un match e l'altro.</b> Circa 5 minuti, con risultato, tabellone aggiornato e presentazione del match successivo.</li>
+      <li><b>Fine match.</b> I giocatori restano al tavolo finché la regia non conferma il risultato.</li>
+    </ol>
+    <p class="callout"><strong>Puntualità.</strong> Chi non è al tavolo all'orario di chiamata ha 5 minuti di tolleranza. Dopo 5 minuti perde il primo game a tavolino; dopo 10 minuti perde il match a tavolino.</p>
+  </section>
+
+  <section id="tecnici" aria-labelledby="h1-6">
+    <h2 id="h1-6"><span class="n">6</span>Problemi tecnici</h2>
+    <p>Regola generale: un problema tecnico non deve decidere una partita, ma non si può usare per annullarne una che si sta perdendo.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Situazione</th><th>Cosa succede</th></tr></thead>
+      <tbody>
+        <tr><td>Disconnessione o crash nel primo minuto di gioco</td><td>Il game si rigioca da capo, con gli stessi mazzi</td></tr>
+        <tr><td>Disconnessione o crash dopo il primo minuto</td><td>Vale il risultato registrato dal gioco</td></tr>
+        <tr><td>Pareggio a fine overtime</td><td>Il game non conta e si rigioca subito</td></tr>
+        <tr><td>Batteria scarica o telefono rotto prima di un game</td><td>5 minuti per risolvere, poi game perso a tavolino</td></tr>
+        <tr><td>Problema di rete della scuola o del server Supercell</td><td>La regia sospende il match e lo riprende dal punto in cui era</td></tr>
+        <tr><td>La sfida parte per errore in una modalità sbagliata</td><td>Il game non conta e si rigioca</td></tr>
+      </tbody>
+    </table></div>
+    <p>Chi ha un problema alza la mano e avvisa subito la regia: segnalazioni fatte a game finito non vengono considerate, salvo il pareggio.</p>
+    <p>Il giocatore deve usare il proprio telefono. Se non funziona, può entrare con il proprio account su un altro dispositivo solo con il permesso della regia.</p>
+  </section>
+
+  <section id="fairplay" aria-labelledby="h1-7">
+    <h2 id="h1-7"><span class="n">7</span>Fair play e sanzioni</h2>
+    <p>Si vince giocando meglio, non guardando lo schermo dell'altro. Ogni infrazione ha una sanzione fissa, decisa dalla regia.</p>
+    <h3>È vietato</h3>
+    <ul class="rules dots">
+      <li>guardare il proiettore o lo schermo dell'avversario durante un game;</li>
+      <li>ricevere consigli durante un game, dal pubblico o da altri giocatori (tra un game e l'altro si può parlare);</li>
+      <li>giocare con l'account di un altro o far giocare il proprio a un altro;</li>
+      <li>usare app, mod o strumenti esterni che danno un vantaggio;</li>
+      <li>abbandonare la partita o perdere apposta;</li>
+      <li>insultare avversari, pubblico o regia, anche tramite emote.</li>
+    </ul>
+    <div class="tw"><table>
+      <thead><tr><th>Infrazione</th><th>Sanzione</th></tr></thead>
+      <tbody>
+        <tr><td>Prima scorrettezza lieve (spam di emote, ritardo nel lanciare la sfida)</td><td>Richiamo verbale</td></tr>
+        <tr><td>Seconda scorrettezza lieve nello stesso match</td><td>Game in corso o successivo perso a tavolino</td></tr>
+        <tr><td>Carta già usata in un game precedente dello stesso match</td><td>Game perso a tavolino</td></tr>
+        <tr><td>Guardare il proiettore o ricevere consigli durante un game</td><td>Game perso a tavolino</td></tr>
+        <tr><td>Pubblico che suggerisce in modo ripetuto</td><td>Allontanamento dalla sala</td></tr>
+        <tr><td>Account non proprio, strumenti esterni, partita persa apposta</td><td>Squalifica dal torneo</td></tr>
+        <tr><td>Insulti o comportamento grave</td><td>Squalifica dal torneo</td></tr>
+      </tbody>
+    </table></div>
+    <p>Un giocatore squalificato perde a tavolino i match rimanenti e non riceve premi.</p>
+  </section>
+
+  <section id="regia" aria-labelledby="h1-8">
+    <h2 id="h1-8"><span class="n">8</span>Regia, risultati e contestazioni</h2>
+    <p>I risultati ufficiali sono quelli del battlelog di Clash Royale, registrati dalla regia; le decisioni della regia sono definitive.</p>
+    <ul class="rules dots">
+      <li><b>Regia.</b> Gestisce tempi, chiamate, proiezione, risultati e sanzioni. È composta dagli organizzatori; nessun membro della regia arbitra un match in cui gioca o in cui gioca un suo compagno di classe, se c'è qualcun altro disponibile.</li>
+      <li><b>Registrazione dei risultati.</b> Ogni game viene letto dal battlelog ufficiale tramite il tag dei giocatori: corone, mazzi e torri restano registrati. Se il battlelog non risponde, vale il risultato visto in diretta dalla regia.</li>
+      <li><b>Contestazioni.</b> Vanno fatte alla regia subito, prima che inizi il game successivo. A match concluso e risultato confermato non si accettano contestazioni.</li>
+      <li><b>Casi non previsti.</b> Li decide la regia, nello spirito di questo regolamento: partite giuste e torneo che finisce in orario.</li>
+      <li><b>Modifiche.</b> Il regolamento può essere aggiornato prima del torneo; le modifiche vengono comunicate a tutti i qualificati.</li>
+    </ul>
+  </section>
+
+  <section id="premi" aria-labelledby="h1-9">
+    <h2 id="h1-9"><span class="n">9</span>Premi, riprese e foto</h2>
+    <p>Il campione riceve il trofeo della Messedaglia League; i premi definitivi vengono annunciati prima del torneo.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Posizione</th><th>Premio</th></tr></thead>
+      <tbody>
+        <tr class="gf"><td class="c">1º posto</td><td>Corona Messedaglia League + premio da confermare</td></tr>
+        <tr><td class="c">2º posto</td><td class="muted">Da confermare</td></tr>
+        <tr><td class="c">3º posto</td><td class="muted">Da confermare</td></tr>
+        <tr><td class="c">Premio del pubblico</td><td>Giocata più bella, votata in sala</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>Riprese.</strong> Le partite vengono proiettate e i giocatori possono essere ripresi da telecamere durante i match: iscrivendosi lo si accetta.</p>
+    <p><strong>Foto e social.</strong> Foto e video vengono pubblicati sui canali della scuola o dei rappresentanti solo per chi ha dato il consenso nel modulo di iscrizione. Per i minorenni valgono le regole della scuola sul consenso dei genitori.</p>
+  </section>
+
+  <a class="back" href="iscrizioni.html">Iscriviti</a>
+</main>
+
+<footer>
+  <strong>Messedaglia League · Finali d'Istituto</strong> · Torneo studentesco del Liceo Messedaglia.<br>
+  Questo materiale non è ufficiale e non è approvato da Supercell. Per maggiori informazioni consulta la <a href="https://supercell.com/en/fan-content-policy/" target="_blank" rel="noopener">Fan Content Policy di Supercell</a>.
+</footer>
+
+<script src="config.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

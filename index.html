@@ -255,6 +255,7 @@ a { color: var(--text); }
 .rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; }
 .rule { display: grid; gap: 10px; justify-items: start; align-content: start; padding: 22px; background: var(--panel); min-width: 0; }
 .rule dd { margin: 0; color: var(--muted); }
+.rules-more { margin-top: 22px; justify-content: flex-start; }
 
 /* FAQ: domande a tendina */
 .faq { display: grid; gap: 6px; max-width: 900px; }
@@ -435,7 +436,7 @@ footer a { color: var(--text); }
 </header>
 
 <dl class="facts" data-reveal="stagger">
-  <div class="fact"><dt class="chip gold">Quando</dt><dd>Da annunciare</dd></div>
+  <div class="fact"><dt class="chip gold">Quando</dt><dd>2 mattine<small>durante l'autogestione, date da annunciare</small></dd></div>
   <div class="fact"><dt class="chip">Giocatori</dt><dd>8<small>tutti 1 contro 1</small></dd></div>
   <div class="fact"><dt class="chip">Tabellone</dt><dd>Doppia<small>eliminazione, con rivincita in Grand Final</small></dd></div>
   <div class="fact"><dt class="chip">Match</dt><dd>BO3<small>e BO5 nelle tre finali</small></dd></div>
@@ -497,7 +498,7 @@ footer a { color: var(--text); }
       <div class="duel-copy" data-reveal>
         <span class="chip">Regola del duello</span>
         <h3 id="duello-title">Un mazzo nuovo a ogni round</h3>
-        <p>Ogni round è una normale partita 1 contro 1. Però nello stesso match non puoi riusare nessuna carta che hai già giocato in un round precedente.</p>
+        <p>Ogni round è una normale amichevole 1 contro 1, non la modalità Duello del gioco. Però nello stesso match non puoi riusare nessuna carta che hai già giocato in un round precedente: tra un round e l'altro hai <strong>1 minuto e 30</strong> per preparare il mazzo nuovo.</p>
         <div class="bars">
           <div class="bar"><span class="chip">Carte diverse al massimo</span><b>24<small>in un BO3</small></b><b>40<small>in un BO5</small></b></div>
         </div>
@@ -521,7 +522,7 @@ footer a { color: var(--text); }
       <div class="bracket-scroll" tabindex="0" role="region" aria-label="Tabellone a doppia eliminazione">
         <div class="bk" id="bracket"></div>
       </div>
-      <p class="bracket-note">Le linee seguono chi vince; chi perde nel Winners scende nella casella "Perdente" del Losers. Tutti i match sono BO3, le tre finali e l'eventuale rivincita sono BO5.</p>
+      <p class="bracket-note">I posti sono quelli della classifica: 1º contro 8º, 4º contro 5º, 2º contro 7º, 3º contro 6º, così i più forti si incontrano il più tardi possibile. Le linee seguono chi vince; chi perde nel Winners scende nella casella "Perdente" del Losers. Tutti i match sono BO3, le tre finali e l'eventuale rivincita sono BO5.</p>
     </div>
   </section>
 
@@ -560,13 +561,14 @@ footer a { color: var(--text); }
         <h2 id="regole-title">Poche regole, chiare</h2>
       </div>
       <dl class="rules" data-reveal="stagger">
-        <div class="rule"><dt class="chip blue">Partite</dt><dd>Tutte <strong>1 contro 1</strong>, amichevoli tra i due sfidanti, ognuno dal proprio account.</dd></div>
+        <div class="rule"><dt class="chip blue">Partite</dt><dd>Tutte <strong>1 contro 1</strong>, in amichevole nel clan del torneo, ognuno dal proprio account e dal proprio telefono.</dd></div>
         <div class="rule"><dt class="chip red">Match</dt><dd><strong>BO3</strong> (prima a 2) in tutto il tabellone, <strong>BO5</strong> (prima a 3) nelle tre finali.</dd></div>
         <div class="rule"><dt class="chip blue">Eliminazione</dt><dd>Doppia: sei fuori solo al <strong>secondo match perso</strong>. Vale anche in Grand Final: se la vince chi arriva dal Losers, <strong>si rigioca</strong>.</dd></div>
-        <div class="rule"><dt class="chip red">Mazzi</dt><dd>Regola del duello: ogni round si gioca con un mazzo nuovo, senza carte già usate. Chi viene beccato con una carta ripetuta <strong>perde subito il round</strong>.</dd></div>
+        <div class="rule"><dt class="chip red">Mazzi</dt><dd>Regola del duello: ogni round si gioca con un mazzo nuovo, senza carte già usate, e hai 1:30 per prepararlo. Chi viene beccato con una carta ripetuta <strong>perde subito il round</strong>.</dd></div>
         <div class="rule"><dt class="chip blue">Pareggi</dt><dd>Una partita finita in parità <strong>non conta</strong> e si rigioca.</dd></div>
         <div class="rule"><dt class="chip red">Fair play</dt><dd>Rispetto per avversari e pubblico, in chat e dal vivo.</dd></div>
       </dl>
+      <div class="cta-row rules-more" data-reveal><a class="cta blue" href="regolamento.html">Leggi il regolamento completo</a></div>
     </div>
   </section>
 
@@ -575,7 +577,7 @@ footer a { color: var(--text); }
       <div class="head" data-reveal>
         <span class="chip">FAQ</span>
         <h2 id="faq-title">Domande frequenti</h2>
-        <p>Le risposte alle domande che ci fate più spesso. Tocca una domanda per aprirla.</p>
+        <p>Le risposte alle domande che ci fate più spesso. Tocca una domanda per aprirla. Tutti i dettagli sono nel <a href="regolamento.html" style="color:#fff">regolamento completo</a>.</p>
       </div>
       <div class="faq" data-reveal="stagger">
         <details class="faq-item">
@@ -584,11 +586,15 @@ footer a { color: var(--text); }
         </details>
         <details class="faq-item">
           <summary>Serve un livello minimo o una lega minima?</summary>
-          <div class="faq-a"><p>No, può iscriversi chiunque. Però i posti sono solo 8: le stats dell'account contano per decidere chi entra direttamente (vedi la domanda qui sotto).</p></div>
+          <div class="faq-a"><p>No, può iscriversi chiunque. Però i posti sono solo 8: le statistiche dell'account decidono chi entra direttamente (vedi la domanda qui sotto).</p></div>
         </details>
         <details class="faq-item">
           <summary>Come vengono scelti gli 8 finalisti?</summary>
-          <div class="faq-a"><p>I primi <strong>6</strong> per stats entrano direttamente nel tabellone. Il punteggio guarda la miglior lega in classificata (con le medaglie), i trofei, la percentuale di vittorie e le carte a livello 16. Gli ultimi <strong>2 posti</strong> si giocano nelle qualificazioni wildcard tra gli altri iscritti che le hanno scelte nel modulo.</p></div>
+          <div class="faq-a"><p>I primi <strong>6</strong> della classifica entrano direttamente nel tabellone. La classifica usa i dati ufficiali dell'API di Clash Royale (niente screenshot) e conta, in quest'ordine: la <strong>lega più alta</strong> raggiunta in Classificata, il <strong>record di trofei</strong> e i <strong>trofei attuali</strong>. Gli ultimi <strong>2 posti</strong> si giocano negli spareggi tra aspiranti.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Come funzionano gli spareggi tra aspiranti?</summary>
+          <div class="faq-a"><p>I 4 iscritti successivi in classifica (dal <strong>7º al 10º</strong>) che nel modulo hanno dato disponibilità giocano due match al meglio delle 5 nei giorni prima del torneo: <strong>AS1</strong>, 7º contro 10º, e <strong>AS2</strong>, 8º contro 9º. Si giocano in amichevole nel clan del torneo, online o a scuola, e i risultati si controllano dal battlelog. I 2 vincitori entrano nel tabellone come 7º e 8º, gli sconfitti sono le prime riserve.</p></div>
         </details>
         <details class="faq-item">
           <summary>Dove trovo il mio tag giocatore?</summary>
@@ -600,7 +606,11 @@ footer a { color: var(--text); }
         </details>
         <details class="faq-item">
           <summary>Come funziona la regola del duello?</summary>
-          <div class="faq-a"><p>Ogni partita di un match si gioca con un mazzo nuovo, e nessuna carta può comparire in due mazzi dello stesso match. Preparati quindi 3 mazzi diversi per le BO3 e 5 per le BO5. Una carta ripetuta fa perdere subito il round.</p></div>
+          <div class="faq-a"><p>Ogni partita di un match si gioca con un mazzo nuovo, e nessuna carta può comparire in due mazzi dello stesso match. Preparati quindi 3 mazzi diversi per le BO3 e 5 per le BO5. Una carta ripetuta fa perdere subito il round. Si gioca in <strong>amichevole 1v1 classica</strong>, non nella modalità Duello del gioco: tra un round e l'altro hai <strong>1 minuto e 30</strong> per preparare il mazzo successivo.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>A che livello sono le carte?</summary>
+          <div class="faq-a"><p>Si gioca in amichevole, quindi tutte le carte vengono portate al <strong>livello torneo (11)</strong>: i livelli sono uguali per tutti, conta solo come giochi.</p></div>
         </details>
         <details class="faq-item">
           <summary>Se perdo un match sono fuori?</summary>
@@ -612,11 +622,15 @@ footer a { color: var(--text); }
         </details>
         <details class="faq-item">
           <summary>Quando e dove si gioca?</summary>
-          <div class="faq-a"><p>Le date vengono annunciate qui sul sito. Nel modulo ti chiediamo se sei disponibile per due giorni, perché il tabellone potrebbe essere diviso in due giornate.</p></div>
+          <div class="faq-a"><p>In <strong>due mattine durante l'autogestione</strong>, un match alla volta e sempre proiettato: il primo giorno il Winners bracket e i primi turni del Losers, il secondo le finali in <strong>aula magna</strong>. Le date definitive vengono annunciate qui quando la scuola conferma il calendario. Gli spareggi tra aspiranti si giocano nei giorni prima.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>E se arrivo in ritardo o mi si disconnette il telefono?</summary>
+          <div class="faq-a"><p>Dalla chiamata hai <strong>5 minuti di tolleranza</strong>: dopo 5 minuti perdi il primo round a tavolino, dopo 10 il match. Se ti disconnetti nel <strong>primo minuto</strong> di gioco il round si rigioca da capo, dopo il primo minuto vale il risultato del gioco. Tutti i casi sono nel regolamento, sezione 6.</p></div>
         </details>
         <details class="faq-item">
           <summary>Le partite vengono riprese?</summary>
-          <div class="faq-a"><p>Sì, le partite vengono trasmesse in diretta con la grafica del torneo. Nel modulo chiediamo il permesso per le riprese e per le foto.</p></div>
+          <div class="faq-a"><p>Sì: tutte le partite vengono <strong>proiettate in sala</strong> e i giocatori possono essere ripresi da telecamere durante i match; iscrivendosi lo si accetta. Foto e video vengono pubblicati sui canali della scuola solo per chi ha dato il consenso nel modulo.</p></div>
         </details>
         <details class="faq-item">
           <summary>Posso modificare o ritirare l'iscrizione?</summary>
@@ -830,8 +844,8 @@ renderSim();
   const yW5 = TOP + STEP / 2, yW6 = TOP + 2.5 * STEP, yW7 = (yW5 + yW6) / 2;
   // [numero, colonna, y, posto rosso, posto blu, BO, classe]
   const M = {
-    W1: [1, 0, TOP, 'Posto 1', 'Posto 2', 3, 'seed'], W2: [2, 0, TOP + STEP, 'Posto 3', 'Posto 4', 3, 'seed'],
-    W3: [3, 0, TOP + 2 * STEP, 'Posto 5', 'Posto 6', 3, 'seed'], W4: [4, 0, TOP + 3 * STEP, 'Posto 7', 'Posto 8', 3, 'seed'],
+    W1: [1, 0, TOP, 'Posto 1', 'Posto 8', 3, 'seed'], W2: [2, 0, TOP + STEP, 'Posto 4', 'Posto 5', 3, 'seed'],
+    W3: [3, 0, TOP + 2 * STEP, 'Posto 2', 'Posto 7', 3, 'seed'], W4: [4, 0, TOP + 3 * STEP, 'Posto 3', 'Posto 6', 3, 'seed'],
     L1: [5, 0, LOW, 'Perdente match 1', 'Perdente match 2', 3], L2: [6, 0, LOW + STEP, 'Perdente match 3', 'Perdente match 4', 3],
     W5: [7, 1, yW5, 'Vincente match 1', 'Vincente match 2', 3], W6: [8, 1, yW6, 'Vincente match 3', 'Vincente match 4', 3],
     L3: [9, 1, LOW, 'Vincente match 5', 'Perdente match 8', 3], L4: [10, 1, LOW + STEP, 'Vincente match 6', 'Perdente match 7', 3],
