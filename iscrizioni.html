@@ -98,6 +98,8 @@
   .steps span:not(.n) { color: var(--muted); }
   a.btn { display: inline-block; text-decoration: none; }
   @media (max-width: 560px) { .two { grid-template-columns: 1fr; } .profile { flex-wrap: wrap; } .profile .state { margin-left: 0; } }
+  .privacy-note { margin-top: 18px; padding: 12px 16px; background: var(--panel, #0d1120); color: var(--muted, #9aa3b5); font-size: .92rem; box-shadow: inset 4px 0 0 var(--blue, #1f74d0); }
+  .privacy-note b, .privacy-note a { color: #fff; }
 </style>
 </head>
 <body>
@@ -110,11 +112,12 @@
 
   <ol class="steps">
     <li><span class="n">1</span><div><b>Apri il modulo</b><span>Se non sei già entrato, Google ti chiede l'account della scuola.</span></div></li>
-    <li><span class="n blue">2</span><div><b>Compila i dati</b><span>Classe e sezione, tag giocatore di Clash Royale, soprannome e mazzo preferito.</span></div></li>
+    <li><span class="n blue">2</span><div><b>Compila i dati</b><span>Classe e sezione, tag giocatore di Clash Royale, soprannome e mazzo preferito. Se vuoi ricevere l'esito per mail, metti la spunta apposita: è facoltativa.</span></div></li>
     <li><span class="n red">3</span><div><b>Aspetta la lista</b><span>Gli organizzatori controllano gli account e pubblicano gli 8 finalisti. Finché le iscrizioni sono aperte puoi riaprire il modulo per modificare i dati.</span></div></li>
   </ol>
 
   <div class="box" id="go"></div>
+  <p class="privacy-note">📧 <b>Mail solo se le scegli:</b> senza la spunta nel modulo non ti scriviamo, e l'esito lo trovi comunque nel modulo. Sul sito compaiono solo nome in gioco e soprannome. <a href="privacy.html">Privacy e cookie</a></p>
 </main>
 
 <script src="config.js"></script>

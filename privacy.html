@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy e cookie · Messedaglia League</title>
+<meta name="description" content="Come la Messedaglia League usa i dati delle iscrizioni alle Finali d'Istituto: cosa raccogliamo, cosa è pubblico, mail solo su scelta, nessun cookie di tracciamento.">
+<!-- Anteprima quando il link viene condiviso (WhatsApp, Instagram, Telegram, Discord…) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Messedaglia League">
+<meta property="og:title" content="Privacy e cookie · Messedaglia League">
+<meta property="og:description" content="Come la Messedaglia League usa i dati delle iscrizioni alle Finali d'Istituto: cosa raccogliamo, cosa è pubblico, mail solo su scelta, nessun cookie di tracciamento.">
+<meta property="og:url" content="https://messeleague.github.io/messedaglia-league/privacy.html">
+<meta property="og:image" content="https://messeleague.github.io/messedaglia-league/img/anteprima-2.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Messedaglia League · Finali d'Istituto">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05070f">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="nav.css">
+<style>
+  /* Privacy: stesso stile del regolamento */
+  :root {
+    --bg: #05070f; --panel: #0d1120; --panel-2: #121830; --line: #1d2335; --text: #fff; --muted: #9aa3b5; --grey: #4a4d55;
+    --blue: #1f74d0; --red: #d6303f; --gold: #f5b301;
+    --display: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Archivo", "Segoe UI", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    margin: 0; color: var(--text); font: 400 16px/1.6 var(--body);
+    background:
+      radial-gradient(45% 22% at 6% 0, rgba(31, 116, 208, 0.35), transparent 70%),
+      radial-gradient(45% 22% at 94% 0, rgba(214, 48, 63, 0.35), transparent 70%),
+      var(--bg);
+  }
+  main { max-width: 900px; margin: 0 auto; padding: 34px max(16px, env(safe-area-inset-right, 0px)) 80px max(16px, env(safe-area-inset-left, 0px)); }
+  h1 { font: 400 clamp(2.2rem, 8vw, 3.6rem)/1 var(--display); text-transform: uppercase; margin: 12px 0 10px; }
+  .lead { color: var(--muted); font-size: 1.1rem; margin: 0 0 22px; max-width: 62ch; }
+  .lead b { color: var(--text); }
+  .chip { display: inline-block; padding: 6px 12px; background: #fff; color: #000; font: 400 .78rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .06em; }
+
+  /* Indice */
+  .toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 34px; padding: 0; list-style: none; }
+  .toc a { display: block; padding: 9px 12px; background: var(--panel); color: #c9cfdb; text-decoration: none; font: 400 .74rem/1 var(--display); text-transform: uppercase; }
+  .toc a:hover, .toc a:focus-visible { background: var(--blue); color: #fff; }
+
+  section { margin-top: 44px; }
+  h2 { display: flex; align-items: center; gap: 12px; font: 400 clamp(1.35rem, 4vw, 1.8rem)/1.1 var(--display); text-transform: uppercase; margin: 0 0 14px; }
+  h2 .n { flex: none; display: grid; place-items: center; width: 40px; height: 40px; background: var(--blue); font-size: 1.1rem; }
+  section:nth-of-type(even) h2 .n { background: var(--red); }
+  h3 { font: 400 1rem/1.3 var(--display); text-transform: uppercase; margin: 22px 0 8px; }
+  h3 small { font: 600 .85rem/1 var(--body); color: var(--muted); text-transform: none; }
+  p { margin: 0 0 12px; }
+  .muted { color: var(--muted); }
+  strong { color: #fff; }
+
+  /* Regole numerate e puntate: blocchi come sul sito */
+  .rules { margin: 0 0 12px; padding: 0; list-style: none; display: grid; gap: 6px; counter-reset: r; }
+  .rules > li { position: relative; padding: 14px 16px 14px 56px; background: var(--panel); color: #d5dae4; }
+  .rules > li::before { counter-increment: r; content: counter(r); position: absolute; left: 14px; top: 13px; width: 28px; height: 28px; display: grid; place-items: center; background: #fff; color: #000; font: 400 .85rem/1 var(--display); }
+  .rules.dots > li::before { content: ""; width: 10px; height: 10px; top: 21px; left: 23px; background: var(--gold); }
+  .rules b { color: #fff; }
+
+  /* Tabelle */
+  .tw { overflow-x: auto; margin: 0 0 12px; }
+  table { width: 100%; border-collapse: collapse; min-width: 480px; }
+  th { text-align: left; padding: 9px 12px; background: #fff; color: #000; font: 400 .72rem/1.2 var(--display); text-transform: uppercase; white-space: nowrap; }
+  td { padding: 10px 12px; background: var(--panel); border-bottom: 2px solid var(--bg); vertical-align: top; }
+  td.c { white-space: nowrap; font: 400 .9rem/1.3 var(--display); }
+  .bo { display: inline-block; padding: 3px 7px; background: var(--blue); font: 400 .72rem/1.2 var(--display); }
+  .bo.five { background: var(--gold); color: #000; }
+  tr.gf td { background: linear-gradient(90deg, rgba(245, 179, 1, 0.18), var(--panel)); }
+
+  .callout { padding: 14px 16px; background: rgba(245, 179, 1, 0.1); box-shadow: inset 4px 0 0 var(--gold); }
+  .callout.red { background: rgba(214, 48, 63, 0.12); box-shadow: inset 4px 0 0 var(--red); }
+  .back { display: inline-block; margin-top: 46px; padding: 16px 26px; background: var(--blue); color: #fff; text-decoration: none; font: 400 1rem/1 var(--display); text-transform: uppercase; }
+  .back:hover { filter: brightness(1.12); }
+  footer { max-width: 900px; margin: 0 auto; padding: 26px 16px 40px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
+  footer a { color: #c9cfdb; }
+  td small { font: 600 .75rem/1.2 var(--body); }
+  td.c { white-space: normal; min-width: 130px; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<nav id="topbar" data-page="privacy" aria-label="Sito"></nav>
+
+<main>
+  <span class="chip">Finali d'Istituto</span>
+  <h1>Privacy e cookie</h1>
+  <p class="lead">In breve: raccogliamo solo quello che serve per organizzare il torneo, <b>non usiamo cookie di tracciamento né pubblicità</b>, sul sito compaiono solo nome in gioco e soprannome, e <b>ti scriviamo per mail solo se lo scegli tu</b> nel modulo.</p>
+
+  <nav aria-label="Indice">
+    <ol class="toc">
+      <li><a href="#chi">1 · Chi siamo</a></li>
+      <li><a href="#dati">2 · Dati raccolti</a></li>
+      <li><a href="#pubblico">3 · Cosa è pubblico</a></li>
+      <li><a href="#mail">4 · Mail</a></li>
+      <li><a href="#foto">5 · Foto e riprese</a></li>
+      <li><a href="#dove">6 · Dove e per quanto</a></li>
+      <li><a href="#diritti">7 · I tuoi diritti</a></li>
+      <li><a href="#cookie">8 · Cookie</a></li>
+    </ol>
+  </nav>
+
+  <section id="chi" aria-labelledby="p-1">
+    <h2 id="p-1"><span class="n">1</span>Chi siamo</h2>
+    <p>Le Finali d'Istituto della Messedaglia League sono un torneo di Clash Royale organizzato da studenti del Liceo Messedaglia. I dati del modulo li vedono solo gli organizzatori del torneo, entrando con il loro account della scuola.</p>
+    <p class="muted">Per qualsiasi domanda sui tuoi dati scrivi agli organizzatori dalla mail della scuola: rispondiamo da lì.</p>
+  </section>
+
+  <section id="dati" aria-labelledby="p-2">
+    <h2 id="p-2"><span class="n">2</span>Dati raccolti</h2>
+    <p>Quando ti iscrivi con il modulo (si entra solo con l'account <b>@messedaglia.edu.it</b>) salviamo:</p>
+    <div class="tw"><table>
+      <thead><tr><th>Dato</th><th>A cosa serve</th></tr></thead>
+      <tbody>
+        <tr><td class="c">Mail della scuola</td><td>Riconoscerti, evitare doppie iscrizioni e, solo se lo scegli, scriverti l'esito.</td></tr>
+        <tr><td class="c">Nome, classe e sezione</td><td>Sapere chi sei il giorno del torneo. Non vengono mai pubblicati.</td></tr>
+        <tr><td class="c">Tag di Clash Royale</td><td>Leggere le statistiche dall'API ufficiale di Clash Royale e costruire la classifica.</td></tr>
+        <tr><td class="c">Soprannome, motto, mazzo</td><td>Facoltativi: servono per la telecronaca e la scheda giocatore in diretta.</td></tr>
+        <tr><td class="c">Risposte e consensi</td><td>Disponibilità nei due giorni e agli spareggi, accettazione del regolamento e delle riprese, scelta su foto e mail.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Dal tag leggiamo solo dati <b>già pubblici</b> in Clash Royale: nome in gioco, trofei, record, leghe, vittorie, carte e mazzo.</p>
+  </section>
+
+  <section id="pubblico" aria-labelledby="p-3">
+    <h2 id="p-3"><span class="n">3</span>Cosa è pubblico</h2>
+    <ul class="rules dots">
+      <li><b>Sul sito</b> (pagina <a href="iscritti.html" style="color:#fff">Iscritti</a>) compaiono solo: nome in gioco, soprannome se l'hai scritto, miglior lega, record, trofei e posizione in classifica.</li>
+      <li><b>Mai pubblici:</b> nome e cognome, classe, mail.</li>
+      <li><b>In diretta</b> durante il torneo compaiono nome in gioco, soprannome, motto e mazzo dei giocatori in campo.</li>
+    </ul>
+  </section>
+
+  <section id="mail" aria-labelledby="p-4">
+    <h2 id="p-4"><span class="n">4</span>Mail: solo se le scegli</h2>
+    <div class="callout">Nel modulo c'è la spunta <b>"Voglio ricevere per mail l'esito…"</b>. È facoltativa e parte <b>non selezionata</b>: se non la metti, non ti scriviamo mai. L'esito lo trovi comunque nel modulo.</div>
+    <ul class="rules dots" style="margin-top:12px">
+      <li><b>Cosa ti arriva:</b> una mail alla chiusura delle iscrizioni con il tuo esito (qualificato, aspirante o fuori) e, per qualificati e aspiranti, il link del clan del torneo. In più, eventuali avvisi pratici sul torneo (orari, cambi di programma).</li>
+      <li><b>Niente spam:</b> nessuna newsletter, nessuna pubblicità, nessun indirizzo dato ad altri. Le mail di gruppo partono in copia nascosta.</li>
+      <li><b>Ci ripensi?</b> Apri il modulo e togli la spunta, anche dopo la chiusura delle iscrizioni: vale subito.</li>
+    </ul>
+  </section>
+
+  <section id="foto" aria-labelledby="p-5">
+    <h2 id="p-5"><span class="n">5</span>Foto e riprese</h2>
+    <ul class="rules dots">
+      <li><b>Riprese durante le partite:</b> le partite vengono proiettate e trasmesse, quindi per giocare serve accettarle (come indicato nel modulo e nel <a href="regolamento.html" style="color:#fff">regolamento</a>).</li>
+      <li><b>Foto e video sui canali della scuola o dei rappresentanti:</b> è una scelta separata. Se rispondi No, gli organizzatori ne tengono conto e non pubblicano contenuti in cui sei riconoscibile.</li>
+    </ul>
+  </section>
+
+  <section id="dove" aria-labelledby="p-6">
+    <h2 id="p-6"><span class="n">6</span>Dove e per quanto</h2>
+    <ul class="rules dots">
+      <li><b>Modulo e iscrizioni:</b> un Foglio Google nell'account della scuola (Google Workspace del Liceo), visibile solo agli organizzatori.</li>
+      <li><b>Sito:</b> pubblicato su GitHub Pages; contiene solo i dati pubblici del punto 3.</li>
+      <li><b>Statistiche:</b> lette dall'API ufficiale di Clash Royale tramite il tag.</li>
+      <li><b>Per quanto:</b> i dati del modulo vengono cancellati entro un mese dalla fine del torneo. Restano solo i risultati del torneo (nomi in gioco, tabellone, podio) e le foto e i video pubblicati da chi ha dato il consenso.</li>
+    </ul>
+  </section>
+
+  <section id="diritti" aria-labelledby="p-7">
+    <h2 id="p-7"><span class="n">7</span>I tuoi diritti</h2>
+    <ul class="rules dots">
+      <li><b>Vedere e correggere:</b> nel modulo vedi sempre cosa hai inviato; finché le iscrizioni sono aperte puoi modificarlo.</li>
+      <li><b>Ritirarti:</b> finché le iscrizioni sono aperte il pulsante "Ritira l'iscrizione" cancella la tua riga. Dopo, scrivi agli organizzatori.</li>
+      <li><b>Cancellazione o dubbi:</b> scrivi agli organizzatori dalla mail della scuola e cancelliamo o correggiamo i tuoi dati.</li>
+    </ul>
+  </section>
+
+  <section id="cookie" aria-labelledby="p-8">
+    <h2 id="p-8"><span class="n">8</span>Cookie</h2>
+    <p><b>Questo sito non usa cookie</b>: niente statistiche, niente pubblicità, niente profilazione. Per questo non trovi nessun banner da accettare.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Cosa</th><th>Chi</th><th>Perché</th></tr></thead>
+      <tbody>
+        <tr><td class="c">Memoria del browser<br><small class="muted">ml_user · 30 giorni</small></td><td>Questo sito</td><td>Non è un cookie e non viene inviato a nessuno: ricorda sul tuo dispositivo nome e iniziali dopo che sei passato dal modulo, per mostrarli nella barra in alto. Lo cancelli con "Esci" o pulendo i dati del sito.</td></tr>
+        <tr><td class="c">Caratteri del sito</td><td>Google Fonts</td><td>I caratteri vengono scaricati dai server di Google, che riceve l'indirizzo IP come per ogni pagina web. Non imposta cookie.</td></tr>
+        <tr><td class="c">Hosting</td><td>GitHub Pages</td><td>Il server che ospita il sito può registrare l'indirizzo IP per sicurezza, come ogni sito.</td></tr>
+        <tr><td class="c">Modulo di iscrizione</td><td>Google</td><td>Il modulo è una pagina Google: per l'accesso con l'account della scuola Google usa i suoi cookie tecnici, secondo le regole del Workspace della scuola.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <p class="muted" style="margin-top:34px">Ultimo aggiornamento: novembre 2026. Se cambia qualcosa di importante lo scriviamo qui.</p>
+  <a class="back" href="iscrizioni.html">Vai alle iscrizioni</a>
+</main>
+
+<footer>
+  <strong>Messedaglia League · Finali d'Istituto</strong> · Torneo studentesco del Liceo Messedaglia. · <a href="privacy.html">Privacy e cookie</a><br>
+  Questo materiale non è ufficiale e non è approvato da Supercell. Per maggiori informazioni consulta la <a href="https://supercell.com/en/fan-content-policy/" target="_blank" rel="noopener">Fan Content Policy di Supercell</a>.
+</footer>
+
+<script src="config.js"></script>
+<script src="pubblico.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
