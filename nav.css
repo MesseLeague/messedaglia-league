@@ -91,7 +91,7 @@ body::before {
 @keyframes ml-pulse { 50% { box-shadow: 0 0 0 5px rgba(63, 207, 127, 0.25); } }
 @media (prefers-reduced-motion: reduce) { .ml-dot.on { animation: none; } }
 
-@media (max-width: 1040px) {
+@media (max-width: 1120px) {
   .ml-brand span { display: none; }
   .ml-burger { display: block; }
   .ml-links {
