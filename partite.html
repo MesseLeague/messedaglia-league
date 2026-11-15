@@ -186,6 +186,7 @@
   .ov-tab[aria-selected="true"] { background: #fff; color: #000; }
   .ov-tab .w { display: inline-block; width: 9px; height: 9px; margin-right: 7px; vertical-align: 0; }
   .ov-tab .w.blue { background: var(--blue); } .ov-tab .w.red { background: var(--red); }
+  .ov-tab .w.on { background: var(--red); border-radius: 50%; animation: rec 1.4s ease-in-out infinite; }
   .ov-res { text-align: center; margin: 8px 0 0; font: 400 .9rem/1.2 var(--display); text-transform: uppercase; color: var(--muted); min-height: 1.2em; }
 
   /* Barre blu/rossa che partono dal centro, come nella diretta */
@@ -402,6 +403,18 @@
         ${riga('HP torri rimaste', torri(g, 'blue'), torri(g, 'red'), { d: 0 })}
       </div>
       <div class="decks">${mazzo(g, 'blue', 'Mazzo di ' + B)}${mazzo(g, 'red', 'Mazzo di ' + R)}</div>`;
+  }
+
+  // Game in corso (modalità torneo): solo i mazzi scelti, le statistiche arrivano a fine game
+  function vistaInCorso(p, live) {
+    const B = nome(p, 'blue'), R = nome(p, 'red');
+    const g = { mazzi: { blue: live.mazzi.blue || [], red: live.mazzi.red || [] }, costi: live.costi || {}, truppa: live.truppa || {} };
+    return `<div class="rows">
+        ${riga('Costo medio', medio(g, 'blue'), medio(g, 'red'), { low: true, d: 2 })}
+        ${riga('Ciclo 4 carte', ciclo(g.costi.blue), ciclo(g.costi.red), { low: true, d: 0 })}
+      </div>
+      <div class="decks">${mazzo(g, 'blue', 'Mazzo di ' + B)}${mazzo(g, 'red', 'Mazzo di ' + R)}</div>
+      <p class="note2">Mazzi scelti per questo game. Corone, elisir e torri arrivano quando il game finisce.</p>`;
   }
 
   function vistaSerie(p) {
@@ -678,11 +691,17 @@
     const gb = p.giocatori.blue, gr = p.giocatori.red;
     const plBtn = (g, n) => chiave(g) ? `<button class="pl-link" data-g="${esc(chiave(g))}">${esc(n)}<small>Scheda giocatore ›</small></button>` : esc(n);
     const sub = g => [g.clan, g.trofei != null ? num(g.trofei, 0) + ' trofei' : '', g.vittorie != null ? num(g.vittorie) + '% vittorie' : ''].filter(Boolean).map(esc).join(' · ');
-    if (tab > p.games.length) tab = p.games.length;
+    // Modalità torneo: game in corso con i mazzi già scelti (tab dopo l'ultimo game giocato)
+    const live = p.prossimo && p.prossimo.game === p.games.length + 1 ? p.prossimo : null;
+    const maxTab = p.games.length + (live ? 1 : 0);
+    if (tab > maxTab) tab = maxTab;
     const tabs = [`<button class="ov-tab" role="tab" aria-selected="${tab === 0}" data-tab="0">Serie</button>`]
-      .concat(p.games.map((g, i) => `<button class="ov-tab" role="tab" aria-selected="${tab === i + 1}" data-tab="${i + 1}"><i class="w ${g.vincitore}"></i>Game ${i + 1}</button>`));
-    const g = tab ? p.games[tab - 1] : null;
-    const res = g ? `Vince ${esc(g.vincitore === 'blue' ? B : R)}${g.corone ? ` · ${g.corone.blue}-${g.corone.red}` : ''}`
+      .concat(p.games.map((g, i) => `<button class="ov-tab" role="tab" aria-selected="${tab === i + 1}" data-tab="${i + 1}"><i class="w ${g.vincitore}"></i>Game ${i + 1}</button>`))
+      .concat(live ? [`<button class="ov-tab live" role="tab" aria-selected="${tab === live.game}" data-tab="${live.game}"><i class="w on"></i>Game ${live.game} · in corso</button>`] : []);
+    const inCorso = live && tab === live.game;
+    const g = tab && !inCorso ? p.games[tab - 1] : null;
+    const res = inCorso ? `● Game ${live.game} in corso · mazzi scelti`
+      : g ? `Vince ${esc(g.vincitore === 'blue' ? B : R)}${g.corone ? ` · ${g.corone.blue}-${g.corone.red}` : ''}`
       : p.vincitore ? `🏆 Vince il match ${esc(p.vincitore === 'blue' ? B : R)}` : p.stato === 'in_corso' ? '● Match in corso' : '';
     ovIn.innerHTML = `
       <div class="ov-bar">${indietro ? `<button class="ov-back" id="ov-back">← ${esc(indietro.label)}</button>` : ''}<span class="ov-chip" id="ov-title">${quale(p.num)}${p.turno && /^\d+$/.test(String(p.num)) ? ' · ' + esc(p.turno) : ''} · BO${p.formato}</span><span class="grow"></span><button class="ov-x" id="ov-x" aria-label="Chiudi">✕</button></div>
@@ -693,7 +712,7 @@
       </div>
       <div class="ov-tabs" role="tablist">${tabs.join('')}</div>
       <p class="ov-res">${res}</p>
-      <div id="ov-body">${g ? vistaGame(p, tab - 1) : vistaSerie(p)}</div>`;
+      <div id="ov-body">${inCorso ? vistaInCorso(p, live) : g ? vistaGame(p, tab - 1) : vistaSerie(p)}</div>`;
     document.getElementById('ov-x').onclick = chiudi;
     if (indietro) document.getElementById('ov-back').onclick = indietro.go;
     const da = { n: aperta, t: tab };
@@ -707,7 +726,8 @@
     const p = D.partite.find(x => String(x.num) === String(n));
     if (!p) return;
     aperta = n; giocatore = null; indietro = back;
-    tab = t ?? (p.games.length ? p.games.length : 0);   // apre sull'ultimo game giocato
+    const liveN = p.prossimo && p.prossimo.game === p.games.length + 1 ? p.prossimo.game : 0;
+    tab = t ?? (liveN || (p.games.length ? p.games.length : 0));   // apre sul game in corso o sull'ultimo giocato
     ov.hidden = false; ov.classList.add('show'); document.body.classList.add('ov-open');
     disegnaScheda();
     ov.scrollTop = 0;
