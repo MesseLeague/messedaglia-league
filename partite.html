@@ -211,6 +211,11 @@
   .deck .lab { top: -17px; }
   .cards { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 2vw, 22px) clamp(8px, 1.6vw, 18px); max-width: 470px; margin: 0 auto; opacity: 0; transform: translateY(14px); transition: opacity .35s .35s, transform .5s .35s cubic-bezier(.12, .9, .2, 1); }
   .open .cards { opacity: 1; transform: none; }
+  .cards.has-tower { grid-template-columns: repeat(5, minmax(0, 1fr)); max-width: 580px; }
+  .cards .tower { grid-row: 1 / span 2; align-self: center; }
+  .cards.blue .tower { grid-column: 1; }
+  .cards.red .tower { grid-column: 5; }
+  .cards .tower img { width: 100%; display: block; filter: drop-shadow(0 6px 10px rgba(0,0,0,.45)); }
   .card { position: relative; }
   .card img { width: 100%; display: block; filter: drop-shadow(0 6px 10px rgba(0,0,0,.45)); }
   .cost { position: absolute; left: -8%; top: -5%; width: 40%; aspect-ratio: 50 / 53; display: grid; place-items: center; padding-top: 6%; background: url('img/elisir.png') center / contain no-repeat;
@@ -284,7 +289,10 @@
   const mazzo = (g, side, label) => {
     const carte = g.mazzi?.[side] || [];
     const costi = g.costi?.[side] || [];
-    return `<div class="deck"><i class="half ${side}"></i><div class="lab">${esc(label)}</div><div class="cards">${carte.length
+    // Truppa della torre: a sinistra del mazzo blu, a destra del rosso, a metà tra le due file
+    const truppa = carte.length && g.truppa?.[side];
+    const torre = truppa ? `<div class="tower"><img src="img/carte/${esc(truppa)}.webp" alt="${esc(truppa.replace(/_/g, ' '))}" title="${esc(truppa.replace(/_/g, ' '))}" loading="lazy" onerror="this.parentNode.remove()"></div>` : '';
+    return `<div class="deck"><i class="half ${side}"></i><div class="lab">${esc(label)}</div><div class="cards${truppa ? ' has-tower ' + side : ''}">${torre}${carte.length
       ? carte.map((c, i) => `<div class="card"><img src="img/carte/${esc(c)}.webp" alt="${esc(c.replace(/^(evo|hero)_/, '').replace(/_/g, ' '))}" loading="lazy" onerror="this.style.opacity=.25">${costi.length ? `<span class="cost">${typeof costi[i] === 'number' ? costi[i] : '?'}</span>` : ''}</div>`).join('')
       : '<div class="nodeck">Mazzo non disponibile<br><small style="font-family:var(--body);text-transform:none;opacity:.8">game segnato a mano</small></div>'}</div></div>`;
   };
