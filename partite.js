@@ -3,7 +3,7 @@
 // Non modificarlo a mano. Solo dati pubblici: nomi in gioco, statistiche, mazzi.
 // =================================================================
 window.ML_PARTITE = {
- "aggiornato": "2026-11-15T13:22:37+00:00",
+ "aggiornato": "2026-11-15T13:43:39+00:00",
  "torneo": "Messedaglia 2026",
  "live": null,
  "tabellone": {
@@ -51,5 +51,6 @@ window.ML_PARTITE = {
   },
   "results": {}
  },
+ "aspiranti": null,
  "partite": []
 };
