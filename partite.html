@@ -24,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
 <link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="bracket.css">
 <style>
   /* Partite: stesso stile del sito */
   :root {
@@ -95,13 +96,13 @@
   /* Font di Clash Royale, solo per i numeri dell'elisir (come nella diretta) */
   @font-face { font-family: "Clash"; src: url("font/Clash_Bold.otf") format("opentype"); font-display: swap; }
   main { max-width: 1100px; }
-  .live { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 22px; padding: 14px 18px; background: linear-gradient(90deg, rgba(214, 48, 63, .3), var(--panel) 70%); box-shadow: inset 4px 0 0 var(--red); color: #fff; text-decoration: none; cursor: pointer; border: 0; width: 100%; text-align: left; font: inherit; }
-  .live:hover { filter: brightness(1.1); }
-  .live .rec { display: inline-flex; align-items: center; gap: 8px; font: 400 .8rem/1 var(--display); text-transform: uppercase; letter-spacing: .06em; }
-  .live .rec::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--red); animation: rec 1.4s ease-in-out infinite; }
+  .livebar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 22px; padding: 14px 18px; background: linear-gradient(90deg, rgba(214, 48, 63, .3), var(--panel) 70%); box-shadow: inset 4px 0 0 var(--red); color: #fff; text-decoration: none; cursor: pointer; border: 0; width: 100%; text-align: left; font: inherit; }
+  .livebar:hover { filter: brightness(1.1); }
+  .livebar .rec { display: inline-flex; align-items: center; gap: 8px; font: 400 .8rem/1 var(--display); text-transform: uppercase; letter-spacing: .06em; }
+  .livebar .rec::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--red); animation: rec 1.4s ease-in-out infinite; }
   @keyframes rec { 50% { opacity: .25; } }
-  .live b { font: 400 1.05rem/1.2 var(--display); text-transform: uppercase; }
-  .live .grow { flex: 1; }
+  .livebar b { font: 400 1.05rem/1.2 var(--display); text-transform: uppercase; }
+  .livebar .grow { flex: 1; }
 
   .turno { margin: 30px 0 10px; font: 400 1rem/1 var(--display); text-transform: uppercase; color: var(--muted); letter-spacing: .06em; }
   .lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 10px; }
@@ -125,6 +126,26 @@
   .m-score .b { background: #1764b8; } .m-score .r { background: #bf2736; }
   .m-foot { padding: 9px 12px; font-size: .85rem; color: var(--muted); }
   .m-foot b { color: #fff; }
+
+  /* Tabellone (grafica della diretta, ridimensionata per stare nella pagina) */
+  .tab { position: relative; margin-top: 8px; padding: 22px 0 10px; background: radial-gradient(60% 50% at 50% 0, rgba(255,255,255,.04), transparent 70%); }
+  .tab-scroll { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; padding: 0 20px 6px; }
+  .tab-fit { position: relative; margin: 0 auto; }
+  .tab-fit .bk-canvas { --bk-font: var(--display); transform-origin: 0 0; position: absolute; left: 0; top: 0; }
+  .bk-canvas .bk-match { cursor: default; }
+  .bk-canvas .bk-match.has-data { cursor: pointer; }
+  .bk-canvas .bk-match.has-data:hover .bk-rows, .bk-canvas .bk-match.has-data:focus-visible .bk-rows { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .bk-canvas .bk-match:focus-visible { outline: none; }
+  .bk-canvas .bk-match.has-data::after { content: "📊"; position: absolute; left: 0; top: 100%; margin-top: 2px; font-size: 10px; opacity: .8; }
+  .champ { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 14px; padding: 14px; background: linear-gradient(90deg, transparent, rgba(245, 179, 1, .22), transparent); font: 400 clamp(1rem, 3vw, 1.4rem)/1.2 var(--display); text-transform: uppercase; }
+  .champ b { color: var(--gold); }
+  .legenda { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin: 12px 0 0; color: var(--muted); font-size: .85rem; }
+  .legenda i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; font-style: normal; }
+  .legenda .l1 { background: #fff; box-shadow: 0 0 0 2px var(--gold); }
+  .legenda .l2 { background: #fff; }
+  .legenda .l3 { background: #2a2c31; }
+  .toast2 { position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 160%); z-index: 70; max-width: calc(100vw - 32px); padding: 12px 18px; background: #fff; color: #000; font: 600 .92rem/1.35 var(--body); box-shadow: 0 10px 30px rgba(0,0,0,.5); transition: transform .3s cubic-bezier(.12, .9, .2, 1); }
+  .toast2.show { transform: translate(-50%, 0); }
 
   .vuoto { padding: 40px 22px; background: var(--panel); text-align: center; color: var(--muted); }
   .vuoto b { display: block; margin-bottom: 6px; color: #fff; font: 400 1.3rem/1.2 var(--display); text-transform: uppercase; }
@@ -216,10 +237,11 @@
 <main>
   <span class="chip">Finali d'Istituto</span>
   <h1>Partite</h1>
-  <p class="lead">Tutti i match del torneo, aggiornati dalla regia mentre si gioca. <b>Tocca un match</b> per vedere game per game corone, mazzi, costo medio ed elisir sprecato.</p>
+  <p class="lead">Il tabellone del torneo, aggiornato dalla regia mentre si gioca. <b>Tocca un match</b> per vedere game per game corone, mazzi, costo medio ed elisir sprecato.</p>
   <div id="app"></div>
   <p class="note2" id="agg"></p>
 </main>
+<div class="toast2" id="toast2" role="status" aria-live="polite"></div>
 
 <div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="ov-title" hidden>
   <div class="ov-in" id="ov-in"></div>
@@ -233,6 +255,7 @@
 <script src="config.js"></script>
 <script src="pubblico.js"></script>
 <script src="partite.js"></script>
+<script src="bracket.js"></script>
 <script src="nav.js"></script>
 <script>
 (function () {
@@ -344,7 +367,7 @@
       return;
     }
     const live = P.find(p => p.num === D.live);
-    let html = live ? `<button class="live" data-m="${live.num}"><span class="rec">In corso</span><b>${esc(nome(live, 'blue'))} ${live.punteggio.blue}-${live.punteggio.red} ${esc(nome(live, 'red'))}</b><span class="muted">Match ${live.num}${live.turno ? ' · ' + esc(live.turno) : ''}</span><span class="grow"></span><span>Apri →</span></button>` : '';
+    let html = live ? `<button class="livebar" data-m="${live.num}"><span class="rec">In corso</span><b>${esc(nome(live, 'blue'))} ${live.punteggio.blue}-${live.punteggio.red} ${esc(nome(live, 'red'))}</b><span class="muted">Match ${live.num}${live.turno ? ' · ' + esc(live.turno) : ''}</span><span class="grow"></span><span>Apri →</span></button>` : '';
     // Raggruppa per turno, nell'ordine dei match
     const gruppi = [];
     for (const p of P) {
@@ -367,8 +390,73 @@
     app.querySelectorAll('[data-m]').forEach(b => b.onclick = () => apri(+b.dataset.m));
   }
 
+  // ---------- Tabellone ----------
+  let toastT = null;
+  function toast(t) {
+    const el = document.getElementById('toast2');
+    el.textContent = t; el.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('show'), 3200);
+  }
+
+  function disegnaTabellone() {
+    const T = D.tabellone, P = D.partite || [];
+    const res = Bracket.resolve(T);
+    const byNum = Object.fromEntries(res.matches.map(m => [m.num, m]));
+    const pNum = Object.fromEntries(P.map(p => [p.num, p]));
+    // Punteggi delle serie finite, orientati come nel tabellone (a = sopra, b = sotto)
+    const scores = {};
+    let live = null;
+    for (const p of P) {
+      const m = byNum[p.num];
+      if (!m || !m.a || !m.b) continue;
+      const aBlue = m.a.tag === p.giocatori.blue.id;
+      if (p.vincitore) scores[p.num] = aBlue ? { a: p.punteggio.blue, b: p.punteggio.red } : { a: p.punteggio.red, b: p.punteggio.blue };
+      if (p.num === D.live && p.giocatori.blue.id && p.giocatori.red.id) {
+        live = { tags: [p.giocatori.blue.id, p.giocatori.red.id], wins: { [p.giocatori.blue.id]: p.punteggio.blue, [p.giocatori.red.id]: p.punteggio.red } };
+      }
+    }
+    const livePart = P.find(p => p.num === D.live);
+    let html = livePart ? `<button class="livebar" data-m="${livePart.num}"><span class="rec">In corso</span><b>${esc(nome(livePart, 'blue'))} ${livePart.punteggio.blue}-${livePart.punteggio.red} ${esc(nome(livePart, 'red'))}</b><span class="muted">Match ${livePart.num}${livePart.turno ? ' · ' + esc(livePart.turno) : ''}</span><span class="grow"></span><span>Stats →</span></button>` : '';
+    if (res.champion) html += `<div class="champ">🏆 Campione d'Istituto: <b>${esc(res.champion.name)}</b></div>`;
+    html += `<div class="tab"><div class="tab-scroll"><div class="tab-fit" id="tab-fit"><div class="bk-canvas" id="bk"></div></div></div>
+      <div class="legenda"><span><i class="l1"></i>In corso</span><span><i class="l2"></i>Vincitore</span><span><i class="l3"></i>Eliminato dal match</span><span>📊 Stats disponibili: tocca il match</span></div></div>`;
+    app.innerHTML = html;
+    const canvas = document.getElementById('bk');
+    const layout = Bracket.render(canvas, T, { live, scores });
+    canvas.querySelectorAll('.bk-match').forEach(el => {
+      const n = +el.dataset.num, m = byNum[n], p = pNum[n];
+      if (p) { el.classList.add('has-data'); el.tabIndex = 0; el.setAttribute('role', 'button'); el.setAttribute('aria-label', `Match ${n}: statistiche`); }
+      const go = () => {
+        if (p) return apri(n);
+        if (!m.exists) return toast(`Il match ${n} si gioca solo se serve la rivincita.`);
+        toast(m.ready ? `Match ${n} · ${m.label}: ${m.a.name} contro ${m.b.name}, ancora da giocare.` : `Match ${n} · ${m.label}: si aspetta ${[!m.a && m.aText, !m.b && m.bText].filter(Boolean).join(' e ').toLowerCase()}.`);
+      };
+      el.addEventListener('click', go);
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+    app.querySelectorAll('.livebar[data-m]').forEach(b => b.onclick = () => apri(+b.dataset.m));
+    adatta(layout);
+  }
+
+  // Il tabellone (largo ~1000 px) si rimpicciolisce per stare nella pagina; sul telefono si scorre di lato
+  let ultimoLayout = null;
+  function adatta(layout) {
+    layout = layout || ultimoLayout;
+    if (!layout) return;
+    ultimoLayout = layout;
+    const fit = document.getElementById('tab-fit'), canvas = document.getElementById('bk');
+    if (!fit) return;
+    const W = layout.width + 50, H = layout.height + 10;
+    const box = fit.parentElement.clientWidth - 40;
+    const k = Math.max(0.62, Math.min(1.15, box / W));
+    canvas.style.transform = `translateX(${25 * k}px) scale(${k})`;
+    fit.style.width = W * k + 'px';
+    fit.style.height = H * k + 'px';
+  }
+  addEventListener('resize', () => adatta());
+
   function disegna() {
-    disegnaLista();
+    if (D.tabellone && typeof Bracket !== 'undefined') disegnaTabellone(); else disegnaLista();
     if (aperta != null) disegnaScheda();
     const q = D.aggiornato ? new Date(D.aggiornato) : null;
     document.getElementById('agg').textContent = q && !isNaN(q)

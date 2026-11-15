@@ -1,0 +1,97 @@
+/* =================================================================
+   TABELLONE – grafica condivisa tra stage e regia (stile World Finals:
+   intestazioni bianche, numero della serie in un quadratino, riga rossa
+   sopra e blu sotto, linee grigie spesse).
+   Ogni pagina può cambiare i font con --bk-font.
+   ================================================================= */
+
+.bk-canvas {
+  position: relative;
+  --bk-red: #d33a47;
+  --bk-red-dim: #5a1f27;
+  --bk-blue: #2f7fd6;
+  --bk-blue-dim: #183a63;
+  --bk-grey: #4a4d55;
+  --bk-lost: #2a2c31;
+  --bk-gold: #f5b301;
+  font-family: var(--bk-font, 'Segoe UI Black', 'Arial Black', sans-serif);
+}
+.bk-canvas svg { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+
+/* Striscia scura dietro la riga delle intestazioni */
+.bk-band {
+  position: absolute; left: -40px; right: -40px;
+  background: linear-gradient(90deg, rgba(47, 127, 214, 0.28), rgba(20, 20, 26, 0.6) 30%, rgba(20, 20, 26, 0.6) 70%, rgba(211, 58, 71, 0.28));
+  border-top: 2px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.bk-head {
+  position: absolute;
+  display: grid; place-items: center;
+  background: #fff; color: #000;
+  font-size: 15px; font-weight: 900; letter-spacing: 0.02em;
+  text-transform: uppercase; white-space: nowrap;
+}
+.bk-head.gold { background: var(--bk-gold); }
+.bk-head.grey { background: #55585f; color: #fff; }
+.bk-head-sub { position: absolute; text-align: center; font-size: 11px; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Linee grigie; quelle già percorse diventano bianche */
+.bk-wire { fill: none; stroke: var(--bk-grey); stroke-width: 6; stroke-linejoin: miter; }
+.bk-wire.lit { stroke: #e9e9ee; }
+
+/* Serie */
+.bk-match {
+  position: absolute;
+  display: flex; align-items: center;
+  animation: bk-in 0.45s var(--d, 0s) ease-out both;
+}
+.bk-num {
+  flex: none;
+  height: 30px; margin-right: 4px;
+  display: grid; place-items: center;
+  background: #fff; color: #000;
+  font-size: 17px; font-weight: 900;
+}
+.bk-match.gf .bk-num { background: var(--bk-gold); }
+.bk-rows { flex: 1; min-width: 0; height: 100%; display: grid; grid-template-rows: 1fr 1fr; }
+.bk-row { display: grid; grid-template-columns: 1fr 26px; min-width: 0; }
+.bk-name {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 0; padding: 0 6px;
+  font-size: 13px; font-weight: 900; color: #fff; text-transform: uppercase;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.bk-score { display: grid; place-items: center; background: var(--bk-grey); color: #fff; font-size: 15px; font-weight: 900; }
+.bk-row.red .bk-name { background: var(--bk-red); }
+.bk-row.blue .bk-name { background: var(--bk-blue); }
+
+/* Da giocare: colori spenti e testo sbiadito, come i "WINNER OF MATCH" del riferimento */
+.bk-row.tbd.red .bk-name { background: var(--bk-red-dim); color: rgba(255, 120, 130, 0.55); }
+.bk-row.tbd.blue .bk-name { background: var(--bk-blue-dim); color: rgba(120, 180, 255, 0.55); }
+.bk-row.tbd .bk-name { font-size: 11px; }
+/* Finita: il vincitore resta colorato con la spunta, il perdente diventa grigio */
+.bk-row.won .bk-score::after { content: "✓"; }
+/* Con il punteggio della serie (sito) il numero prende il posto della spunta */
+.bk-match.has-score .bk-row.won .bk-score::after { content: none; }
+.bk-row.won .bk-score { background: #fff; color: #000; }
+.bk-row.lost .bk-name { background: var(--bk-lost); color: #77797f; }
+/* In corso: righe bianche e punteggio live */
+.bk-row.live .bk-name { background: #fff; color: #000; }
+.bk-row.live .bk-score { background: #fff; color: #000; border-left: 2px solid #c9c9cf; }
+.bk-match.is-live .bk-rows { box-shadow: 0 0 0 3px var(--bk-gold), 0 0 24px rgba(245, 179, 1, 0.55); animation: bk-live 1.6s ease-in-out infinite; }
+@keyframes bk-live { 50% { box-shadow: 0 0 0 3px var(--bk-gold), 0 0 6px rgba(245, 179, 1, 0.15); } }
+
+.bk-match.ghost { opacity: 0.35; }
+
+/* Formato BO3/BO5, piccolo sotto la serie */
+.bk-bo {
+  position: absolute; right: 0; top: 100%; margin-top: 3px;
+  font-size: 9px; font-weight: 900; letter-spacing: 0.08em; color: #8d9099;
+}
+.bk-bo.five { color: var(--bk-gold); }
+
+@keyframes bk-in { from { opacity: 0; transform: translateX(-12px); } }
+/* Niente prefers-reduced-motion: è una grafica per la diretta e OBS eredita
+   l'impostazione di Windows, che spegnerebbe anche l'alone della serie in corso. */
