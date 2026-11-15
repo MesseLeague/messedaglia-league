@@ -93,12 +93,13 @@ const Bracket = (() => {
     return { matches, links, labels, bands: [0, LOW_HEAD] };
   }
 
-  // Spareggi aspiranti (regolamento): AS1 = 7º contro 10º, AS2 = 8º contro 9º, al meglio delle 5.
-  // players = [7º, 8º, 9º, 10º]. Chi vince entra nel tabellone come 7º (AS1) o 8º (AS2).
+  // Spareggi aspiranti: 4 posti assegnati a sorteggio, AS1 = posto 1 contro 2, AS2 = 3 contro 4, al meglio delle 5.
+  // players = [sorteggiato 1, 2, 3, 4]. Chi vince entra nel tabellone come 7º (AS1) o 8º (AS2).
   function aspiranti(cfg) {
+    const slot = i => ({ seed: i, text: `Aspirante ${i + 1}` });
     const matches = [
-      { id: 'AS1', num: 'AS1', col: 0, y: TOP, a: seed(0), b: seed(3), bo: cfg.bo, cls: 'as', label: 'Spareggio AS1' },
-      { id: 'AS2', num: 'AS2', col: 0, y: TOP + STEP, a: seed(1), b: seed(2), bo: cfg.bo, cls: 'as', label: 'Spareggio AS2' },
+      { id: 'AS1', num: 'AS1', col: 0, y: TOP, a: slot(0), b: slot(1), bo: cfg.bo, cls: 'as', label: 'Spareggio AS1' },
+      { id: 'AS2', num: 'AS2', col: 0, y: TOP + STEP, a: slot(2), b: slot(3), bo: cfg.bo, cls: 'as', label: 'Spareggio AS2' },
     ];
     const labels = [['Spareggi', 0, 0],
       ['→ 7º nel tabellone', 1, TOP + (H - HEAD) / 2, 'gold dest'], ['→ 8º nel tabellone', 1, TOP + STEP + (H - HEAD) / 2, 'gold dest']];
@@ -137,6 +138,7 @@ const Bracket = (() => {
   }
 
   function sourceText(src, numOf = id => id) {
+    if (src.text) return src.text;
     if ('seed' in src) return `Posto ${src.seed + 1}`;
     return `${'win' in src ? 'Vincente' : 'Perdente'} match ${numOf(src.win || src.lose)}`;
   }
@@ -161,6 +163,10 @@ const Bracket = (() => {
     const ordered = [...layout.matches].sort((p, q) => (typeof p.num === 'number' && typeof q.num === 'number' ? p.num - q.num : 0));
     for (const m of ordered) {
       const r = { ...m, a: player(m.a), b: player(m.b), aText: sourceText(m.a, id => nums[id]), bText: sourceText(m.b, id => nums[id]) };
+      // Tabellone da 8: i posti 7 e 8 sono dei vincitori degli spareggi aspiranti (regolamento)
+      if (config.size === 8 && config.type !== 'aspiranti') {
+        for (const k of ['a', 'b']) if (m[k].seed === 6 || m[k].seed === 7) r[k + 'Text'] = `Vincente AS${m[k].seed - 5}`;
+      }
       r.exists = !m.onlyIf || byId[m.onlyIf[0]]?.winner === m.onlyIf[1];
       r.ready = r.exists && !!r.a?.name && !!r.b?.name;
       r.winner = r.ready && (results[m.id] === 'a' || results[m.id] === 'b') ? results[m.id] : null;

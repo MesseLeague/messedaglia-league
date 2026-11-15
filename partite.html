@@ -402,15 +402,15 @@
   // Etichetta di un match: numero del tabellone oppure spareggio AS1/AS2
   const quale = n => /^\d+$/.test(String(n)) ? `Match ${n}` : `Spareggio ${n}`;
 
-  // Spareggi aspiranti: dalla regia (partite.js) o, se non ancora pubblicati, dalla classifica a iscrizioni chiuse
+  // Spareggi aspiranti: sempre visibili. Dalla regia (partite.js); altrimenti dal sorteggio della
+  // classifica (iscrizioni chiuse); altrimenti 4 posti vuoti "Aspirante 1-4".
   function aspirantiDaMostrare() {
-    if (D.aspiranti) return D.aspiranti;
+    if (D.aspiranti) return { T: D.aspiranti, nota: '' };
     const C = window.ML_PUBBLICO || {};
-    if (!C.iscrizioni || C.iscrizioni.aperte !== false) return null;
-    const asp = (C.classifica || []).filter(g => g.esito === 'asp' && g.posto);
-    if (asp.length < 2) return null;
-    const players = [7, 8, 9, 10].map(p => { const g = asp.find(x => x.posto === p); return g ? { name: g.nome, tag: 'c' + p } : { name: '', tag: '' }; });
-    return { config: { name: 'Spareggi aspiranti', type: 'aspiranti', size: 4, bo: 5, final_bo: 5, reset: false, players }, results: {} };
+    const asp = (C.classifica || []).filter(g => g.esito === 'asp' && g.sorteggio);
+    const players = [1, 2, 3, 4].map(n => { const g = asp.find(x => x.sorteggio === n); return g ? { name: g.nome, tag: 'c' + n } : { name: '', tag: '' }; });
+    const nota = asp.length ? ' Accoppiamenti dal sorteggio di chiusura delle iscrizioni.' : ' I 4 aspiranti vengono sorteggiati nei posti alla chiusura delle iscrizioni.';
+    return { T: { config: { name: 'Spareggi aspiranti', type: 'aspiranti', size: 4, bo: 5, final_bo: 5, reset: false, players }, results: {} }, nota };
   }
 
   // Disegna un tabellone e collega i match alle schede con gli stats
@@ -451,21 +451,19 @@
   let disegnati = [];
   function disegnaTabellone() {
     const P = D.partite || [];
-    const A = aspirantiDaMostrare();
+    const A = aspirantiDaMostrare();   // { T, nota }, sempre presente
     const livePart = P.find(p => String(p.num) === String(D.live));
     let html = livePart ? `<button class="livebar" data-m="${esc(livePart.num)}"><span class="rec">In corso</span><b>${esc(nome(livePart, 'blue'))} ${livePart.punteggio.blue}-${livePart.punteggio.red} ${esc(nome(livePart, 'red'))}</b><span class="muted">${quale(livePart.num)}${livePart.turno && /^\d+$/.test(String(livePart.num)) ? ' · ' + esc(livePart.turno) : ''}</span><span class="grow"></span><span>Stats →</span></button>` : '';
     html += '<div id="champ"></div>';
-    if (A) {
-      html += `<h2 class="turno">Spareggi aspiranti</h2>
-        <p class="muted" style="margin:-4px 0 0">Prima del torneo, al meglio delle 5: chi vince AS1 entra nel tabellone come 7º, chi vince AS2 come 8º.${D.aspiranti ? '' : ' Giocatori dalla classifica delle iscrizioni.'}</p>
-        <div class="tab tab-mini"><div class="tab-scroll"><div class="tab-fit"><div class="bk-canvas" id="bk-asp"></div></div></div></div>
-        <h2 class="turno">Tabellone</h2>`;
-    }
+    html += `<h2 class="turno">Spareggi aspiranti</h2>
+      <p class="muted" style="margin:-4px 0 0">Prima del torneo, al meglio delle 5: chi vince AS1 entra nel tabellone come 7º, chi vince AS2 come 8º.${A.nota}</p>
+      <div class="tab tab-mini"><div class="tab-scroll"><div class="tab-fit"><div class="bk-canvas" id="bk-asp"></div></div></div></div>
+      <h2 class="turno">Tabellone</h2>`;
     html += `<div class="tab"><div class="tab-scroll"><div class="tab-fit"><div class="bk-canvas" id="bk"></div></div></div>
       <div class="legenda"><span><i class="l1"></i>In corso</span><span><i class="l2"></i>Vincitore</span><span><i class="l3"></i>Eliminato dal match</span><span>📊 Stats disponibili: tocca il match</span></div></div>`;
     app.innerHTML = html;
     disegnati = [];
-    if (A) disegnati.push(tabellone(A, 'bk-asp'));
+    disegnati.push(tabellone(A.T, 'bk-asp'));
     const main = tabellone(D.tabellone, 'bk');
     disegnati.push(main);
     if (main.res.champion) document.getElementById('champ').innerHTML = `<div class="champ">🏆 Campione d'Istituto: <b>${esc(main.res.champion.name)}</b></div>`;

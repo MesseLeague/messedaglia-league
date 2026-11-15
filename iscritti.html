@@ -166,17 +166,19 @@
     html += `<h2><span class="chip gold">1º-6º</span>Qualificati</h2><p>Entrano direttamente nel tabellone, ai posti dall'1 al 6.</p>
       <ol class="cards">${qual.map((g, i) => `<li class="card" style="--i:${i}"><span class="pos">${g.pos}</span>${img(g)}${who(g)}</li>`).join('')}</ol>`;
 
-    // Spareggi: AS1 = posto 7 contro posto 10, AS2 = posto 8 contro posto 9
-    const byPosto = p => asp.find(g => g.posto === p);
-    const side = (p, color) => {
-      const g = byPosto(p);
-      return g ? `<div class="side ${color}"><span class="seed">${p}º</span>${who(g)}${img(g)}</div>`
-               : `<div class="side ${color} empty"><span class="seed">${p}º</span><span>Posto libero</span><span></span></div>`;
+    // Spareggi: i 4 aspiranti si sorteggiano alla chiusura. AS1 = sorteggiato 1 contro 2, AS2 = 3 contro 4
+    const sorteggiati = asp.some(g => g.sorteggio);
+    const bySlot = n => asp.find(g => g.sorteggio === n);
+    const side = (n, color) => {
+      const g = sorteggiati ? bySlot(n) : null;
+      return g ? `<div class="side ${color}"><span class="seed">${g.posto}º</span>${who(g)}${img(g)}</div>`
+               : `<div class="side ${color} empty"><span class="seed">?</span><span>${sorteggiati ? 'Posto libero' : 'Da sorteggiare'}</span><span></span></div>`;
     };
-    html += `<h2><span class="chip">7º-10º</span>Aspiranti</h2><p>Due spareggi al meglio delle 5 prima del torneo: chi vince entra nel tabellone come 7º o 8º, chi perde è riserva.</p>
-      <div class="duels">
-        <div class="duel"><div class="duel-head"><b>AS1</b><span class="chip blue">Bo5</span></div>${side(7, 'blue')}<span class="vs">VS</span>${side(10, 'red')}</div>
-        <div class="duel"><div class="duel-head"><b>AS2</b><span class="chip blue">Bo5</span></div>${side(8, 'blue')}<span class="vs">VS</span>${side(9, 'red')}</div>
+    html += `<h2><span class="chip">7º-10º</span>Aspiranti</h2><p>Due spareggi al meglio delle 5 prima del torneo, con accoppiamenti <b style="color:#fff">sorteggiati alla chiusura delle iscrizioni</b>: chi vince AS1 entra nel tabellone come 7º, chi vince AS2 come 8º; chi perde è riserva.</p>`
+      + (!sorteggiati && asp.length ? `<ol class="rows" style="margin-bottom:10px">${asp.map(g => `<li class="row"><span class="n" title="Posizione in classifica">${g.posto}º</span>${img(g)}${who(g)}<span class="rec">${fmt(g.trofei)}<small>trofei</small></span></li>`).join('')}</ol>` : '')
+      + `<div class="duels">
+        <div class="duel"><div class="duel-head"><b>AS1</b><span class="chip blue">Bo5 · → 7º</span></div>${side(1, 'blue')}<span class="vs">VS</span>${side(2, 'red')}</div>
+        <div class="duel"><div class="duel-head"><b>AS2</b><span class="chip blue">Bo5 · → 8º</span></div>${side(3, 'blue')}<span class="vs">VS</span>${side(4, 'red')}</div>
       </div>`;
 
     html += `<h2><span class="chip red">${altri.length}</span>Non qualificati</h2><p>${aperte
