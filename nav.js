@@ -13,12 +13,11 @@
   const DAYS = 30;
   const PAGES = [
     ['home', 'Home', './'],
-    ['formato', 'Formato', './#formato'],
     ['tabellone', 'Tabellone', './#tabellone'],
     ['partite', 'Partite', 'partite.html'],
-    ['faq', 'FAQ', './#faq'],
-    ['regolamento', 'Regolamento', 'regolamento.html'],
+    ['partecipanti', 'Partecipanti', 'partecipanti.html'],
     ['iscritti', 'Iscritti', 'iscritti.html'],
+    ['regolamento', 'Regolamento', 'regolamento.html'],
     ['contatti', 'Contatti', 'contatti.html'],
     ['iscrizioni', 'Iscrizioni', 'iscrizioni.html'],
   ];

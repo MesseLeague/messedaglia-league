@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Partecipanti · Messedaglia League</title>
+<meta name="description" content="I giocatori delle Finali d'Istituto della Messedaglia League: qualificati e aspiranti, con profilo di Clash Royale, mazzo e forma recente.">
+<!-- Anteprima quando il link viene condiviso (WhatsApp, Instagram, Telegram, Discord…) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Messedaglia League">
+<meta property="og:title" content="Partecipanti · Messedaglia League">
+<meta property="og:description" content="Chi gioca le Finali d'Istituto: qualificati e aspiranti, con profilo, mazzo e forma recente.">
+<meta property="og:url" content="https://messeleague.github.io/messedaglia-league/partecipanti.html">
+<meta property="og:image" content="https://messeleague.github.io/messedaglia-league/img/anteprima-2.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Messedaglia League · Finali d'Istituto">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05070f">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="nav.css">
+<style>
+  /* Partecipanti: stesso stile del sito */
+  @font-face { font-family: "Clash"; src: url("font/Clash_Bold.otf") format("opentype"); font-display: swap; }
+  :root {
+    --bg: #05070f; --panel: #0d1120; --panel-2: #121830; --line: #1d2335; --text: #fff; --muted: #9aa3b5; --grey: #4a4d55;
+    --blue: #1f74d0; --red: #d6303f; --gold: #f5b301; --green: #1f9d55;
+    --display: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Archivo", "Segoe UI", system-ui, sans-serif;
+    --ease: cubic-bezier(.12, .9, .2, 1);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--text); font: 400 16px/1.55 var(--body); min-height: 100vh;
+    background:
+      radial-gradient(45% 26% at 6% 0, rgba(31, 116, 208, 0.35), transparent 70%),
+      radial-gradient(45% 26% at 94% 0, rgba(214, 48, 63, 0.35), transparent 70%),
+      var(--bg);
+  }
+  main { max-width: 1100px; margin: 0 auto; padding: 34px max(16px, env(safe-area-inset-right, 0px)) 80px max(16px, env(safe-area-inset-left, 0px)); }
+  h1 { font: 400 clamp(2.2rem, 8vw, 3.6rem)/1 var(--display); text-transform: uppercase; margin: 12px 0 10px; }
+  h2 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font: 400 clamp(1.3rem, 4vw, 1.7rem)/1.1 var(--display); text-transform: uppercase; margin: 40px 0 6px; }
+  h2 + p { margin: 0 0 14px; color: var(--muted); }
+  .lead { color: var(--muted); font-size: 1.1rem; margin: 0 0 18px; max-width: 64ch; }
+  .lead b { color: #fff; }
+  .chip { display: inline-block; padding: 6px 12px; background: #fff; color: #000; font: 400 .78rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .06em; }
+  .chip.gold { background: var(--gold); } .chip.blue { background: var(--blue); color: #fff; }
+  .avviso { padding: 14px 16px; background: rgba(245, 179, 1, .1); box-shadow: inset 4px 0 0 var(--gold); color: #d5dae4; }
+  .avviso b { color: #fff; }
+
+  /* Carte dei giocatori */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; }
+  .pc { position: relative; display: grid; grid-template-rows: auto 1fr; background: var(--panel); min-width: 0; transition: transform .15s, filter .15s; animation: in .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 50ms); }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } }
+  .pc:hover { transform: translateY(-3px); filter: brightness(1.08); }
+  .pc-top { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: center; padding: 18px 16px 16px;
+            background: linear-gradient(135deg, rgba(245, 179, 1, .24), transparent 70%); box-shadow: inset 0 3px 0 var(--gold); }
+  .pc.asp .pc-top { background: linear-gradient(135deg, rgba(31, 116, 208, .32), transparent 70%); box-shadow: inset 0 3px 0 var(--blue); }
+  .pc-top > img, .pc-top .noimg { width: 72px; height: 72px; object-fit: contain; filter: drop-shadow(0 6px 12px rgba(0,0,0,.5)); }
+  .noimg { display: grid; place-items: center; background: var(--panel-2); color: var(--muted); font: 400 1.6rem/1 var(--display); }
+  .pc-name { font: 400 1.3rem/1.1 var(--display); text-transform: uppercase; overflow-wrap: anywhere; }
+  .pc-name a { color: inherit; text-decoration: underline transparent 2px; text-underline-offset: 4px; transition: text-decoration-color .15s; }
+  .pc-name a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+  .pc:hover .pc-name a { text-decoration-color: currentColor; }
+  .pc-name a:focus-visible { outline: none; }
+  .pc-name a:focus-visible::after { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .pc-nick { color: var(--gold); font-weight: 800; font-size: .9rem; overflow-wrap: anywhere; }
+  .pc-sub { color: var(--muted); font-size: .85rem; overflow-wrap: anywhere; }
+  .pc-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .pc-chips span { padding: 4px 7px; background: #fff; color: #000; font: 400 .66rem/1.1 var(--display); text-transform: uppercase; letter-spacing: .04em; }
+  .pc-chips .q { background: var(--gold); } .pc-chips .a { background: var(--blue); color: #fff; }
+  .pc-chips .w { background: var(--gold); } .pc-chips .on { background: var(--red); color: #fff; } .pc-chips .ko { background: var(--grey); color: #fff; }
+
+  .pc-body { display: grid; gap: 14px; align-content: start; padding: 14px 16px 18px; }
+  .pc-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+  .pc-stats div { padding: 9px 6px 8px; background: var(--panel-2); text-align: center; min-width: 0; }
+  .pc-stats b { display: block; font: 400 1.05rem/1.1 var(--display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pc-stats small { display: block; margin-top: 3px; color: var(--muted); font-size: .68rem; line-height: 1.15; }
+  .pc-lab { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; font: 400 .66rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .pc-lab b { color: #fff; }
+  .pc-deck { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; }
+  .pc-deck .c { position: relative; }
+  .pc-deck img { width: 100%; display: block; }
+  .pc-deck i { position: absolute; left: -10%; top: -8%; width: 46%; aspect-ratio: 50 / 53; display: grid; place-items: center; padding-top: 6%; background: url('img/elisir.png') center / contain no-repeat;
+               font: 400 .72rem/1 "Clash", var(--display); font-style: normal; color: #fff; -webkit-text-stroke: 2px #4a0a52; paint-order: stroke fill; }
+  .pc-form { display: flex; gap: 3px; }
+  .pc-form i { flex: 1; height: 22px; display: grid; place-items: center; font: 400 .66rem/1 var(--display); font-style: normal; background: var(--grey); }
+  .pc-form i.V { background: var(--green); } .pc-form i.S { background: var(--red); }
+  .pc-more { color: var(--muted); font: 600 .8rem/1 var(--body); text-align: right; }
+  .pc:hover .pc-more { color: #fff; }
+
+  .empty-box { padding: 30px 20px; background: var(--panel); text-align: center; color: var(--muted); }
+  .empty-box b { display: block; color: #fff; font: 400 1.2rem/1.2 var(--display); text-transform: uppercase; margin-bottom: 6px; }
+  .empty-box a { color: #fff; }
+  .note { margin-top: 26px; color: var(--muted); font-size: .9rem; }
+  .note a { color: #fff; }
+  footer { max-width: 1100px; margin: 0 auto; padding: 26px 16px 40px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
+  footer a { color: #c9cfdb; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  @media (max-width: 400px) { .pc-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (prefers-reduced-motion: reduce) { .pc { animation: none; transition: none; } }
+</style>
+</head>
+<body>
+<nav id="topbar" data-page="partecipanti" aria-label="Sito"></nav>
+
+<main>
+  <span class="chip">Finali d'Istituto</span>
+  <h1>Partecipanti</h1>
+  <p class="lead">Chi gioca le Finali: i <b>6 qualificati</b> e i <b>4 aspiranti</b> degli spareggi, con il loro profilo di Clash Royale. <b>Tocca un giocatore</b> per la scheda completa, con le statistiche del torneo.</p>
+  <div id="app"></div>
+  <p class="note" id="note"></p>
+</main>
+
+<footer>
+  <strong>Messedaglia League · Finali d'Istituto</strong> · Torneo studentesco del Liceo Messedaglia. · <a href="contatti.html">Contatti</a> · <a href="privacy.html">Privacy e cookie</a><br>
+  Questo materiale non è ufficiale e non è approvato da Supercell. Per maggiori informazioni consulta la <a href="https://supercell.com/en/fan-content-policy/" target="_blank" rel="noopener">Fan Content Policy di Supercell</a>.
+</footer>
+
+<script src="config.js"></script>
+<script src="pubblico.js"></script>
+<script src="partite.js"></script>
+<script src="bracket.js"></script>
+<script src="nav.js"></script>
+<script>
+(function () {
+  const P = window.ML_PUBBLICO || { iscrizioni: { aperte: true }, classifica: [] };
+  const D = window.ML_PARTITE || { partite: [] };
+  const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const num = (v, d = 0) => v == null || isNaN(v) ? '–' : Number(v).toLocaleString('it-IT', { maximumFractionDigits: d });
+  const app = document.getElementById('app');
+  const lista = P.classifica || [];
+  const qual = lista.filter(g => g.esito === 'qual').sort((a, b) => a.pos - b.pos);
+  const asp = lista.filter(g => g.esito === 'asp').sort((a, b) => (a.posto || 99) - (b.posto || 99));
+  const aperte = P.iscrizioni ? P.iscrizioni.aperte !== false : true;
+  const profilo = nome => { const k = Object.keys(P.profili || {}).find(x => x.toLowerCase() === String(nome).toLowerCase()); return k ? P.profili[k] : null; };
+
+  // Il torneo (se è iniziato): id del giocatore nel tabellone pubblico, risultati e stato
+  const low = s => String(s || '').toLowerCase();
+  function idDi(nome) {
+    for (const T of [D.tabellone, D.aspiranti]) {
+      const p = (T?.config?.players || []).find(x => x.tag && low(x.name) === low(nome));
+      if (p) return p.tag;
+    }
+    return null;
+  }
+  function torneo(nome) {
+    const id = idDi(nome);
+    const ms = (D.partite || []).flatMap(p => ['blue', 'red'].filter(s => (id ? p.giocatori[s].id === id : low(p.giocatori[s].nome) === low(nome))).map(s => ({ p, s })));
+    const v = ms.filter(m => m.p.vincitore === m.s).length, l = ms.filter(m => m.p.vincitore && m.p.vincitore !== m.s).length;
+    let stato = null;
+    if (id && typeof Bracket !== 'undefined') {
+      const tocca = m => m.a?.tag === id || m.b?.tag === id;
+      if (D.tabellone) {
+        const r = Bracket.resolve(D.tabellone);
+        if (r.champion?.tag === id) stato = { t: '🏆 Campione', c: 'w' };
+        else if (r.matches.some(tocca)) stato = r.matches.some(m => m.exists && !m.winner && tocca(m)) ? { t: 'In gara', c: '' } : { t: 'Eliminato', c: 'ko' };
+      }
+      if (!stato && D.aspiranti) {
+        const r = Bracket.resolve(D.aspiranti);
+        if (r.matches.some(m => m.winner && m[m.winner === 'a' ? 'b' : 'a']?.tag === id)) stato = { t: 'Riserva', c: 'ko' };
+      }
+      const live = (D.partite || []).find(p => String(p.num) === String(D.live));
+      if (live && [live.giocatori.blue.id, live.giocatori.red.id].includes(id)) stato = { t: '● In campo', c: 'on' };
+    }
+    return { v, l, n: ms.length, stato };
+  }
+
+  function carta(g, i, tipo) {
+    const pr = profilo(g.nome);
+    const tr = torneo(g.nome);
+    const lega = g.lega ? `<img src="img/${esc(g.lega)}.png" alt="${esc(g.legaNome || '')}" title="Miglior lega: ${esc(g.legaNome || '')}" loading="lazy">` : '<span class="noimg" aria-hidden="true">?</span>';
+    const chips = [
+      tipo === 'qual' ? `<span class="q">${g.pos}º qualificato</span>` : `<span class="a">Aspirante${g.match ? ' · ' + esc(g.match) : ''}</span>`,
+      tr.stato ? `<span class="${tr.stato.c}">${tr.stato.t}</span>` : '',
+      tr.n ? `<span>Torneo ${tr.v}-${tr.l}</span>` : '',
+    ].join('');
+    const sub = [pr?.clan, g.legaNome].filter(Boolean).map(esc).join(' · ');
+    const href = 'partite.html?da=partecipanti#g' + encodeURIComponent('n:' + g.nome);
+
+    let body = `<div class="pc-stats">
+        <div><b>${num(pr?.trofei ?? g.trofei)}</b><small>trofei</small></div>
+        <div><b>${pr ? num(pr.percentuale, 1) + '%' : '–'}</b><small>vittorie</small></div>
+        <div><b>${pr ? num(pr.livello) : '–'}</b><small>livello Re</small></div>
+        <div><b>${pr ? num(pr.carte16) : num(g.record)}</b><small>${pr ? 'carte LV16' : 'record'}</small></div>
+      </div>`;
+    if (pr?.mazzo?.length) {
+      body += `<div><div class="pc-lab"><span>Mazzo attuale</span><span>medio <b>${pr.mazzoMedio != null ? num(pr.mazzoMedio, 2) : '–'}</b> · ciclo <b>${pr.ciclo ?? '–'}</b></span></div>
+        <div class="pc-deck">${pr.mazzo.map(c => `<div class="c"><img src="img/carte/${esc(c.slug)}.webp" alt="${esc(c.nome)}" title="${esc(c.nome)}" loading="lazy" onerror="this.style.opacity=.25">${typeof c.costo === 'number' ? `<i>${c.costo}</i>` : ''}</div>`).join('')}</div></div>`;
+    }
+    if (pr?.forma?.length) {
+      const f = pr.forma.slice(0, 10);
+      body += `<div><div class="pc-lab"><span>Forma recente</span><span>${pr.percentualeRecente != null ? `<b>${pr.percentualeRecente}%</b> vinte` : ''}</span></div>
+        <div class="pc-form">${f.map(b => `<i class="${esc(b.r)}" title="${esc(b.modo)} · ${esc(b.corone)}">${esc(b.r)}</i>`).join('')}</div></div>`;
+    }
+    body += `<div class="pc-more">Scheda completa ›</div>`;
+
+    return `<li class="pc ${tipo}" style="--i:${i}">
+      <div class="pc-top">${lega}<div>
+        <div class="pc-name"><a href="${href}">${esc(g.nome)}</a></div>
+        ${g.soprannome ? `<div class="pc-nick">"${esc(g.soprannome)}"</div>` : ''}
+        ${sub ? `<div class="pc-sub">${sub}</div>` : ''}
+        <div class="pc-chips">${chips}</div>
+      </div></div>
+      <div class="pc-body">${body}</div></li>`;
+  }
+
+  let html = '';
+  if (!qual.length && !asp.length) {
+    html = `<div class="empty-box"><b>I partecipanti arrivano presto</b>Qui compaiono qualificati e aspiranti quando la classifica è pronta. Intanto guarda gli <a href="iscritti.html">iscritti</a>.</div>`;
+  } else {
+    if (aperte) html += `<p class="avviso"><b>Iscrizioni ancora aperte:</b> questi sono i primi 10 di adesso, la lista diventa definitiva alla chiusura.</p>`;
+    html += `<h2><span class="chip gold">1º-6º</span>Qualificati</h2><p>Entrano direttamente nel tabellone.</p>
+      <ol class="grid">${qual.map((g, i) => carta(g, i, 'qual')).join('')}</ol>`;
+    if (asp.length) html += `<h2><span class="chip blue">7º-10º</span>Aspiranti</h2><p>Si giocano gli ultimi 2 posti negli spareggi al meglio delle 5: chi vince AS1 entra come 7º, chi vince AS2 come 8º.</p>
+      <ol class="grid">${asp.map((g, i) => carta(g, i + qual.length, 'asp')).join('')}</ol>`;
+  }
+  app.innerHTML = html;
+
+  const pr0 = Object.values(P.profili || {}).map(p => p.letto).filter(Boolean).sort().pop();
+  const q = pr0 ? new Date(pr0) : (P.aggiornato ? new Date(P.aggiornato) : null);
+  document.getElementById('note').innerHTML =
+    (q && !isNaN(q) ? `Profili aggiornati il ${q.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' })} alle ${q.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })}. ` : '')
+    + 'I dati arrivano dall\'API ufficiale di Clash Royale e sono già pubblici nel gioco. Sono mostrati il nome in gioco e il soprannome scelto nel modulo. Classifica completa in <a href="iscritti.html">Iscritti</a>.';
+})();
+</script>
+</body>
+</html>
