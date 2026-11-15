@@ -93,6 +93,18 @@ const Bracket = (() => {
     return { matches, links, labels, bands: [0, LOW_HEAD] };
   }
 
+  // Spareggi aspiranti (regolamento): AS1 = 7º contro 10º, AS2 = 8º contro 9º, al meglio delle 5.
+  // players = [7º, 8º, 9º, 10º]. Chi vince entra nel tabellone come 7º (AS1) o 8º (AS2).
+  function aspiranti(cfg) {
+    const matches = [
+      { id: 'AS1', num: 'AS1', col: 0, y: TOP, a: seed(0), b: seed(3), bo: cfg.bo, cls: 'as', label: 'Spareggio AS1' },
+      { id: 'AS2', num: 'AS2', col: 0, y: TOP + STEP, a: seed(1), b: seed(2), bo: cfg.bo, cls: 'as', label: 'Spareggio AS2' },
+    ];
+    const labels = [['Spareggi', 0, 0],
+      ['→ 7º nel tabellone', 1, TOP + (H - HEAD) / 2, 'gold dest'], ['→ 8º nel tabellone', 1, TOP + STEP + (H - HEAD) / 2, 'gold dest']];
+    return { matches, links: [], labels, bands: [0] };
+  }
+
   // Grand Final nella riga del Winners; la rivincita subito a destra, sulla stessa riga
   function addGrand(cfg, matches, links, labels, wFinal, lFinal, col, y, num) {
     matches.push({ id: 'GF', num, col, y, a: win(wFinal), b: win(lFinal), bo: cfg.final_bo, cls: 'gf', label: 'Grand Final' });
@@ -118,8 +130,8 @@ const Bracket = (() => {
   ];
 
   function build(cfg) {
-    const layout = cfg.type === 'single' ? single(cfg) : cfg.size === 4 ? double4(cfg) : double8(cfg);
-    const cols = Math.max(...layout.matches.map(m => m.col)) + 1;
+    const layout = cfg.type === 'aspiranti' ? aspiranti(cfg) : cfg.type === 'single' ? single(cfg) : cfg.size === 4 ? double4(cfg) : double8(cfg);
+    const cols = Math.max(...layout.matches.map(m => m.col), ...layout.labels.map(l => l[1])) + 1;
     const bottom = Math.max(...layout.matches.map(m => m.y)) + H;
     return { ...layout, W, H, COL, HEAD, width: (cols - 1) * COL + W, height: bottom + 4 };
   }
@@ -146,7 +158,7 @@ const Bracket = (() => {
       return m[side];
     };
     // In ordine di gioco: una serie dipende sempre da serie con numero più basso
-    const ordered = [...layout.matches].sort((p, q) => p.num - q.num);
+    const ordered = [...layout.matches].sort((p, q) => (typeof p.num === 'number' && typeof q.num === 'number' ? p.num - q.num : 0));
     for (const m of ordered) {
       const r = { ...m, a: player(m.a), b: player(m.b), aText: sourceText(m.a, id => nums[id]), bText: sourceText(m.b, id => nums[id]) };
       r.exists = !m.onlyIf || byId[m.onlyIf[0]]?.winner === m.onlyIf[1];

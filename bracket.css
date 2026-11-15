@@ -55,6 +55,9 @@
   font-size: 17px; font-weight: 900;
 }
 .bk-match.gf .bk-num { background: var(--bk-gold); }
+/* Spareggi aspiranti: "AS1" nel quadratino al posto del numero */
+.bk-match.as .bk-num { font-size: 11px; letter-spacing: -0.02em; }
+.bk-head.dest { font-size: 12px; }
 .bk-rows { flex: 1; min-width: 0; height: 100%; display: grid; grid-template-rows: 1fr 1fr; }
 .bk-row { display: grid; grid-template-columns: 1fr 26px; min-width: 0; }
 .bk-name {

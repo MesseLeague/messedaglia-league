@@ -129,6 +129,7 @@
 
   /* Tabellone (grafica della diretta, ridimensionata per stare nella pagina) */
   .tab { position: relative; margin-top: 8px; padding: 22px 0 10px; background: radial-gradient(60% 50% at 50% 0, rgba(255,255,255,.04), transparent 70%); }
+  .tab-mini { padding-top: 10px; }
   .tab-scroll { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; padding: 0 20px 6px; }
   .tab-fit { position: relative; margin: 0 auto; }
   .tab-fit .bk-canvas { --bk-font: var(--display); transform-origin: 0 0; position: absolute; left: 0; top: 0; }
@@ -228,7 +229,7 @@
     .ov-side.red .ov-sub { justify-content: flex-end; }
     .decks { grid-template-columns: 1fr; gap: 40px; }
   }
-  @media (prefers-reduced-motion: reduce) { .half, .val, .cards { transition: none; } .ov.show, .ov-side { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .half, .val, .cards { transition: none; } .ov.show, .ov-side.blue, .ov-side.red { animation: none; } }
 </style>
 </head>
 <body>
@@ -315,7 +316,7 @@
   }
 
   function disegnaScheda() {
-    const p = D.partite.find(x => x.num === aperta);
+    const p = D.partite.find(x => String(x.num) === String(aperta));
     if (!p) return chiudi();
     const B = nome(p, 'blue'), R = nome(p, 'red');
     const gb = p.giocatori.blue, gr = p.giocatori.red;
@@ -327,7 +328,7 @@
     const res = g ? `Vince ${esc(g.vincitore === 'blue' ? B : R)}${g.corone ? ` · ${g.corone.blue}-${g.corone.red}` : ''}`
       : p.vincitore ? `🏆 Vince il match ${esc(p.vincitore === 'blue' ? B : R)}` : p.stato === 'in_corso' ? '● Match in corso' : '';
     ovIn.innerHTML = `
-      <div class="ov-bar"><span class="ov-chip" id="ov-title">Match ${p.num}${p.turno ? ' · ' + esc(p.turno) : ''} · BO${p.formato}</span><span class="grow"></span><button class="ov-x" id="ov-x" aria-label="Chiudi">✕</button></div>
+      <div class="ov-bar"><span class="ov-chip" id="ov-title">${quale(p.num)}${p.turno && /^\d+$/.test(String(p.num)) ? ' · ' + esc(p.turno) : ''} · BO${p.formato}</span><span class="grow"></span><button class="ov-x" id="ov-x" aria-label="Chiudi">✕</button></div>
       <div class="ov-score"><span class="b">${p.punteggio.blue}</span><span class="r">${p.punteggio.red}</span></div>
       <div class="ov-head">
         <div class="ov-side blue${p.vincitore === 'blue' ? ' win' : ''}"><div class="ov-name">${esc(B)}</div>${lega(gb)}<div class="ov-sub">${sub(gb)}</div></div>
@@ -343,7 +344,7 @@
   }
 
   function apri(n, t) {
-    const p = D.partite.find(x => x.num === n);
+    const p = D.partite.find(x => String(x.num) === String(n));
     if (!p) return;
     aperta = n;
     tab = t ?? (p.games.length ? p.games.length : 0);   // apre sull'ultimo game giocato
@@ -379,15 +380,15 @@
     html += gruppi.map(gr => `<h2 class="turno">${esc(gr.t)}</h2><div class="lista">${gr.l.map(p => {
       const lose = s => p.vincitore && p.vincitore !== s ? ' lose' : '';
       const foot = p.vincitore ? `🏆 Vince <b>${esc(nome(p, p.vincitore))}</b> · ${p.games.length} game` : p.stato === 'in_corso' ? `Game ${p.games.length + 1} in corso` : `${p.games.length} game giocati`;
-      return `<button class="m" data-m="${p.num}" aria-label="Match ${p.num}: ${esc(nome(p, 'blue'))} contro ${esc(nome(p, 'red'))}">
-        <div class="m-top"><span>Match ${p.num} · BO${p.formato}</span><span class="grow"></span>${stato(p)}</div>
+      return `<button class="m" data-m="${p.num}" aria-label="${quale(p.num)}: ${esc(nome(p, 'blue'))} contro ${esc(nome(p, 'red'))}">
+        <div class="m-top"><span>${quale(p.num)} · BO${p.formato}</span><span class="grow"></span>${stato(p)}</div>
         <div class="m-vs"><div class="m-side blue${lose('blue')}">${lega(p.giocatori.blue)}<span>${esc(nome(p, 'blue'))}</span></div>
         <div class="m-score"><i class="b">${p.punteggio.blue}</i><i class="r">${p.punteggio.red}</i></div>
         <div class="m-side red${lose('red')}"><span>${esc(nome(p, 'red'))}</span>${lega(p.giocatori.red)}</div></div>
         <div class="m-foot">${foot}</div></button>`;
     }).join('')}</div>`).join('');
     app.innerHTML = html;
-    app.querySelectorAll('[data-m]').forEach(b => b.onclick = () => apri(+b.dataset.m));
+    app.querySelectorAll('[data-m]').forEach(b => b.onclick = () => apri(b.dataset.m));
   }
 
   // ---------- Tabellone ----------
@@ -398,60 +399,92 @@
     clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('show'), 3200);
   }
 
-  function disegnaTabellone() {
-    const T = D.tabellone, P = D.partite || [];
+  // Etichetta di un match: numero del tabellone oppure spareggio AS1/AS2
+  const quale = n => /^\d+$/.test(String(n)) ? `Match ${n}` : `Spareggio ${n}`;
+
+  // Spareggi aspiranti: dalla regia (partite.js) o, se non ancora pubblicati, dalla classifica a iscrizioni chiuse
+  function aspirantiDaMostrare() {
+    if (D.aspiranti) return D.aspiranti;
+    const C = window.ML_PUBBLICO || {};
+    if (!C.iscrizioni || C.iscrizioni.aperte !== false) return null;
+    const asp = (C.classifica || []).filter(g => g.esito === 'asp' && g.posto);
+    if (asp.length < 2) return null;
+    const players = [7, 8, 9, 10].map(p => { const g = asp.find(x => x.posto === p); return g ? { name: g.nome, tag: 'c' + p } : { name: '', tag: '' }; });
+    return { config: { name: 'Spareggi aspiranti', type: 'aspiranti', size: 4, bo: 5, final_bo: 5, reset: false, players }, results: {} };
+  }
+
+  // Disegna un tabellone e collega i match alle schede con gli stats
+  function tabellone(T, id) {
+    const P = D.partite || [];
     const res = Bracket.resolve(T);
-    const byNum = Object.fromEntries(res.matches.map(m => [m.num, m]));
-    const pNum = Object.fromEntries(P.map(p => [p.num, p]));
+    const byNum = Object.fromEntries(res.matches.map(m => [String(m.num), m]));
+    const pNum = Object.fromEntries(P.map(p => [String(p.num), p]));
     // Punteggi delle serie finite, orientati come nel tabellone (a = sopra, b = sotto)
     const scores = {};
     let live = null;
     for (const p of P) {
-      const m = byNum[p.num];
+      const m = byNum[String(p.num)];
       if (!m || !m.a || !m.b) continue;
       const aBlue = m.a.tag === p.giocatori.blue.id;
       if (p.vincitore) scores[p.num] = aBlue ? { a: p.punteggio.blue, b: p.punteggio.red } : { a: p.punteggio.red, b: p.punteggio.blue };
-      if (p.num === D.live && p.giocatori.blue.id && p.giocatori.red.id) {
+      if (String(p.num) === String(D.live) && p.giocatori.blue.id && p.giocatori.red.id) {
         live = { tags: [p.giocatori.blue.id, p.giocatori.red.id], wins: { [p.giocatori.blue.id]: p.punteggio.blue, [p.giocatori.red.id]: p.punteggio.red } };
       }
     }
-    const livePart = P.find(p => p.num === D.live);
-    let html = livePart ? `<button class="livebar" data-m="${livePart.num}"><span class="rec">In corso</span><b>${esc(nome(livePart, 'blue'))} ${livePart.punteggio.blue}-${livePart.punteggio.red} ${esc(nome(livePart, 'red'))}</b><span class="muted">Match ${livePart.num}${livePart.turno ? ' · ' + esc(livePart.turno) : ''}</span><span class="grow"></span><span>Stats →</span></button>` : '';
-    if (res.champion) html += `<div class="champ">🏆 Campione d'Istituto: <b>${esc(res.champion.name)}</b></div>`;
-    html += `<div class="tab"><div class="tab-scroll"><div class="tab-fit" id="tab-fit"><div class="bk-canvas" id="bk"></div></div></div>
-      <div class="legenda"><span><i class="l1"></i>In corso</span><span><i class="l2"></i>Vincitore</span><span><i class="l3"></i>Eliminato dal match</span><span>📊 Stats disponibili: tocca il match</span></div></div>`;
-    app.innerHTML = html;
-    const canvas = document.getElementById('bk');
+    const canvas = document.getElementById(id);
     const layout = Bracket.render(canvas, T, { live, scores });
     canvas.querySelectorAll('.bk-match').forEach(el => {
-      const n = +el.dataset.num, m = byNum[n], p = pNum[n];
-      if (p) { el.classList.add('has-data'); el.tabIndex = 0; el.setAttribute('role', 'button'); el.setAttribute('aria-label', `Match ${n}: statistiche`); }
+      const n = el.dataset.num, m = byNum[n], p = pNum[n];
+      if (p) { el.classList.add('has-data'); el.tabIndex = 0; el.setAttribute('role', 'button'); el.setAttribute('aria-label', `${quale(n)}: statistiche`); }
       const go = () => {
         if (p) return apri(n);
         if (!m.exists) return toast(`Il match ${n} si gioca solo se serve la rivincita.`);
-        toast(m.ready ? `Match ${n} · ${m.label}: ${m.a.name} contro ${m.b.name}, ancora da giocare.` : `Match ${n} · ${m.label}: si aspetta ${[!m.a && m.aText, !m.b && m.bText].filter(Boolean).join(' e ').toLowerCase()}.`);
+        toast(m.ready ? `${quale(n)} · ${m.label}: ${m.a.name} contro ${m.b.name}, ancora da giocare.`
+          : `${quale(n)} · ${m.label}: si aspetta ${[!m.a && m.aText, !m.b && m.bText].filter(Boolean).join(' e ').toLowerCase()}.`);
       };
       el.addEventListener('click', go);
       el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     });
-    app.querySelectorAll('.livebar[data-m]').forEach(b => b.onclick = () => apri(+b.dataset.m));
-    adatta(layout);
+    return { res, layout, canvas, fit: canvas.parentElement };
   }
 
-  // Il tabellone (largo ~1000 px) si rimpicciolisce per stare nella pagina; sul telefono si scorre di lato
-  let ultimoLayout = null;
-  function adatta(layout) {
-    layout = layout || ultimoLayout;
-    if (!layout) return;
-    ultimoLayout = layout;
-    const fit = document.getElementById('tab-fit'), canvas = document.getElementById('bk');
-    if (!fit) return;
-    const W = layout.width + 50, H = layout.height + 10;
-    const box = fit.parentElement.clientWidth - 40;
-    const k = Math.max(0.62, Math.min(1.15, box / W));
-    canvas.style.transform = `translateX(${25 * k}px) scale(${k})`;
-    fit.style.width = W * k + 'px';
-    fit.style.height = H * k + 'px';
+  let disegnati = [];
+  function disegnaTabellone() {
+    const P = D.partite || [];
+    const A = aspirantiDaMostrare();
+    const livePart = P.find(p => String(p.num) === String(D.live));
+    let html = livePart ? `<button class="livebar" data-m="${esc(livePart.num)}"><span class="rec">In corso</span><b>${esc(nome(livePart, 'blue'))} ${livePart.punteggio.blue}-${livePart.punteggio.red} ${esc(nome(livePart, 'red'))}</b><span class="muted">${quale(livePart.num)}${livePart.turno && /^\d+$/.test(String(livePart.num)) ? ' · ' + esc(livePart.turno) : ''}</span><span class="grow"></span><span>Stats →</span></button>` : '';
+    html += '<div id="champ"></div>';
+    if (A) {
+      html += `<h2 class="turno">Spareggi aspiranti</h2>
+        <p class="muted" style="margin:-4px 0 0">Prima del torneo, al meglio delle 5: chi vince AS1 entra nel tabellone come 7º, chi vince AS2 come 8º.${D.aspiranti ? '' : ' Giocatori dalla classifica delle iscrizioni.'}</p>
+        <div class="tab tab-mini"><div class="tab-scroll"><div class="tab-fit"><div class="bk-canvas" id="bk-asp"></div></div></div></div>
+        <h2 class="turno">Tabellone</h2>`;
+    }
+    html += `<div class="tab"><div class="tab-scroll"><div class="tab-fit"><div class="bk-canvas" id="bk"></div></div></div>
+      <div class="legenda"><span><i class="l1"></i>In corso</span><span><i class="l2"></i>Vincitore</span><span><i class="l3"></i>Eliminato dal match</span><span>📊 Stats disponibili: tocca il match</span></div></div>`;
+    app.innerHTML = html;
+    disegnati = [];
+    if (A) disegnati.push(tabellone(A, 'bk-asp'));
+    const main = tabellone(D.tabellone, 'bk');
+    disegnati.push(main);
+    if (main.res.champion) document.getElementById('champ').innerHTML = `<div class="champ">🏆 Campione d'Istituto: <b>${esc(main.res.champion.name)}</b></div>`;
+    app.querySelectorAll('.livebar[data-m]').forEach(b => b.onclick = () => apri(b.dataset.m));
+    adatta();
+  }
+
+  // I tabelloni si rimpiccioliscono per stare nella pagina (stessa scala per tutti); sul telefono si scorrono di lato
+  function adatta() {
+    if (!disegnati.length) return;
+    const box = disegnati[0].fit.parentElement.clientWidth - 40;
+    const widest = Math.max(...disegnati.map(d => d.layout.width + 50));
+    const k = Math.max(0.62, Math.min(1.15, box / widest));
+    for (const d of disegnati) {
+      const W = d.layout.width + 50, H = d.layout.height + 10;
+      d.canvas.style.transform = `translateX(${25 * k}px) scale(${k})`;
+      d.fit.style.width = W * k + 'px';
+      d.fit.style.height = H * k + 'px';
+    }
   }
   addEventListener('resize', () => adatta());
 
@@ -464,8 +497,8 @@
       : '';
   }
   disegna();
-  const m = /^#m(\d+)$/.exec(location.hash);
-  if (m) apri(+m[1]);
+  const m = /^#m(\w+)$/.exec(location.hash);
+  if (m) apri(m[1]);
 
   // Durante il torneo ricarica i dati ogni minuto, senza ricaricare la pagina
   setInterval(async () => {
