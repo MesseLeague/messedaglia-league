@@ -3,7 +3,7 @@
 // Non modificarlo a mano. Solo dati pubblici: nomi in gioco, statistiche, mazzi.
 // =================================================================
 window.ML_PARTITE = {
- "aggiornato": "2026-11-15T13:43:39+00:00",
+ "aggiornato": "2026-11-15T13:44:11+00:00",
  "torneo": "Messedaglia 2026",
  "live": null,
  "tabellone": {
@@ -16,36 +16,36 @@ window.ML_PARTITE = {
    "reset": true,
    "players": [
     {
-     "name": "Blax13e",
-     "tag": "p0"
+     "name": "",
+     "tag": ""
     },
     {
-     "name": "IL PIÙ PRO",
-     "tag": "p1"
+     "name": "",
+     "tag": ""
     },
     {
-     "name": "Light Bulb",
-     "tag": "p2"
+     "name": "",
+     "tag": ""
     },
     {
-     "name": "Mohamed Light",
-     "tag": "p3"
+     "name": "",
+     "tag": ""
     },
     {
-     "name": "Ryley",
-     "tag": "p4"
+     "name": "",
+     "tag": ""
     },
     {
-     "name": "jagoix",
-     "tag": "p5"
+     "name": "",
+     "tag": ""
     },
     {
-     "name": "leomo",
-     "tag": "p6"
+     "name": "",
+     "tag": ""
     },
     {
-     "name": "SK Morten",
-     "tag": "p7"
+     "name": "",
+     "tag": ""
     }
    ]
   },
