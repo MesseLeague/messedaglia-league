@@ -825,7 +825,7 @@ function setupReveal() {
 const crownsEl = document.getElementById('crowns');
 const statusEl = document.getElementById('status');
 let format = 5;
-let games = ['blue', 'red', 'blue'];   // serie d'esempio a metà, così la barra si vede piena
+let games = [];   // si parte sempre da 0-0, anche ricaricando la pagina
 const needed = () => Math.floor(format / 2) + 1;
 const wins = side => games.filter(g => g === side).length;
 const winner = () => ['blue', 'red'].find(s => wins(s) >= needed()) || null;
