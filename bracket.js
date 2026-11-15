@@ -219,7 +219,7 @@ const Bracket = (() => {
         const state = live ? 'live' : m.winner ? (m.winner === side ? 'won' : 'lost') : p ? '' : 'tbd';
         const fin = opts.scores?.[m.num];
         const score = live ? (opts.live.wins[p.tag] ?? 0) : (m.winner && fin ? (fin[side] ?? '') : '');
-        return `<div class="bk-row ${color} ${state}"><span class="bk-name">${esc(p?.name || m[side + 'Text'])}</span><span class="bk-score">${score}</span></div>`;
+        return `<div class="bk-row ${color} ${state}"${p?.tag ? ` data-tag="${esc(p.tag)}"` : ''}><span class="bk-name">${esc(p?.name || m[side + 'Text'])}</span><span class="bk-score">${score}</span></div>`;
       };
       html += `<div class="bk-match ${m.cls || ''}${m.exists ? '' : ' ghost'}${live ? ' is-live' : ''}${opts.scores?.[m.num] ? ' has-score' : ''}" data-id="${m.id}" data-num="${m.num}" style="left:${x(m.col)}px;top:${m.y}px;width:${W}px;height:${H}px;--d:${(m.col * 0.08).toFixed(2)}s">
         <span class="bk-num" style="width:${NUM - 4}px">${m.num}</span>

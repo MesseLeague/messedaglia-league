@@ -225,6 +225,74 @@
   .note2 { margin-top: 26px; color: var(--muted); font-size: .85rem; text-align: center; }
   body.ov-open { overflow: hidden; }
 
+  /* ----- Nomi cliccabili → scheda giocatore ----- */
+  .bk-canvas .bk-pl { cursor: pointer; text-decoration: underline transparent 2px; text-underline-offset: 3px; transition: text-decoration-color .15s; }
+  .bk-canvas .bk-pl:hover { text-decoration-color: currentColor; }
+  .pl-link { all: unset; cursor: pointer; text-decoration: underline transparent 3px; text-underline-offset: 6px; transition: text-decoration-color .15s; }
+  .pl-link:hover { text-decoration-color: currentColor; }
+  .pl-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .pl-link small { display: block; margin-top: 8px; font: 600 .8rem/1 var(--body); text-shadow: none; opacity: .85; }
+  .ov-back { padding: 0 14px; height: 44px; border: 0; background: rgba(255,255,255,.1); color: #fff; cursor: pointer; font: 400 .78rem/1 var(--display); text-transform: uppercase; }
+  .ov-back:hover { background: var(--blue); }
+  .ov-back { white-space: nowrap; }
+  @media (max-width: 480px) { .ov-back + .ov-chip { display: none; } }
+
+  /* ----- Scheda giocatore ----- */
+  .pl-head { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: clamp(14px, 3vw, 28px); margin-top: 14px; padding: clamp(18px, 3vw, 28px);
+             background: linear-gradient(110deg, rgba(31, 116, 208, .55), rgba(13, 17, 32, .9) 45%, rgba(13, 17, 32, .9) 55%, rgba(214, 48, 63, .55)); animation: from-l .6s cubic-bezier(.12, .9, .2, 1) both; }
+  .pl-head img { width: clamp(76px, 14vw, 130px); filter: drop-shadow(0 10px 20px rgba(0,0,0,.5)); }
+  .pl-head .noimg { width: clamp(76px, 14vw, 130px); aspect-ratio: 1; display: grid; place-items: center; background: rgba(255,255,255,.06); font: 400 2.6rem/1 var(--display); color: var(--muted); }
+  .pl-name { font: 400 clamp(1.7rem, 6vw, 3.4rem)/1 var(--display); text-transform: uppercase; overflow-wrap: anywhere; text-shadow: 0 4px 16px rgba(0,0,0,.45); }
+  .pl-stato { display: inline-block; margin-top: 12px; padding: 6px 10px; background: #fff; color: #000; font: 400 .78rem/1.1 var(--display); text-transform: uppercase; letter-spacing: .04em; }
+  .pl-stato.gold { background: var(--gold); } .pl-stato.on { background: var(--red); color: #fff; } .pl-stato.ko { background: var(--grey); color: #fff; }
+  .pl-info { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; color: #d5dae4; font: 600 .88rem/1.3 var(--body); }
+  .pl-info b { color: #fff; }
+
+  .pl-h { display: flex; align-items: baseline; gap: 10px; margin: 34px 0 12px; font: 400 1rem/1 var(--display); text-transform: uppercase; letter-spacing: .06em; }
+  .pl-h small { font: 600 .82rem/1 var(--body); color: var(--muted); text-transform: none; letter-spacing: 0; }
+  .pl-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); gap: 8px; }
+  .pl-t { position: relative; padding: 14px 16px 16px; background: var(--panel); opacity: 0; transform: translateY(10px); transition: opacity .35s, transform .5s cubic-bezier(.12, .9, .2, 1); transition-delay: calc(var(--i, 0) * .04s); }
+  .open .pl-t { opacity: 1; transform: none; }
+  .pl-t span { display: block; font: 400 .7rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .pl-t strong { display: block; margin: 8px 0 4px; font: 400 clamp(1.7rem, 4.6vw, 2.4rem)/1 var(--display); }
+  .pl-t strong small { font-size: .5em; margin-left: .15em; color: var(--muted); }
+  .pl-t em { font: 600 .8rem/1.3 var(--body); font-style: normal; color: var(--muted); }
+  .pl-t.best { box-shadow: inset 0 -4px 0 var(--gold); }
+  .pl-t.best em::after { content: " · meglio della media"; color: var(--gold); }
+
+  .pl-ms { display: grid; gap: 6px; }
+  .pl-m { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr) auto auto; align-items: center; gap: 12px; width: 100%; padding: 12px 14px; border: 0; background: var(--panel); color: #fff; cursor: pointer; text-align: left; font: inherit; box-shadow: inset 4px 0 0 var(--grey); transition: transform .15s; }
+  .pl-m:hover { transform: translateX(3px); }
+  .pl-m:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .pl-m.w { box-shadow: inset 4px 0 0 var(--gold); } .pl-m.l { box-shadow: inset 4px 0 0 var(--red); } .pl-m.on { box-shadow: inset 4px 0 0 #fff; }
+  .pl-m-t { font: 400 .78rem/1.25 var(--display); text-transform: uppercase; color: var(--muted); }
+  .pl-m-vs { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pl-m-vs b { font: 400 .95rem/1 var(--display); text-transform: uppercase; }
+  .pl-m-sc { font: 400 1.3rem/1 var(--display); }
+  .pl-m-r { min-width: 74px; padding: 5px 8px; text-align: center; font: 400 .72rem/1 var(--display); text-transform: uppercase; background: var(--grey); }
+  .pl-m.w .pl-m-r { background: var(--gold); color: #000; } .pl-m.l .pl-m-r { background: var(--red); } .pl-m.on .pl-m-r { background: #fff; color: #000; }
+
+  .pl-cards { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: clamp(10px, 2vw, 20px) clamp(8px, 1.6vw, 16px); max-width: 860px; margin: 0; padding: 8px 4px 0; }
+  .pl-cards .card b { position: absolute; right: -4%; bottom: -4%; padding: 3px 6px; background: #fff; color: #000; font: 400 .72rem/1 var(--display); }
+  .pl-decks { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr)); gap: 8px; }
+  .pl-deck { padding: 26px 14px 16px; background: var(--panel); }
+  .pl-deck .cost { font-size: clamp(.62rem, 1.2vw, .85rem); -webkit-text-stroke-width: 2px; }
+  .pl-deck-t { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: -12px 0 16px; font: 400 .74rem/1.2 var(--display); text-transform: uppercase; color: var(--muted); }
+  .pl-deck-t i { padding: 4px 7px; font-style: normal; background: var(--grey); color: #fff; }
+  .pl-deck-t i.w { background: var(--gold); color: #000; } .pl-deck-t i.l { background: var(--red); }
+  .pl-deck .cards { grid-template-columns: repeat(8, minmax(0, 1fr)); max-width: none; }
+  .pl-deck .cards.has-tower { grid-template-columns: repeat(9, minmax(0, 1fr)); max-width: none; }
+  .pl-deck .cards .tower { grid-row: auto; grid-column: auto; order: 9; opacity: .9; }
+
+  @media (max-width: 640px) {
+    .pl-m { grid-template-columns: minmax(0, 1fr) auto; }
+    .pl-m-t { grid-column: 1 / -1; }
+    .pl-m-r { grid-column: 2; grid-row: 2 / span 2; align-self: center; }
+    .pl-cards, .pl-deck .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .pl-deck .cards.has-tower { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .pl-deck .cards .tower { display: none; }
+  }
+
   @media (max-width: 480px) { .m-side img { display: none; } .m-side { font-size: .85rem; } }
   @media (max-width: 640px) {
     .ov-head { grid-template-columns: 1fr; }
@@ -234,7 +302,7 @@
     .ov-side.red .ov-sub { justify-content: flex-end; }
     .decks { grid-template-columns: 1fr; gap: 40px; }
   }
-  @media (prefers-reduced-motion: reduce) { .half, .val, .cards { transition: none; } .ov.show, .ov-side.blue, .ov-side.red { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .half, .val, .cards, .pl-t { transition: none; } .pl-head { animation: none; } .ov.show, .ov-side.blue, .ov-side.red { animation: none; } }
 </style>
 </head>
 <body>
@@ -243,7 +311,7 @@
 <main>
   <span class="chip">Finali d'Istituto</span>
   <h1>Partite</h1>
-  <p class="lead">Il tabellone del torneo, aggiornato dalla regia mentre si gioca. <b>Tocca un match</b> per vedere game per game corone, mazzi, costo medio ed elisir sprecato.</p>
+  <p class="lead">Il tabellone del torneo, aggiornato dalla regia mentre si gioca. <b>Tocca un match</b> per vedere game per game corone, mazzi, costo medio ed elisir sprecato, oppure <b>il nome di un giocatore</b> per la sua scheda con le statistiche di tutto il torneo.</p>
   <div id="app"></div>
   <p class="note2" id="agg"></p>
 </main>
@@ -270,6 +338,8 @@
   const app = document.getElementById('app'), ov = document.getElementById('ov'), ovIn = document.getElementById('ov-in');
   let D = window.ML_PARTITE || { partite: [] };
   let aperta = null, tab = 0;
+  let giocatore = null;     // id della scheda giocatore aperta (p0, a1… o "n:Nome")
+  let indietro = null;      // { label, go } bottone "←" nella barra della scheda
 
   const nome = (p, side) => p.giocatori[side].nome || (side === 'blue' ? 'Blu' : 'Rosso');
   const lega = g => g.lega ? `<img src="img/${esc(g.lega)}.png" alt="${esc(g.legaNome || '')}" title="Miglior lega: ${esc(g.legaNome || '')}" loading="lazy">` : '';
@@ -323,11 +393,200 @@
       </div>`;
   }
 
+  // ---------- Scheda giocatore: tutte le sue partite e statistiche del torneo ----------
+  const chiave = g => g ? (g.id || (g.nome ? 'n:' + g.nome : null)) : null;
+  const media = v => { const n = v.filter(x => typeof x === 'number' && !isNaN(x)); return n.length ? n.reduce((s, x) => s + x, 0) / n.length : null; };
+  const base = c => String(c).replace(/^(evo|hero)_/, '');
+
+  function partiteDi(id) {
+    return (D.partite || []).flatMap(p => ['blue', 'red'].filter(s => chiave(p.giocatori[s]) === id).map(s => ({ p, s, o: s === 'blue' ? 'red' : 'blue' })));
+  }
+  // Tutti i game con statistiche (non segnati a mano), visti dal lato `s`
+  const gameDi = ms => ms.flatMap(({ p, s, o }) => p.games.map((g, i) => ({ p, g, i, s, o }))).filter(x => !x.g.manuale && x.g.corone);
+
+  // Media di tutti i giocatori del torneo, per confronto
+  function mediaTorneo() {
+    const tutti = (D.partite || []).flatMap(p => p.games.filter(g => !g.manuale && g.corone).flatMap(g => ['blue', 'red'].map(s => ({ g, s }))));
+    return {
+      corone: media(tutti.map(x => x.g.corone?.[x.s])),
+      medio: media(tutti.map(x => medio(x.g, x.s))),
+      ciclo: media(tutti.map(x => ciclo(x.g.costi?.[x.s]))),
+      sprecato: media(tutti.map(x => x.g.sprecato?.[x.s])),
+      torri: media(tutti.map(x => torri(x.g, x.s))),
+    };
+  }
+
+  // Nome e dati del giocatore: dall'ultima partita giocata, altrimenti dal tabellone, poi dalla classifica iscritti
+  function chiE(id) {
+    const ms = partiteDi(id);
+    const ultimo = ms.length ? ms[ms.length - 1].p.giocatori[ms[ms.length - 1].s] : null;
+    const cfgs = [D.tabellone, D.aspiranti].filter(Boolean).flatMap(T => T.config.players || []);
+    const nome = ultimo?.nome || cfgs.find(p => p.tag === id)?.name || (String(id).startsWith('n:') ? String(id).slice(2) : '');
+    const cl = ((window.ML_PUBBLICO || {}).classifica || []).find(g => g.nome && g.nome.toLowerCase() === String(nome).toLowerCase());
+    const g = ultimo || (cl ? { trofei: cl.trofei, lega: cl.lega, legaNome: cl.legaNome } : {});
+    return { nome, g, cl };
+  }
+
+  // A che punto è nel torneo
+  function statoTorneo(id) {
+    if (typeof Bracket === 'undefined') return null;
+    const tocca = m => m.a?.tag === id || m.b?.tag === id;
+    const perso = m => m.winner && m[m.winner === 'a' ? 'b' : 'a']?.tag === id;
+    if (D.tabellone) {
+      const r = Bracket.resolve(D.tabellone);
+      if (r.champion && r.champion.tag === id) return { t: "🏆 Campione d'Istituto", c: 'gold' };
+      if (r.matches.some(tocca)) {
+        const live = (D.partite || []).find(p => String(p.num) === String(D.live));
+        if (live && [live.giocatori.blue.id, live.giocatori.red.id].includes(id)) return { t: '● In campo adesso', c: 'on' };
+        if (r.matches.some(m => m.exists && !m.winner && tocca(m))) return { t: 'Ancora in gara', c: '' };
+        const ko = r.matches.filter(perso).pop();
+        if (ko && r.champion && /^(grand final|rivincita|finale)$/i.test(ko.label || '')) return { t: '🥈 Finalista', c: '' };
+        return { t: 'Eliminato' + (ko ? ' · ' + ko.label : ''), c: 'ko' };
+      }
+    }
+    if (D.aspiranti) {
+      const r = Bracket.resolve(D.aspiranti);
+      if (r.matches.some(m => m.winner && perso(m))) return { t: 'Riserva · spareggio perso', c: 'ko' };
+      if (r.matches.some(tocca)) return { t: 'Spareggio da giocare', c: '' };
+    }
+    return null;
+  }
+
+  function disegnaGiocatore() {
+    const id = giocatore;
+    const { nome: N, g: info, cl } = chiE(id);
+    if (!N) return chiudi();
+    const ms = partiteDi(id), gs = gameDi(ms);
+    const tuttiG = ms.flatMap(({ p, s, o }) => p.games.map(g => ({ g, s, o })));
+    const mV = ms.filter(m => m.p.vincitore === m.s).length, mP = ms.filter(m => m.p.vincitore === m.o).length;
+    const gV = tuttiG.filter(x => x.g.vincitore === x.s).length, gP = tuttiG.filter(x => x.g.vincitore === x.o).length;
+    const cF = gs.reduce((s, x) => s + (x.g.corone[x.s] || 0), 0), cS = gs.reduce((s, x) => s + (x.g.corone[x.o] || 0), 0);
+    const tre = gs.filter(x => x.g.corone[x.s] >= 3).length;
+    const io = {
+      corone: media(gs.map(x => x.g.corone[x.s])),
+      medio: media(gs.map(x => medio(x.g, x.s))),
+      ciclo: media(gs.map(x => ciclo(x.g.costi?.[x.s]))),
+      sprecato: media(gs.map(x => x.g.sprecato?.[x.s])),
+      torri: media(gs.map(x => torri(x.g, x.s))),
+    };
+    const T = mediaTorneo();
+    let i = 0;
+    const tile = (lab, val, sub = '', best = false) => `<div class="pl-t${best ? ' best' : ''}" style="--i:${i++}"><span>${lab}</span><strong>${val}</strong><em>${sub}</em></div>`;
+    const conf = (k, d, low = false) => {
+      const a = io[k], b = T[k];
+      const best = typeof a === 'number' && typeof b === 'number' && gs.length && (low ? a < b - 1e-9 : a > b + 1e-9) && ms.length < (D.partite || []).length;
+      return [num(a, d), b == null ? '' : 'media del torneo ' + num(b, d), best];
+    };
+    const pct = (v, p) => v + p ? Math.round(v / (v + p) * 100) + '%' : '–';
+
+    // Carte più usate (evo e hero contano come la carta base, si mostra la versione usata più spesso)
+    const conta = {};
+    for (const x of gs) (x.g.mazzi?.[x.s] || []).forEach((c, k) => {
+      const b = base(c), e = conta[b] || (conta[b] = { n: 0, v: {}, costo: null });
+      e.n++; e.v[c] = (e.v[c] || 0) + 1;
+      const cc = x.g.costi?.[x.s]?.[k];
+      if (typeof cc === 'number') e.costo = cc;
+    });
+    const top = Object.entries(conta).sort((a, b) => b[1].n - a[1].n || a[0].localeCompare(b[0])).slice(0, 8)
+      .map(([b, e]) => ({ c: Object.entries(e.v).sort((x, y) => y[1] - x[1])[0][0], n: e.n, costo: e.costo }));
+    const evo = gs.reduce((s, x) => s + (x.g.mazzi?.[x.s] || []).filter(c => /^evo_/.test(c)).length, 0);
+    const hero = gs.reduce((s, x) => s + (x.g.mazzi?.[x.s] || []).filter(c => /^hero_/.test(c)).length, 0);
+    const truppe = {};
+    gs.forEach(x => { const t = x.g.truppa?.[x.s]; if (t) truppe[t] = (truppe[t] || 0) + 1; });
+    const truppa = Object.entries(truppe).sort((a, b) => b[1] - a[1])[0];
+    const carta = c => `<img src="img/carte/${esc(c)}.webp" alt="${esc(base(c).replace(/_/g, ' '))}" title="${esc(base(c).replace(/_/g, ' '))}" loading="lazy" onerror="this.style.opacity=.25">`;
+
+    const stato = statoTorneo(id) || (cl ? (cl.esito === 'qual' ? { t: `Qualificato · ${cl.posto || cl.pos}º posto`, c: 'gold' }
+      : cl.esito === 'asp' ? { t: cl.match ? `Aspirante · spareggio ${cl.match}` : 'Aspirante · spareggi', c: '' }
+      : { t: 'Non qualificato', c: 'ko' }) : null);
+    const infos = [
+      info.clan && `<span>${esc(info.clan)}</span>`,
+      info.trofei != null && `<span><b>${num(info.trofei, 0)}</b> trofei</span>`,
+      info.vittorie != null && `<span><b>${num(info.vittorie)}%</b> vittorie in carriera</span>`,
+      info.livello != null && `<span>Re livello <b>${num(info.livello, 0)}</b></span>`,
+      info.legaNome && `<span>Miglior lega <b>${esc(info.legaNome)}</b></span>`,
+      cl && cl.record != null && `<span>Record <b>${num(cl.record, 0)}</b> trofei</span>`,
+      cl && cl.soprannome && `<span>"${esc(cl.soprannome)}"</span>`,
+      cl && cl.pos && `<span><b>${cl.pos}º</b> nella classifica iscritti</span>`,
+    ].filter(Boolean).join('');
+    const leg = info.lega || cl?.lega;
+    const img = leg ? `<img src="img/${esc(leg)}.png" alt="${esc(info.legaNome || cl?.legaNome || '')}">` : `<span class="noimg" aria-hidden="true">?</span>`;
+
+    let body = '';
+    if (!ms.length) {
+      body = '<div class="vuoto" style="margin-top:26px"><b>Ancora nessun match</b>Le statistiche compaiono qui appena gioca il suo primo match del torneo.</div>';
+    } else {
+      body += `<h3 class="pl-h">Statistiche del torneo <small>${ms.length} match · ${tuttiG.length} game${gs.length < tuttiG.length ? ` (${tuttiG.length - gs.length} segnati a mano, senza stats)` : ''}</small></h3>
+        <div class="pl-tiles">
+          ${tile('Match vinti', `${mV}<small>/ ${mV + mP || ms.length}</small>`, ms.length - mV - mP ? `${ms.length - mV - mP} in corso o sospeso` : (mP ? `${mP} persi` : 'nessuna sconfitta'))}
+          ${tile('Game vinti', `${gV}-${gP}`, `${pct(gV, gP)} dei game`)}
+          ${gs.length ? tile('Corone fatte', `${cF}-${cS}`, `subite ${cS} · ${num(io.corone)} a game`) : ''}
+          ${gs.length ? tile('Vittorie a 3 corone', tre, tre ? `${pct(tre, gs.length - tre)} dei game` : 'ancora nessuna') : ''}
+          ${gs.length ? tile('Costo medio', ...conf('medio', 2, true)) : ''}
+          ${gs.length ? tile('Ciclo 4 carte', ...conf('ciclo', 1, true)) : ''}
+          ${gs.length ? tile('Elisir sprecato', ...conf('sprecato', 1, true)) : ''}
+          ${gs.length ? tile('HP torri rimaste', ...conf('torri', 0)) : ''}
+          ${gs.length ? tile('Evo e hero', `${evo}<small>evo</small> ${hero}<small>hero</small>`, 'giocate in tutti i game') : ''}
+        </div>`;
+
+      body += `<h3 class="pl-h">Percorso <small>tocca un match per i dettagli</small></h3><div class="pl-ms">${ms.map(({ p, s, o }) => {
+        const r = p.vincitore === s ? 'w' : p.vincitore === o ? 'l' : p.stato === 'in_corso' ? 'on' : '';
+        const rt = r === 'w' ? 'Vinto' : r === 'l' ? 'Perso' : r === 'on' ? 'In corso' : 'Sospeso';
+        return `<button class="pl-m ${r}" data-m="${esc(p.num)}"><span class="pl-m-t">${quale(p.num)}${p.turno && /^\d+$/.test(String(p.num)) ? ' · ' + esc(p.turno) : ''} · BO${p.formato}</span>
+          <span class="pl-m-vs">contro <b>${esc(nome(p, o))}</b></span><span class="pl-m-sc">${p.punteggio[s]}-${p.punteggio[o]}</span><span class="pl-m-r">${rt}</span></button>`;
+      }).join('')}</div>`;
+
+      if (top.length) body += `<h3 class="pl-h">Carte più giocate <small>in quanti game${truppa ? ` · torre: ${esc(truppa[0].replace(/_/g, ' '))}` : ''}</small></h3>
+        <div class="pl-cards cards">${top.map(t => `<div class="card">${carta(t.c)}${typeof t.costo === 'number' ? `<span class="cost">${t.costo}</span>` : ''}<b>×${t.n}</b></div>`).join('')}</div>`;
+
+      if (gs.length) body += `<h3 class="pl-h">Tutti i mazzi <small>game per game</small></h3><div class="pl-decks">${gs.map(x => {
+        const carte = x.g.mazzi?.[x.s] || [], costi = x.g.costi?.[x.s] || [], tr = x.g.truppa?.[x.s];
+        const w = x.g.vincitore === x.s;
+        return `<div class="pl-deck"><div class="pl-deck-t"><i class="${w ? 'w' : 'l'}">${w ? 'Vinto' : 'Perso'} ${x.g.corone[x.s]}-${x.g.corone[x.o]}</i>${quale(x.p.num)} · Game ${x.i + 1} · contro ${esc(nome(x.p, x.o))}</div>
+          <div class="cards${tr ? ' has-tower' : ''}">${carte.map((c, k) => `<div class="card">${carta(c)}${costi.length ? `<span class="cost">${typeof costi[k] === 'number' ? costi[k] : '?'}</span>` : ''}</div>`).join('')}${tr ? `<div class="tower">${carta(tr).replace('onerror="this.style.opacity=.25"', 'onerror="this.parentNode.remove()"')}</div>` : ''}</div></div>`;
+      }).join('')}</div>`;
+    }
+
+    ovIn.innerHTML = `
+      <div class="ov-bar">${indietro ? `<button class="ov-back" id="ov-back">← ${esc(indietro.label)}</button>` : ''}<span class="ov-chip" id="ov-title">Scheda giocatore</span><span class="grow"></span><button class="ov-x" id="ov-x" aria-label="Chiudi">✕</button></div>
+      <div class="pl-head">${img}<div><div class="pl-name">${esc(N)}</div>${stato ? `<span class="pl-stato ${stato.c}">${stato.t}</span>` : ''}<div class="pl-info">${infos}</div></div></div>
+      <div id="ov-body">${body}</div>`;
+    document.getElementById('ov-x').onclick = chiudi;
+    if (indietro) document.getElementById('ov-back').onclick = indietro.go;
+    ovIn.querySelectorAll('.pl-m[data-m]').forEach(b => b.onclick = () => apri(b.dataset.m, undefined, { label: N, go: () => apriG(id) }));
+    requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('ov-body')?.classList.add('open')));
+  }
+
+  // "n:Nome" (link da Iscritti) → id anonimo del torneo, se quel giocatore c'è
+  function risolvi(id) {
+    if (!String(id).startsWith('n:')) return id;
+    const n = String(id).slice(2).toLowerCase();
+    for (const p of D.partite || []) for (const s of ['blue', 'red']) {
+      const g = p.giocatori[s];
+      if (g.id && (g.nome || '').toLowerCase() === n) return g.id;
+    }
+    const pl = [D.tabellone, D.aspiranti].filter(Boolean).flatMap(T => T.config.players || []).find(x => x.tag && (x.name || '').toLowerCase() === n);
+    return pl ? pl.tag : id;
+  }
+
+  function apriG(id, back = null) {
+    if (!id) return;
+    id = risolvi(id);
+    aperta = null; giocatore = id; indietro = back;
+    ov.hidden = false; ov.classList.add('show'); document.body.classList.add('ov-open');
+    disegnaGiocatore();
+    ov.scrollTop = 0;
+    const h = '#g' + encodeURIComponent(id);
+    if (location.hash !== h) history.replaceState(null, '', h);
+    document.getElementById('ov-x')?.focus();
+  }
+
   function disegnaScheda() {
     const p = D.partite.find(x => String(x.num) === String(aperta));
     if (!p) return chiudi();
     const B = nome(p, 'blue'), R = nome(p, 'red');
     const gb = p.giocatori.blue, gr = p.giocatori.red;
+    const plBtn = (g, n) => chiave(g) ? `<button class="pl-link" data-g="${esc(chiave(g))}">${esc(n)}<small>Scheda giocatore ›</small></button>` : esc(n);
     const sub = g => [g.clan, g.trofei != null ? num(g.trofei, 0) + ' trofei' : '', g.vittorie != null ? num(g.vittorie) + '% vittorie' : ''].filter(Boolean).map(esc).join(' · ');
     if (tab > p.games.length) tab = p.games.length;
     const tabs = [`<button class="ov-tab" role="tab" aria-selected="${tab === 0}" data-tab="0">Serie</button>`]
@@ -336,25 +595,28 @@
     const res = g ? `Vince ${esc(g.vincitore === 'blue' ? B : R)}${g.corone ? ` · ${g.corone.blue}-${g.corone.red}` : ''}`
       : p.vincitore ? `🏆 Vince il match ${esc(p.vincitore === 'blue' ? B : R)}` : p.stato === 'in_corso' ? '● Match in corso' : '';
     ovIn.innerHTML = `
-      <div class="ov-bar"><span class="ov-chip" id="ov-title">${quale(p.num)}${p.turno && /^\d+$/.test(String(p.num)) ? ' · ' + esc(p.turno) : ''} · BO${p.formato}</span><span class="grow"></span><button class="ov-x" id="ov-x" aria-label="Chiudi">✕</button></div>
+      <div class="ov-bar">${indietro ? `<button class="ov-back" id="ov-back">← ${esc(indietro.label)}</button>` : ''}<span class="ov-chip" id="ov-title">${quale(p.num)}${p.turno && /^\d+$/.test(String(p.num)) ? ' · ' + esc(p.turno) : ''} · BO${p.formato}</span><span class="grow"></span><button class="ov-x" id="ov-x" aria-label="Chiudi">✕</button></div>
       <div class="ov-score"><span class="b">${p.punteggio.blue}</span><span class="r">${p.punteggio.red}</span></div>
       <div class="ov-head">
-        <div class="ov-side blue${p.vincitore === 'blue' ? ' win' : ''}"><div class="ov-name">${esc(B)}</div>${lega(gb)}<div class="ov-sub">${sub(gb)}</div></div>
-        <div class="ov-side red${p.vincitore === 'red' ? ' win' : ''}"><div class="ov-name">${esc(R)}</div>${lega(gr)}<div class="ov-sub">${sub(gr)}</div></div>
+        <div class="ov-side blue${p.vincitore === 'blue' ? ' win' : ''}"><div class="ov-name">${plBtn(gb, B)}</div>${lega(gb)}<div class="ov-sub">${sub(gb)}</div></div>
+        <div class="ov-side red${p.vincitore === 'red' ? ' win' : ''}"><div class="ov-name">${plBtn(gr, R)}</div>${lega(gr)}<div class="ov-sub">${sub(gr)}</div></div>
       </div>
       <div class="ov-tabs" role="tablist">${tabs.join('')}</div>
       <p class="ov-res">${res}</p>
       <div id="ov-body">${g ? vistaGame(p, tab - 1) : vistaSerie(p)}</div>`;
     document.getElementById('ov-x').onclick = chiudi;
+    if (indietro) document.getElementById('ov-back').onclick = indietro.go;
+    const da = { n: aperta, t: tab };
+    ovIn.querySelectorAll('.pl-link[data-g]').forEach(b => b.onclick = () => apriG(b.dataset.g, { label: quale(da.n), go: () => apri(da.n, da.t) }));
     ovIn.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { tab = +b.dataset.tab; disegnaScheda(); });
     // Barre e mazzi si aprono dal centro, come nella diretta
     requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('ov-body').classList.add('open')));
   }
 
-  function apri(n, t) {
+  function apri(n, t, back = null) {
     const p = D.partite.find(x => String(x.num) === String(n));
     if (!p) return;
-    aperta = n;
+    aperta = n; giocatore = null; indietro = back;
     tab = t ?? (p.games.length ? p.games.length : 0);   // apre sull'ultimo game giocato
     ov.hidden = false; ov.classList.add('show'); document.body.classList.add('ov-open');
     disegnaScheda();
@@ -363,11 +625,11 @@
     document.getElementById('ov-x').focus();
   }
   function chiudi() {
-    aperta = null;
+    aperta = null; giocatore = null; indietro = null;
     ov.classList.remove('show'); ov.hidden = true; document.body.classList.remove('ov-open');
     if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && aperta != null) chiudi(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && (aperta != null || giocatore != null)) chiudi(); });
 
   function disegnaLista() {
     const P = D.partite || [];
@@ -451,6 +713,12 @@
           : `${quale(n)} · ${m.label}: si aspetta ${[!m.a && m.aText, !m.b && m.bText].filter(Boolean).join(' e ').toLowerCase()}.`);
       };
       el.addEventListener('click', go);
+      el.querySelectorAll('.bk-row[data-tag]').forEach(row => {
+        const nm = row.querySelector('.bk-name');
+        if (!nm || !row.dataset.tag || /^c\d$/.test(row.dataset.tag)) return;
+        nm.innerHTML = `<span class="bk-pl" title="Scheda giocatore">${nm.innerHTML}</span>`;
+        nm.firstChild.addEventListener('click', e => { e.stopPropagation(); apriG(row.dataset.tag); });
+      });
       el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     });
     return { res, layout, canvas, fit: canvas.parentElement };
@@ -497,6 +765,7 @@
   function disegna() {
     if (D.tabellone && typeof Bracket !== 'undefined') disegnaTabellone(); else disegnaLista();
     if (aperta != null) disegnaScheda();
+    else if (giocatore != null) disegnaGiocatore();
     const q = D.aggiornato ? new Date(D.aggiornato) : null;
     document.getElementById('agg').textContent = q && !isNaN(q)
       ? `Aggiornato il ${q.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' })} alle ${q.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })} · si aggiorna da solo ogni minuto`
@@ -505,6 +774,9 @@
   disegna();
   const m = /^#m(\w+)$/.exec(location.hash);
   if (m) apri(m[1]);
+  const gh = /^#g(.+)$/.exec(location.hash);
+  const daIscritti = /[?&]da=iscritti(&|$)/.test(location.search) ? { label: 'Iscritti', go: () => { location.href = 'iscritti.html'; } } : null;
+  if (gh) { try { apriG(decodeURIComponent(gh[1]), daIscritti); } catch { /* link rotto */ } }
 
   // Durante il torneo ricarica i dati ogni minuto, senza ricaricare la pagina
   setInterval(async () => {
