@@ -15,6 +15,7 @@
     ['home', 'Home', './'],
     ['formato', 'Formato', './#formato'],
     ['tabellone', 'Tabellone', './#tabellone'],
+    ['partite', 'Partite', 'partite.html'],
     ['faq', 'FAQ', './#faq'],
     ['regolamento', 'Regolamento', 'regolamento.html'],
     ['iscritti', 'Iscritti', 'iscritti.html'],

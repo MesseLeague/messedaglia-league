@@ -96,7 +96,7 @@ body::before {
 @keyframes ml-pulse { 50% { box-shadow: 0 0 0 5px rgba(63, 207, 127, 0.25); } }
 @media (prefers-reduced-motion: reduce) { .ml-dot.on { animation: none; } }
 
-@media (max-width: 1180px) {
+@media (max-width: 1240px) {
   .ml-brand span { display: none; }
   .ml-burger { display: block; }
   .ml-links {
@@ -110,7 +110,7 @@ body::before {
 }
 
 /* Schermi medi: voci più strette prima di passare al menu a tendina */
-@media (max-width: 1360px) and (min-width: 1181px) {
+@media (max-width: 1440px) and (min-width: 1241px) {
   .ml-inner { gap: 16px; }
   .ml-links { gap: 2px; }
   .ml-links a { padding: 0 9px; letter-spacing: .03em; }
