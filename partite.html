@@ -470,7 +470,7 @@
         if (live && [live.giocatori.blue.id, live.giocatori.red.id].includes(id)) return { t: '● In campo adesso', c: 'on' };
         if (r.matches.some(m => m.exists && !m.winner && tocca(m))) return { t: 'Ancora in gara', c: '' };
         const ko = r.matches.filter(perso).pop();
-        if (ko && r.champion && /^(grand final|rivincita|finale)$/i.test(ko.label || '')) return { t: '🥈 Finalista', c: '' };
+        if (ko && r.champion && /^(gran finale|grand final|rivincita|finale)$/i.test(ko.label || '')) return { t: '🥈 Finalista', c: '' };
         return { t: 'Eliminato' + (ko ? ' · ' + ko.label : ''), c: 'ko' };
       }
     }

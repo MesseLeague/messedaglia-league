@@ -246,7 +246,7 @@ a { color: var(--text); }
 /* ---------------- Leghe ---------------- */
 .leagues { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; }
 .leagues li { display: grid; justify-items: center; gap: 10px; padding: 18px 8px 14px; background: var(--panel); min-width: 0; }
-.leagues img { width: 100%; max-width: 116px; aspect-ratio: 1; object-fit: contain; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.5)); transition: transform 0.2s var(--ease); }
+.leagues img { width: 100%; height: auto; max-width: 116px; aspect-ratio: 1; object-fit: contain; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.5)); transition: transform 0.2s var(--ease); }
 .leagues li:hover img { transform: translateY(-6px) scale(1.05); }
 .leagues span { font: 400 0.72rem/1.2 var(--display); text-transform: uppercase; text-align: center; }
 .leagues li:last-child { background: linear-gradient(180deg, rgba(245, 179, 1, 0.22), var(--panel)); }
@@ -413,11 +413,14 @@ footer a { color: var(--text); }
   .fact:nth-child(2) { border-right: 0; }
   .formats, .sim, .duel, .rules { grid-template-columns: 1fr; }
   .leagues { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .leagues li:last-child { grid-column: span 2; }
 }
 @media (max-width: 620px) {
   .hero-band { grid-template-columns: 1fr; justify-items: center; gap: 4px; padding-block: 18px; }
   .hero-logo { order: -1; margin-block: -70px 6px; }
   .leagues { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .leagues li:last-child { grid-column: 1 / -1; }
+  .leagues li:last-child img { width: calc((100% + 16px - 20px) / 3 - 16px); }
 }
 @media (max-width: 420px) {
   .facts { grid-template-columns: 1fr; }
@@ -439,7 +442,7 @@ footer a { color: var(--text); }
         <span class="hero-word right">d'Istituto</span>
       </h1>
     </div>
-    <p class="hero-sub">Otto giocatori della scuola, uno contro uno, in un tabellone a doppia eliminazione. Un mazzo nuovo a ogni round, fino alla Grand Final.</p>
+    <p class="hero-sub">Otto giocatori della scuola, uno contro uno, in un tabellone a doppia eliminazione. Un mazzo nuovo a ogni round, fino alla Gran Finale.</p>
     <div class="cta-row">
       <a class="cta blue" href="#formato">Il formato</a>
       <a class="cta red" href="#tabellone">Il tabellone</a>
@@ -451,8 +454,8 @@ footer a { color: var(--text); }
 <dl class="facts" data-reveal="stagger">
   <div class="fact"><dt class="chip gold">Quando</dt><dd>2 mattine<small>durante l'autogestione, date da annunciare</small></dd></div>
   <div class="fact"><dt class="chip">Giocatori</dt><dd>8<small>tutti 1 contro 1</small></dd></div>
-  <div class="fact"><dt class="chip">Tabellone</dt><dd>Doppia<small>eliminazione, con rivincita in Grand Final</small></dd></div>
-  <div class="fact"><dt class="chip">Match</dt><dd>BO3<small>e BO5 nelle tre finali</small></dd></div>
+  <div class="fact"><dt class="chip">Tabellone</dt><dd>Doppia eliminazione<small>con rivincita in Gran Finale</small></dd></div>
+  <div class="fact"><dt class="chip">Match</dt><dd>BO3 e BO5</dd></div>
 </dl>
 
 <main>
@@ -475,7 +478,7 @@ footer a { color: var(--text); }
         </article>
         <article class="format five">
           <div class="format-top">BO5</div>
-          <div class="format-body"><h3>Al meglio delle 5</h3><p>Finale Winners, finale Losers e Grand Final. Vince chi arriva per primo a <strong>3 vittorie</strong>.</p></div>
+          <div class="format-body"><h3>Al meglio delle 5</h3><p>Finale Winners, finale Losers e Gran Finale. Vince chi arriva per primo a <strong>3 vittorie</strong>.</p></div>
         </article>
       </div>
 
@@ -530,12 +533,11 @@ footer a { color: var(--text); }
       <div class="head" data-reveal>
         <span class="chip">Il tabellone</span>
         <h2 id="tabellone-title">Otto giocatori, due vite</h2>
-        <p>Se perdi un match nel Winners non sei fuori: scendi nel Losers e ti giochi la seconda possibilità. Al secondo match perso sei eliminato. Se la Grand Final la vince chi arriva dal Losers, si gioca la rivincita.</p>
+        <p>Se perdi un match nel Winners non sei fuori: scendi nel Losers e ti giochi la seconda possibilità. Al secondo match perso sei eliminato. Se la Gran Finale la vince chi arriva dal Losers, si gioca la rivincita.</p>
       </div>
       <div class="bracket-scroll" tabindex="0" role="region" aria-label="Tabellone a doppia eliminazione">
         <div class="bk" id="bracket"></div>
       </div>
-      <p class="bracket-note">I posti sono quelli della classifica: 1º contro 8º, 4º contro 5º, 2º contro 7º, 3º contro 6º, così i più forti si incontrano il più tardi possibile. Le linee seguono chi vince; chi perde nel Winners scende nella casella "Perdente" del Losers. Tutti i match sono BO3, le tre finali e l'eventuale rivincita sono BO5.</p>
     </div>
   </section>
 
@@ -543,7 +545,6 @@ footer a { color: var(--text); }
     <div class="wrap">
       <span class="chip gold">La posta in gioco</span>
       <h2 id="podio-title">Chi sarà il re del Messedaglia?</h2>
-      <p>Alla fine delle Finali d'Istituto restano tre statue sul podio. Solo una è d'oro.</p>
       <div class="places" data-reveal="stagger" aria-label="Posti sul podio"><span class="p1">1° Oro</span><span class="p2">2° Argento</span><span class="p3">3° Bronzo</span></div>
     </div>
   </section>
@@ -576,7 +577,7 @@ footer a { color: var(--text); }
       <dl class="rules" data-reveal="stagger">
         <div class="rule"><dt class="chip blue">Partite</dt><dd>Tutte <strong>1 contro 1</strong>, in amichevole nel clan del torneo, ognuno dal proprio account e dal proprio telefono.</dd></div>
         <div class="rule"><dt class="chip red">Match</dt><dd><strong>BO3</strong> (prima a 2) in tutto il tabellone, <strong>BO5</strong> (prima a 3) nelle tre finali.</dd></div>
-        <div class="rule"><dt class="chip blue">Eliminazione</dt><dd>Doppia: sei fuori solo al <strong>secondo match perso</strong>. Vale anche in Grand Final: se la vince chi arriva dal Losers, <strong>si rigioca</strong>.</dd></div>
+        <div class="rule"><dt class="chip blue">Eliminazione</dt><dd>Doppia: sei fuori solo al <strong>secondo match perso</strong>. Vale anche in Gran Finale: se la vince chi arriva dal Losers, <strong>si rigioca</strong>.</dd></div>
         <div class="rule"><dt class="chip red">Mazzi</dt><dd>Regola del duello: ogni round si gioca con un mazzo nuovo, senza carte già usate, e hai 1:30 per prepararlo. Chi viene beccato con una carta ripetuta <strong>perde subito il round</strong>.</dd></div>
         <div class="rule"><dt class="chip blue">Pareggi</dt><dd>Una partita finita in parità <strong>non conta</strong> e si rigioca.</dd></div>
         <div class="rule"><dt class="chip red">Fair play</dt><dd>Rispetto per avversari e pubblico, in chat e dal vivo.</dd></div>
@@ -874,7 +875,7 @@ renderSim();
   };
   const LINKS = [['W1', 'W5'], ['W2', 'W5'], ['W3', 'W6'], ['W4', 'W6'], ['W5', 'W7'], ['W6', 'W7'], ['W7', 'GF'], ['GF', 'GF2'],
     ['L1', 'L3'], ['L2', 'L4'], ['L3', 'L5'], ['L4', 'L5'], ['L5', 'L6'], ['L6', 'GF', 'up']];
-  const HEADS = [['Quarti', 0, 0], ['Semifinali', 1, 0], ['Finale Winners', 2, 0], ['Grand Final', 3, 0, 'gold'], ['Rivincita', 4, 0, 'grey', 'se serve'],
+  const HEADS = [['Quarti', 0, 0], ['Semifinali', 1, 0], ['Finale Winners', 2, 0], ['Gran Finale', 3, 0, 'gold'], ['Rivincita', 4, 0, 'grey', 'se serve'],
     ['Losers turno 1', 0, LOW_HEAD], ['Losers turno 2', 1, LOW_HEAD], ['Losers turno 3', 2, LOW_HEAD], ['Finale Losers', 3, LOW_HEAD]];
 
   const x = c => c * COL, width = 4 * COL + W, height = LOW + STEP + H + 4;

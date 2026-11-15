@@ -106,11 +106,11 @@ const Bracket = (() => {
     return { matches, links: [], labels, bands: [0] };
   }
 
-  // Grand Final nella riga del Winners; la rivincita subito a destra, sulla stessa riga
+  // Gran Finale nella riga del Winners; la rivincita subito a destra, sulla stessa riga
   function addGrand(cfg, matches, links, labels, wFinal, lFinal, col, y, num) {
-    matches.push({ id: 'GF', num, col, y, a: win(wFinal), b: win(lFinal), bo: cfg.final_bo, cls: 'gf', label: 'Grand Final' });
+    matches.push({ id: 'GF', num, col, y, a: win(wFinal), b: win(lFinal), bo: cfg.final_bo, cls: 'gf', label: 'Gran Finale' });
     links.push([wFinal, 'GF'], [lFinal, 'GF', 'up']);
-    labels.push(['Grand Final', col, 0, 'gold']);
+    labels.push(['Gran Finale', col, 0, 'gold']);
     if (cfg.reset) {
       // Esiste solo se la GF la vince chi arriva dal Losers (posto b)
       matches.push({ id: 'GF2', num: num + 1, col: col + 1, y, a: win('GF'), b: lose('GF'), bo: cfg.final_bo, cls: 'reset', label: 'Rivincita', onlyIf: ['GF', 'b'] });
@@ -234,7 +234,7 @@ const Bracket = (() => {
       const lit = a.winner ? ' lit' : '';
       const x1 = x(a.col) + W, y1 = a.y + H / 2, y2 = b.y + H / 2;
       if (style === 'up') {
-        // Dalla finale Losers sale fino alla Grand Final ed entra dal lato destro
+        // Dalla finale Losers sale fino alla Gran Finale ed entra dal lato destro
         const xr = x(b.col) + W + 16;
         paths += `<path class="bk-wire${lit}" d="M${x1} ${y1} H${xr} V${y2} H${x(b.col) + W}"/>`;
         continue;
