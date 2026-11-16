@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-16T14:40:19.878Z",
+  "aggiornato": "2026-11-16T15:50:13.161Z",
   "iscrizioni": {
     "aperte": false,
     "scadenza": ""
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6164,
+      "partite": 6165,
       "vittorie": 3286,
-      "sconfitte": 2878,
+      "sconfitte": 2879,
       "percentuale": 53.3,
       "treCorone": 836,
       "maxSfida": 2,
@@ -139,7 +139,7 @@ window.ML_PUBBLICO = {
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 21
+          "volte": 20
         },
         {
           "nome": "Cannon",
@@ -147,14 +147,9 @@ window.ML_PUBBLICO = {
           "volte": 19
         },
         {
-          "nome": "The Log",
-          "slug": "the_log",
-          "volte": 13
-        },
-        {
           "nome": "Ice Wizard",
           "slug": "hero_ice_wizard",
-          "volte": 13
+          "volte": 12
         },
         {
           "nome": "Royal Hogs",
@@ -175,9 +170,24 @@ window.ML_PUBBLICO = {
           "nome": "Earthquake",
           "slug": "earthquake",
           "volte": 12
+        },
+        {
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
+          "volte": 12
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Amichevole",
+          "corone": "0-4"
+        },
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Evento",
@@ -242,37 +252,32 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Evento",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "3-0"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-1"
         }
       ],
-      "percentualeRecente": 61,
+      "percentualeRecente": 53,
       "perModo": [
         {
           "modo": "Evento",
           "v": 9,
-          "s": 5
+          "s": 6
         },
         {
           "modo": "Classificata",
-          "v": 4,
-          "s": 5
+          "v": 3,
+          "s": 4
         },
         {
           "modo": "Duello",
           "v": 1,
           "s": 1
+        },
+        {
+          "modo": "Amichevole",
+          "v": 0,
+          "s": 1
         }
       ],
-      "letto": "2026-11-16T14:40:19.083Z"
+      "letto": "2026-11-16T15:50:12.905Z"
     }
   }
 };
