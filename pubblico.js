@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-16T11:42:05.962Z",
+  "aggiornato": "2026-11-16T11:50:13.220Z",
   "iscrizioni": {
     "aperte": false,
     "scadenza": ""
@@ -28,10 +28,6 @@ window.ML_PUBBLICO = {
     {
       "nome": "Marco Giacomi",
       "email": "marco.giacomi@messedaglia.edu.it"
-    },
-    {
-      "nome": "Giovanni Derani",
-      "email": "giovanni.derani@messedaglia.edu.it"
     }
   ],
   "profili": {
@@ -281,7 +277,7 @@ window.ML_PUBBLICO = {
           "s": 1
         }
       ],
-      "letto": "2026-11-16T11:42:05.737Z"
+      "letto": "2026-11-16T11:50:12.818Z"
     }
   }
 };
