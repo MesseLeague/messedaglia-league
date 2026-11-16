@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-16T13:30:13.645Z",
+  "aggiornato": "2026-11-16T14:40:19.878Z",
   "iscrizioni": {
     "aperte": false,
     "scadenza": ""
@@ -37,11 +37,11 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6159,
-      "vittorie": 3282,
-      "sconfitte": 2877,
+      "partite": 6164,
+      "vittorie": 3286,
+      "sconfitte": 2878,
       "percentuale": 53.3,
-      "treCorone": 834,
+      "treCorone": 836,
       "maxSfida": 2,
       "tornei": 57,
       "donazioni": 16349,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 24,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Minion Giant",
-        "slug": "minion_giant"
+        "nome": "Elite Barbarians",
+        "slug": "elite_barbarians"
       },
       "mazzo": [
         {
@@ -139,45 +139,70 @@ window.ML_PUBBLICO = {
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 24
+          "volte": 21
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 22
+          "volte": 19
         },
         {
           "nome": "The Log",
           "slug": "the_log",
-          "volte": 16
+          "volte": 13
+        },
+        {
+          "nome": "Ice Wizard",
+          "slug": "hero_ice_wizard",
+          "volte": 13
         },
         {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "volte": 15
+          "volte": 12
         },
         {
           "nome": "Archer Queen",
           "slug": "archer_queen",
-          "volte": 15
+          "volte": 12
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 15
+          "volte": 12
         },
         {
           "nome": "Earthquake",
           "slug": "earthquake",
-          "volte": 15
-        },
-        {
-          "nome": "Royal Delivery",
-          "slug": "royal_delivery",
-          "volte": 15
+          "volte": 12
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-3"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "2-0"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "3-0"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "2-1"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "3-1"
+        },
         {
           "r": "S",
           "modo": "Classificata",
@@ -227,57 +252,27 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Evento",
           "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Duello",
-          "corone": "2-0"
-        },
-        {
-          "r": "S",
-          "modo": "Duello",
-          "corone": "1-3"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 50,
+      "percentualeRecente": 61,
       "perModo": [
         {
-          "modo": "Classificata",
-          "v": 6,
-          "s": 6
+          "modo": "Evento",
+          "v": 9,
+          "s": 5
         },
         {
-          "modo": "Evento",
-          "v": 5,
-          "s": 4
+          "modo": "Classificata",
+          "v": 4,
+          "s": 5
         },
         {
           "modo": "Duello",
           "v": 1,
           "s": 1
-        },
-        {
-          "modo": "Amichevole",
-          "v": 2,
-          "s": 0
         }
       ],
-      "letto": "2026-11-16T13:30:13.385Z"
+      "letto": "2026-11-16T14:40:19.083Z"
     }
   }
 };
