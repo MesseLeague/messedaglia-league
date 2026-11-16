@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-16T15:50:13.161Z",
+  "aggiornato": "2026-11-16T16:50:14.516Z",
   "iscrizioni": {
     "aperte": false,
     "scadenza": ""
@@ -28,6 +28,10 @@ window.ML_PUBBLICO = {
     {
       "nome": "Marco Giacomi",
       "email": "marco.giacomi@messedaglia.edu.it"
+    },
+    {
+      "nome": "Giovanni Derani",
+      "email": "giovanni.derani@messedaglia.edu.it"
     }
   ],
   "profili": {
@@ -139,12 +143,12 @@ window.ML_PUBBLICO = {
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 20
+          "volte": 18
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 19
+          "volte": 16
         },
         {
           "nome": "Ice Wizard",
@@ -152,32 +156,47 @@ window.ML_PUBBLICO = {
           "volte": 12
         },
         {
+          "nome": "The Log",
+          "slug": "the_log",
+          "volte": 10
+        },
+        {
+          "nome": "Bats",
+          "slug": "bats",
+          "volte": 10
+        },
+        {
+          "nome": "Arrows",
+          "slug": "arrows",
+          "volte": 9
+        },
+        {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "volte": 12
+          "volte": 9
         },
         {
           "nome": "Archer Queen",
           "slug": "archer_queen",
-          "volte": 12
-        },
-        {
-          "nome": "Ice Spirit",
-          "slug": "ice_spirit",
-          "volte": 12
-        },
-        {
-          "nome": "Earthquake",
-          "slug": "earthquake",
-          "volte": 12
-        },
-        {
-          "nome": "Royal Delivery",
-          "slug": "royal_delivery",
-          "volte": 12
+          "volte": 9
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Amichevole",
+          "corone": "0-3"
+        },
+        {
+          "r": "S",
+          "modo": "Amichevole",
+          "corone": "1-4"
+        },
+        {
+          "r": "S",
+          "modo": "Amichevole",
+          "corone": "2-5"
+        },
         {
           "r": "S",
           "modo": "Amichevole",
@@ -237,24 +256,9 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Evento",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 53,
+      "percentualeRecente": 47,
       "perModo": [
         {
           "modo": "Evento",
@@ -262,22 +266,22 @@ window.ML_PUBBLICO = {
           "s": 6
         },
         {
-          "modo": "Classificata",
-          "v": 3,
+          "modo": "Amichevole",
+          "v": 0,
           "s": 4
+        },
+        {
+          "modo": "Classificata",
+          "v": 2,
+          "s": 2
         },
         {
           "modo": "Duello",
           "v": 1,
           "s": 1
-        },
-        {
-          "modo": "Amichevole",
-          "v": 0,
-          "s": 1
         }
       ],
-      "letto": "2026-11-16T15:50:12.905Z"
+      "letto": "2026-11-16T16:50:14.196Z"
     }
   }
 };
