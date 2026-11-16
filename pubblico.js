@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-16T06:20:15.799Z",
+  "aggiornato": "2026-11-16T07:20:23.007Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": ""
@@ -41,9 +41,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6155,
-      "vittorie": 3281,
-      "sconfitte": 2874,
+      "partite": 6157,
+      "vittorie": 3282,
+      "sconfitte": 2875,
       "percentuale": 53.3,
       "treCorone": 834,
       "maxSfida": 2,
@@ -80,8 +80,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 24,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Ice Wizard",
-        "slug": "ice_wizard"
+        "nome": "Minion Giant",
+        "slug": "minion_giant"
       },
       "mazzo": [
         {
@@ -143,17 +143,27 @@ window.ML_PUBBLICO = {
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 21
+          "volte": 22
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 18
+          "volte": 20
         },
         {
           "nome": "The Log",
           "slug": "the_log",
           "volte": 14
+        },
+        {
+          "nome": "Ice Wizard",
+          "slug": "hero_ice_wizard",
+          "volte": 13
+        },
+        {
+          "nome": "Barbarian Barrel",
+          "slug": "barbarian_barrel",
+          "volte": 13
         },
         {
           "nome": "Royal Hogs",
@@ -169,19 +179,19 @@ window.ML_PUBBLICO = {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
           "volte": 13
-        },
-        {
-          "nome": "Earthquake",
-          "slug": "earthquake",
-          "volte": 13
-        },
-        {
-          "nome": "Royal Delivery",
-          "slug": "royal_delivery",
-          "volte": 13
         }
       ],
       "forma": [
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-1"
+        },
         {
           "r": "V",
           "modo": "Evento",
@@ -246,19 +256,9 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 60,
+      "percentualeRecente": 57,
       "perModo": [
         {
           "modo": "Classificata",
@@ -267,13 +267,13 @@ window.ML_PUBBLICO = {
         },
         {
           "modo": "Evento",
-          "v": 4,
-          "s": 3
+          "v": 5,
+          "s": 4
         },
         {
           "modo": "Amichevole",
           "v": 3,
-          "s": 3
+          "s": 1
         },
         {
           "modo": "Duello",
@@ -281,7 +281,7 @@ window.ML_PUBBLICO = {
           "s": 1
         }
       ],
-      "letto": "2026-11-16T06:20:15.552Z"
+      "letto": "2026-11-16T07:20:22.021Z"
     }
   }
 };
