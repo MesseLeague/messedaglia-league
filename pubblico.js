@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-16T19:20:14.694Z",
+  "aggiornato": "2026-11-16T20:30:13.379Z",
   "iscrizioni": {
     "aperte": false,
     "scadenza": ""
@@ -41,9 +41,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6167,
+      "partite": 6168,
       "vittorie": 3286,
-      "sconfitte": 2881,
+      "sconfitte": 2882,
       "percentuale": 53.3,
       "treCorone": 836,
       "maxSfida": 2,
@@ -80,8 +80,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 24,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Witch",
-        "slug": "witch"
+        "nome": "Royal Giant",
+        "slug": "royal_giant"
       },
       "mazzo": [
         {
@@ -281,7 +281,7 @@ window.ML_PUBBLICO = {
           "s": 0
         }
       ],
-      "letto": "2026-11-16T19:20:14.121Z"
+      "letto": "2026-11-16T20:30:13.099Z"
     }
   }
 };
