@@ -121,7 +121,8 @@
 </main>
 
 <script src="config.js"></script>
-<script src="pubblico.js"></script>
+<!-- Dati aggiornati spesso: il parametro cambia ogni minuto, cosi' il browser non tiene una copia vecchia -->
+<script>document.write('<script src="pubblico.js?t=' + Math.floor(Date.now() / 60000) + '"><\/script>');</script>
 <script src="nav.js"></script>
 <script>
   const url = (window.ML_CONFIG || {}).ISCRIZIONI_URL;
