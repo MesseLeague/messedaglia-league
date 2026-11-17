@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-17T06:40:14.820Z",
+  "aggiornato": "2026-11-17T13:40:16.354Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,11 +37,11 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6171,
-      "vittorie": 3287,
-      "sconfitte": 2884,
+      "partite": 6177,
+      "vittorie": 3291,
+      "sconfitte": 2886,
       "percentuale": 53.3,
-      "treCorone": 836,
+      "treCorone": 838,
       "maxSfida": 2,
       "tornei": 57,
       "donazioni": 16349,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 24,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Royal Delivery",
-        "slug": "royal_delivery"
+        "nome": "Royal Hogs",
+        "slug": "royal_hogs"
       },
       "mazzo": [
         {
@@ -139,22 +139,17 @@ window.ML_PUBBLICO = {
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 17
+          "volte": 18
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 12
+          "volte": 14
         },
         {
-          "nome": "Ice Wizard",
-          "slug": "hero_ice_wizard",
-          "volte": 12
-        },
-        {
-          "nome": "Fireball",
-          "slug": "fireball",
-          "volte": 11
+          "nome": "Witch",
+          "slug": "evo_witch",
+          "volte": 10
         },
         {
           "nome": "Arrows",
@@ -162,22 +157,57 @@ window.ML_PUBBLICO = {
           "volte": 10
         },
         {
-          "nome": "Bats",
-          "slug": "bats",
+          "nome": "Fireball",
+          "slug": "fireball",
           "volte": 10
         },
         {
-          "nome": "Witch",
-          "slug": "evo_witch",
-          "volte": 8
+          "nome": "The Log",
+          "slug": "the_log",
+          "volte": 9
         },
         {
-          "nome": "Barbarian Barrel",
-          "slug": "barbarian_barrel",
-          "volte": 8
+          "nome": "Elite Barbarians",
+          "slug": "evo_elite_barbarians",
+          "volte": 9
+        },
+        {
+          "nome": "Giant",
+          "slug": "hero_giant",
+          "volte": 9
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-3"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "3-0"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "3-0"
+        },
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Evento",
@@ -222,49 +252,19 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Amichevole",
           "corone": "2-5"
-        },
-        {
-          "r": "S",
-          "modo": "Amichevole",
-          "corone": "0-4"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-3"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "2-0"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "3-0"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "2-1"
         }
       ],
-      "percentualeRecente": 40,
+      "percentualeRecente": 43,
       "perModo": [
         {
-          "modo": "Evento",
-          "v": 9,
-          "s": 5
+          "modo": "Classificata",
+          "v": 4,
+          "s": 7
         },
         {
-          "modo": "Classificata",
-          "v": 1,
-          "s": 6
+          "modo": "Evento",
+          "v": 6,
+          "s": 4
         },
         {
           "modo": "Amichevole",
@@ -272,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 4
         }
       ],
-      "letto": "2026-11-17T06:40:14.526Z"
+      "letto": "2026-11-17T13:40:15.885Z"
     }
   }
 };
