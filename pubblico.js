@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-16T23:17:44.595Z",
+  "aggiornato": "2026-11-17T06:40:14.820Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6168,
-      "vittorie": 3286,
-      "sconfitte": 2882,
+      "partite": 6171,
+      "vittorie": 3287,
+      "sconfitte": 2884,
       "percentuale": 53.3,
       "treCorone": 836,
       "maxSfida": 2,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 24,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Royal Giant",
-        "slug": "royal_giant"
+        "nome": "Royal Delivery",
+        "slug": "royal_delivery"
       },
       "mazzo": [
         {
@@ -139,12 +139,12 @@ window.ML_PUBBLICO = {
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 18
+          "volte": 17
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 13
+          "volte": 12
         },
         {
           "nome": "Ice Wizard",
@@ -157,27 +157,42 @@ window.ML_PUBBLICO = {
           "volte": 11
         },
         {
+          "nome": "Arrows",
+          "slug": "arrows",
+          "volte": 10
+        },
+        {
           "nome": "Bats",
           "slug": "bats",
           "volte": 10
         },
         {
-          "nome": "Arrows",
-          "slug": "arrows",
-          "volte": 9
+          "nome": "Witch",
+          "slug": "evo_witch",
+          "volte": 8
         },
         {
           "nome": "Barbarian Barrel",
           "slug": "barbarian_barrel",
           "volte": 8
-        },
-        {
-          "nome": "Minion Giant",
-          "slug": "minion_giant",
-          "volte": 8
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-3"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "2-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Classificata",
@@ -237,21 +252,6 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Evento",
           "corone": "2-1"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "3-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-3"
         }
       ],
       "percentualeRecente": 40,
@@ -259,25 +259,20 @@ window.ML_PUBBLICO = {
         {
           "modo": "Evento",
           "v": 9,
-          "s": 6
+          "s": 5
         },
         {
           "modo": "Classificata",
-          "v": 0,
-          "s": 5
+          "v": 1,
+          "s": 6
         },
         {
           "modo": "Amichevole",
           "v": 0,
           "s": 4
-        },
-        {
-          "modo": "Duello",
-          "v": 1,
-          "s": 0
         }
       ],
-      "letto": "2026-11-16T23:17:44.311Z"
+      "letto": "2026-11-17T06:40:14.526Z"
     }
   }
 };
