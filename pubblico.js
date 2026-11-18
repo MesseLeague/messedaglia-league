@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-17T14:50:13.898Z",
+  "aggiornato": "2026-11-18T06:30:14.803Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6179,
-      "vittorie": 3291,
-      "sconfitte": 2888,
+      "partite": 6184,
+      "vittorie": 3294,
+      "sconfitte": 2890,
       "percentuale": 53.3,
       "treCorone": 838,
       "maxSfida": 2,
@@ -70,14 +70,14 @@ window.ML_PUBBLICO = {
       "ultimaPosizione": null,
       "carte": 123,
       "carte16": 13,
-      "carte15": 24,
+      "carte15": 25,
       "carte14": 47,
       "livelloMedio": 13.1,
       "evoSbloccate": 24,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Royal Hogs",
-        "slug": "royal_hogs"
+        "nome": "Hog Rider",
+        "slug": "hog_rider"
       },
       "mazzo": [
         {
@@ -142,18 +142,23 @@ window.ML_PUBBLICO = {
           "volte": 18
         },
         {
+          "nome": "The Log",
+          "slug": "the_log",
+          "volte": 15
+        },
+        {
           "nome": "Cannon",
           "slug": "evo_cannon",
           "volte": 14
         },
         {
-          "nome": "The Log",
-          "slug": "the_log",
-          "volte": 11
-        },
-        {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
+          "volte": 14
+        },
+        {
+          "nome": "Fireball",
+          "slug": "fireball",
           "volte": 10
         },
         {
@@ -167,17 +172,37 @@ window.ML_PUBBLICO = {
           "volte": 10
         },
         {
-          "nome": "Fireball",
-          "slug": "fireball",
-          "volte": 9
-        },
-        {
-          "nome": "Royal Hogs",
-          "slug": "evo_royal_hogs",
+          "nome": "Elite Barbarians",
+          "slug": "evo_elite_barbarians",
           "volte": 9
         }
       ],
       "forma": [
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
         {
           "r": "S",
           "modo": "Evento",
@@ -227,44 +252,19 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "2-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Amichevole",
-          "corone": "0-3"
         }
       ],
       "percentualeRecente": 40,
       "perModo": [
         {
-          "modo": "Classificata",
+          "modo": "Evento",
           "v": 4,
           "s": 7
         },
         {
-          "modo": "Evento",
-          "v": 5,
-          "s": 5
+          "modo": "Classificata",
+          "v": 4,
+          "s": 6
         },
         {
           "modo": "Amichevole",
@@ -272,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 4
         }
       ],
-      "letto": "2026-11-17T14:50:13.514Z"
+      "letto": "2026-11-18T06:30:14.521Z"
     }
   }
 };
