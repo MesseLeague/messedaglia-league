@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-18T13:10:14.878Z",
+  "aggiornato": "2026-11-18T14:10:20.510Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6185,
-      "vittorie": 3294,
-      "sconfitte": 2891,
+      "partite": 6191,
+      "vittorie": 3297,
+      "sconfitte": 2894,
       "percentuale": 53.3,
       "treCorone": 838,
       "maxSfida": 2,
@@ -76,15 +76,33 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 24,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Hog Rider",
-        "slug": "hog_rider"
+        "nome": "Lumberjack",
+        "slug": "lumberjack"
       },
       "mazzo": [
         {
-          "nome": "Royal Giant",
-          "slug": "evo_royal_giant",
-          "costo": 6,
+          "nome": "Cannon",
+          "slug": "evo_cannon",
+          "costo": 3,
+          "livello": 16
+        },
+        {
+          "nome": "Ice Wizard",
+          "slug": "hero_ice_wizard",
+          "costo": 3,
+          "livello": 13
+        },
+        {
+          "nome": "Knight",
+          "slug": "hero_knight",
+          "costo": 3,
           "livello": 15
+        },
+        {
+          "nome": "Skeletons",
+          "slug": "skeletons",
+          "costo": 1,
+          "livello": 16
         },
         {
           "nome": "Barbarian Barrel",
@@ -93,44 +111,26 @@ window.ML_PUBBLICO = {
           "livello": 16
         },
         {
-          "nome": "Royal Ghost",
-          "slug": "evo_royal_ghost",
-          "costo": 3,
-          "livello": 15
-        },
-        {
-          "nome": "Hunter",
-          "slug": "evo_hunter",
-          "costo": 4,
-          "livello": 16
-        },
-        {
           "nome": "Fireball",
           "slug": "fireball",
           "costo": 4,
           "livello": 15
         },
         {
-          "nome": "Fisherman",
-          "slug": "fisherman",
-          "costo": 3,
-          "livello": 15
+          "nome": "Minion Giant",
+          "slug": "minion_giant",
+          "costo": 4,
+          "livello": 11
         },
         {
-          "nome": "Skeletons",
-          "slug": "skeletons",
-          "costo": 1,
-          "livello": 16
-        },
-        {
-          "nome": "Electro Spirit",
-          "slug": "electro_spirit",
-          "costo": 1,
-          "livello": 15
+          "nome": "Bats",
+          "slug": "bats",
+          "costo": 2,
+          "livello": 13
         }
       ],
-      "mazzoMedio": 3,
-      "ciclo": 7,
+      "mazzoMedio": 2.75,
+      "ciclo": 8,
       "torre": {
         "nome": "Tower Princess",
         "slug": "tower_princess"
@@ -139,45 +139,75 @@ window.ML_PUBBLICO = {
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 20
+          "volte": 23
         },
         {
           "nome": "The Log",
           "slug": "the_log",
-          "volte": 17
+          "volte": 20
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 16
+          "volte": 19
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 16
+          "volte": 19
         },
         {
           "nome": "Fireball",
           "slug": "fireball",
-          "volte": 11
+          "volte": 13
         },
         {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "volte": 9
+          "volte": 10
         },
         {
           "nome": "Archer Queen",
           "slug": "archer_queen",
-          "volte": 9
+          "volte": 10
         },
         {
           "nome": "Earthquake",
           "slug": "earthquake",
-          "volte": 9
+          "volte": 10
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-3"
+        },
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
         {
           "r": "V",
           "modo": "Amichevole",
@@ -222,57 +252,27 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Evento",
           "corone": "0-3"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-2"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-3"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "3-0"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "3-0"
         }
       ],
-      "percentualeRecente": 40,
+      "percentualeRecente": 43,
       "perModo": [
         {
           "modo": "Evento",
-          "v": 4,
-          "s": 6
+          "v": 6,
+          "s": 9
         },
         {
           "modo": "Classificata",
-          "v": 4,
-          "s": 6
+          "v": 5,
+          "s": 3
         },
         {
           "modo": "Amichevole",
           "v": 2,
-          "s": 3
+          "s": 0
         }
       ],
-      "letto": "2026-11-18T13:10:14.407Z"
+      "letto": "2026-11-18T14:10:19.420Z"
     }
   }
 };
