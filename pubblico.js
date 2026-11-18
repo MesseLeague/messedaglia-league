@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-18T06:30:14.803Z",
+  "aggiornato": "2026-11-18T07:40:16.938Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6184,
+      "partite": 6185,
       "vittorie": 3294,
-      "sconfitte": 2890,
+      "sconfitte": 2891,
       "percentuale": 53.3,
       "treCorone": 838,
       "maxSfida": 2,
@@ -159,7 +159,7 @@ window.ML_PUBBLICO = {
         {
           "nome": "Fireball",
           "slug": "fireball",
-          "volte": 10
+          "volte": 11
         },
         {
           "nome": "Witch",
@@ -178,6 +178,11 @@ window.ML_PUBBLICO = {
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-3"
+        },
         {
           "r": "V",
           "modo": "Evento",
@@ -247,11 +252,6 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Evento",
           "corone": "0-3"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "2-1"
         }
       ],
       "percentualeRecente": 40,
@@ -272,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 4
         }
       ],
-      "letto": "2026-11-18T06:30:14.521Z"
+      "letto": "2026-11-18T07:40:16.337Z"
     }
   }
 };
