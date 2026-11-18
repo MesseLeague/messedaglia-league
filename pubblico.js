@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-18T14:10:20.510Z",
+  "aggiornato": "2026-11-18T15:20:13.288Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -142,24 +142,29 @@ window.ML_PUBBLICO = {
           "volte": 23
         },
         {
-          "nome": "The Log",
-          "slug": "the_log",
-          "volte": 20
+          "nome": "Ice Spirit",
+          "slug": "ice_spirit",
+          "volte": 21
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 19
+          "volte": 20
         },
         {
-          "nome": "Ice Spirit",
-          "slug": "ice_spirit",
+          "nome": "The Log",
+          "slug": "the_log",
           "volte": 19
         },
         {
           "nome": "Fireball",
           "slug": "fireball",
-          "volte": 13
+          "volte": 12
+        },
+        {
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
+          "volte": 11
         },
         {
           "nome": "Royal Hogs",
@@ -170,14 +175,24 @@ window.ML_PUBBLICO = {
           "nome": "Archer Queen",
           "slug": "archer_queen",
           "volte": 10
-        },
-        {
-          "nome": "Earthquake",
-          "slug": "earthquake",
-          "volte": 10
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Amichevole",
+          "corone": "0-3"
+        },
+        {
+          "r": "S",
+          "modo": "Amichevole",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Amichevole",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Evento",
@@ -237,21 +252,6 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Evento",
           "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-3"
         }
       ],
       "percentualeRecente": 43,
@@ -259,20 +259,20 @@ window.ML_PUBBLICO = {
         {
           "modo": "Evento",
           "v": 6,
-          "s": 9
+          "s": 8
         },
         {
           "modo": "Classificata",
-          "v": 5,
-          "s": 3
+          "v": 4,
+          "s": 2
         },
         {
           "modo": "Amichevole",
           "v": 2,
-          "s": 0
+          "s": 3
         }
       ],
-      "letto": "2026-11-18T14:10:19.420Z"
+      "letto": "2026-11-18T15:20:12.871Z"
     }
   }
 };
