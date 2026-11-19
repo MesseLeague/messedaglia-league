@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-18T15:20:13.288Z",
+  "aggiornato": "2026-11-19T06:30:13.577Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,11 +37,11 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6191,
-      "vittorie": 3297,
-      "sconfitte": 2894,
+      "partite": 6196,
+      "vittorie": 3301,
+      "sconfitte": 2895,
       "percentuale": 53.3,
-      "treCorone": 838,
+      "treCorone": 839,
       "maxSfida": 2,
       "tornei": 57,
       "donazioni": 16349,
@@ -69,22 +69,22 @@ window.ML_PUBBLICO = {
       },
       "ultimaPosizione": null,
       "carte": 123,
-      "carte16": 13,
+      "carte16": 14,
       "carte15": 25,
       "carte14": 47,
-      "livelloMedio": 13.1,
+      "livelloMedio": 13.2,
       "evoSbloccate": 24,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Lumberjack",
-        "slug": "lumberjack"
+        "nome": "Royal Giant",
+        "slug": "royal_giant"
       },
       "mazzo": [
         {
-          "nome": "Cannon",
-          "slug": "evo_cannon",
-          "costo": 3,
-          "livello": 16
+          "nome": "Mortar",
+          "slug": "evo_mortar",
+          "costo": 4,
+          "livello": 14
         },
         {
           "nome": "Ice Wizard",
@@ -93,91 +93,116 @@ window.ML_PUBBLICO = {
           "livello": 13
         },
         {
-          "nome": "Knight",
-          "slug": "hero_knight",
+          "nome": "Skeleton Barrel",
+          "slug": "evo_skeleton_barrel",
           "costo": 3,
+          "livello": 14
+        },
+        {
+          "nome": "Cannon Cart",
+          "slug": "cannon_cart",
+          "costo": 5,
+          "livello": 13
+        },
+        {
+          "nome": "Fireball",
+          "slug": "fireball",
+          "costo": 4,
           "livello": 15
         },
         {
-          "nome": "Skeletons",
-          "slug": "skeletons",
-          "costo": 1,
-          "livello": 16
+          "nome": "Minions",
+          "slug": "minions",
+          "costo": 3,
+          "livello": 13
+        },
+        {
+          "nome": "Rascals",
+          "slug": "rascals",
+          "costo": 5,
+          "livello": 13
         },
         {
           "nome": "Barbarian Barrel",
           "slug": "hero_barbarian_barrel",
           "costo": 2,
           "livello": 16
-        },
-        {
-          "nome": "Fireball",
-          "slug": "fireball",
-          "costo": 4,
-          "livello": 15
-        },
-        {
-          "nome": "Minion Giant",
-          "slug": "minion_giant",
-          "costo": 4,
-          "livello": 11
-        },
-        {
-          "nome": "Bats",
-          "slug": "bats",
-          "costo": 2,
-          "livello": 13
         }
       ],
-      "mazzoMedio": 2.75,
-      "ciclo": 8,
+      "mazzoMedio": 3.63,
+      "ciclo": 11,
       "torre": {
         "nome": "Tower Princess",
         "slug": "tower_princess"
       },
       "piuUsate": [
         {
+          "nome": "The Log",
+          "slug": "the_log",
+          "volte": 22
+        },
+        {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 23
+          "volte": 19
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 21
+          "volte": 19
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 20
-        },
-        {
-          "nome": "The Log",
-          "slug": "the_log",
-          "volte": 19
+          "volte": 18
         },
         {
           "nome": "Fireball",
           "slug": "fireball",
-          "volte": 12
+          "volte": 15
         },
         {
           "nome": "Royal Delivery",
           "slug": "royal_delivery",
-          "volte": 11
+          "volte": 9
         },
         {
-          "nome": "Royal Hogs",
-          "slug": "evo_royal_hogs",
-          "volte": 10
+          "nome": "Hog Rider",
+          "slug": "hog_rider",
+          "volte": 9
         },
         {
-          "nome": "Archer Queen",
-          "slug": "archer_queen",
-          "volte": 10
+          "nome": "Musketeer",
+          "slug": "evo_musketeer",
+          "volte": 8
         }
       ],
       "forma": [
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "3-0"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Amichevole",
@@ -227,52 +252,27 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Amichevole",
           "corone": "2-1"
-        },
-        {
-          "r": "V",
-          "modo": "Amichevole",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-3"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Evento",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 43,
+      "percentualeRecente": 53,
       "perModo": [
         {
           "modo": "Evento",
-          "v": 6,
+          "v": 9,
           "s": 8
-        },
-        {
-          "modo": "Classificata",
-          "v": 4,
-          "s": 2
         },
         {
           "modo": "Amichevole",
           "v": 2,
           "s": 3
+        },
+        {
+          "modo": "Classificata",
+          "v": 1,
+          "s": 2
         }
       ],
-      "letto": "2026-11-18T15:20:12.871Z"
+      "letto": "2026-11-19T06:30:13.313Z"
     }
   }
 };
