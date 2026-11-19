@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-19T07:30:15.420Z",
+  "aggiornato": "2026-11-19T14:10:15.288Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,19 +37,19 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6197,
-      "vittorie": 3301,
+      "partite": 6199,
+      "vittorie": 3303,
       "sconfitte": 2896,
       "percentuale": 53.3,
-      "treCorone": 839,
+      "treCorone": 841,
       "maxSfida": 2,
       "tornei": 57,
-      "donazioni": 16349,
+      "donazioni": 16357,
       "anni": 4,
       "badge": 139,
       "maestrie": 122,
       "serie": 10,
-      "stellaPunti": 19188,
+      "stellaPunti": 19196,
       "lega": {
         "nome": "Maestro III",
         "slug": "master_3",
@@ -139,22 +139,22 @@ window.ML_PUBBLICO = {
         {
           "nome": "The Log",
           "slug": "the_log",
-          "volte": 23
+          "volte": 22
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 19
+          "volte": 18
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 19
+          "volte": 18
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 18
+          "volte": 17
         },
         {
           "nome": "Fireball",
@@ -162,14 +162,14 @@ window.ML_PUBBLICO = {
           "volte": 16
         },
         {
-          "nome": "Royal Delivery",
-          "slug": "royal_delivery",
-          "volte": 9
-        },
-        {
           "nome": "Hog Rider",
           "slug": "hog_rider",
           "volte": 9
+        },
+        {
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
+          "volte": 8
         },
         {
           "nome": "Musketeer",
@@ -178,6 +178,16 @@ window.ML_PUBBLICO = {
         }
       ],
       "forma": [
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "3-0"
+        },
+        {
+          "r": "V",
+          "modo": "Evento",
+          "corone": "3-0"
+        },
         {
           "r": "S",
           "modo": "Evento",
@@ -242,24 +252,14 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Evento",
           "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Evento",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
       "percentualeRecente": 53,
       "perModo": [
         {
           "modo": "Evento",
-          "v": 9,
-          "s": 9
+          "v": 11,
+          "s": 8
         },
         {
           "modo": "Amichevole",
@@ -269,10 +269,10 @@ window.ML_PUBBLICO = {
         {
           "modo": "Classificata",
           "v": 1,
-          "s": 1
+          "s": 0
         }
       ],
-      "letto": "2026-11-19T07:30:14.876Z"
+      "letto": "2026-11-19T14:10:14.982Z"
     }
   }
 };
