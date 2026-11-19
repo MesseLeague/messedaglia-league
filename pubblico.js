@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-19T06:30:13.577Z",
+  "aggiornato": "2026-11-19T07:30:15.420Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6196,
+      "partite": 6197,
       "vittorie": 3301,
-      "sconfitte": 2895,
+      "sconfitte": 2896,
       "percentuale": 53.3,
       "treCorone": 839,
       "maxSfida": 2,
@@ -139,7 +139,7 @@ window.ML_PUBBLICO = {
         {
           "nome": "The Log",
           "slug": "the_log",
-          "volte": 22
+          "volte": 23
         },
         {
           "nome": "Skeletons",
@@ -159,7 +159,7 @@ window.ML_PUBBLICO = {
         {
           "nome": "Fireball",
           "slug": "fireball",
-          "volte": 15
+          "volte": 16
         },
         {
           "nome": "Royal Delivery",
@@ -178,6 +178,11 @@ window.ML_PUBBLICO = {
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Evento",
+          "corone": "0-2"
+        },
         {
           "r": "V",
           "modo": "Evento",
@@ -247,11 +252,6 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Amichevole",
-          "corone": "2-1"
         }
       ],
       "percentualeRecente": 53,
@@ -259,7 +259,7 @@ window.ML_PUBBLICO = {
         {
           "modo": "Evento",
           "v": 9,
-          "s": 8
+          "s": 9
         },
         {
           "modo": "Amichevole",
@@ -269,10 +269,10 @@ window.ML_PUBBLICO = {
         {
           "modo": "Classificata",
           "v": 1,
-          "s": 2
+          "s": 1
         }
       ],
-      "letto": "2026-11-19T06:30:13.313Z"
+      "letto": "2026-11-19T07:30:14.876Z"
     }
   }
 };
