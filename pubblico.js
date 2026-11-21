@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-21T17:00:14.360Z",
+  "aggiornato": "2026-11-21T18:10:15.998Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,11 +37,11 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6241,
-      "vittorie": 3326,
-      "sconfitte": 2915,
+      "partite": 6246,
+      "vittorie": 3330,
+      "sconfitte": 2916,
       "percentuale": 53.3,
-      "treCorone": 845,
+      "treCorone": 846,
       "maxSfida": 2,
       "tornei": 57,
       "donazioni": 16357,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Archer Queen",
-        "slug": "archer_queen"
+        "nome": "Royal Hogs",
+        "slug": "royal_hogs"
       },
       "mazzo": [
         {
@@ -137,47 +137,72 @@ window.ML_PUBBLICO = {
       },
       "piuUsate": [
         {
+          "nome": "Royal Hogs",
+          "slug": "evo_royal_hogs",
+          "volte": 30
+        },
+        {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
+          "volte": 30
+        },
+        {
+          "nome": "Cannon",
+          "slug": "evo_cannon",
+          "volte": 30
+        },
+        {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
           "volte": 30
         },
         {
-          "nome": "The Log",
-          "slug": "the_log",
-          "volte": 29
-        },
-        {
-          "nome": "Royal Delivery",
-          "slug": "royal_delivery",
-          "volte": 26
-        },
-        {
-          "nome": "Royal Hogs",
-          "slug": "evo_royal_hogs",
-          "volte": 25
-        },
-        {
-          "nome": "Archer Queen",
-          "slug": "archer_queen",
-          "volte": 25
-        },
-        {
-          "nome": "Cannon",
-          "slug": "evo_cannon",
-          "volte": 25
-        },
-        {
           "nome": "Earthquake",
           "slug": "earthquake",
-          "volte": 25
+          "volte": 30
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 25
+          "volte": 30
+        },
+        {
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
+          "volte": 30
+        },
+        {
+          "nome": "The Log",
+          "slug": "the_log",
+          "volte": 30
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "3-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
         {
           "r": "V",
           "modo": "Classificata",
@@ -227,34 +252,9 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "3-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "3-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 60,
+      "percentualeRecente": 63,
       "perModo": [
         {
           "modo": "Classificata",
@@ -262,7 +262,7 @@ window.ML_PUBBLICO = {
           "s": 10
         }
       ],
-      "letto": "2026-11-21T17:00:14.070Z"
+      "letto": "2026-11-21T18:10:15.542Z"
     }
   }
 };
