@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-21T20:30:14.000Z",
+  "aggiornato": "2026-11-21T21:40:13.673Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,10 +37,10 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6256,
-      "vittorie": 3338,
-      "sconfitte": 2918,
-      "percentuale": 53.4,
+      "partite": 6263,
+      "vittorie": 3341,
+      "sconfitte": 2922,
+      "percentuale": 53.3,
       "treCorone": 847,
       "maxSfida": 2,
       "tornei": 57,
@@ -184,6 +184,41 @@ window.ML_PUBBLICO = {
           "corone": "0-1"
         },
         {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "1-3"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "1-3"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
@@ -217,52 +252,17 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "3-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "3-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 67,
+      "percentualeRecente": 60,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 16,
-          "s": 9
+          "v": 17,
+          "s": 8
         }
       ],
-      "letto": "2026-11-21T20:30:13.792Z"
+      "letto": "2026-11-21T21:40:13.390Z"
     }
   }
 };
