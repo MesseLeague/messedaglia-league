@@ -6,13 +6,24 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-19T23:10:16.667Z",
+  "aggiornato": "2026-11-21T14:21:42.285Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
   },
-  "totale": 0,
-  "classifica": [],
+  "totale": 1,
+  "classifica": [
+    {
+      "pos": 1,
+      "nome": "Blax13e",
+      "soprannome": "Blax",
+      "lega": "champion",
+      "legaNome": "Campione",
+      "record": 13033,
+      "trofei": 13033,
+      "esito": "qual"
+    }
+  ],
   "contatti": [
     {
       "nome": "Marco Giacomi",
@@ -23,5 +34,249 @@ window.ML_PUBBLICO = {
       "email": "giovanni.derani@messedaglia.edu.it"
     }
   ],
-  "profili": {}
+  "profili": {
+    "Blax13e": {
+      "livello": 63,
+      "clan": "REAL PARADISE™®",
+      "ruolo": "Anziano",
+      "trofei": 13033,
+      "record": 13033,
+      "partite": 6237,
+      "vittorie": 3324,
+      "sconfitte": 2913,
+      "percentuale": 53.3,
+      "treCorone": 845,
+      "maxSfida": 2,
+      "tornei": 57,
+      "donazioni": 16357,
+      "anni": 4,
+      "badge": 139,
+      "maestrie": 122,
+      "serie": 10,
+      "stellaPunti": 22796,
+      "lega": {
+        "nome": "Campione",
+        "slug": "champion",
+        "medaglie": 0
+      },
+      "legaPosizione": null,
+      "migliorLega": {
+        "nome": "Campione",
+        "slug": "champion",
+        "medaglie": 0
+      },
+      "migliorPosizione": null,
+      "ultimaLega": {
+        "nome": "Campione",
+        "slug": "champion",
+        "medaglie": 0
+      },
+      "ultimaPosizione": null,
+      "carte": 123,
+      "carte16": 14,
+      "carte15": 25,
+      "carte14": 48,
+      "livelloMedio": 13.2,
+      "evoSbloccate": 25,
+      "heroSbloccati": 7,
+      "preferita": {
+        "nome": "Royal Hogs",
+        "slug": "royal_hogs"
+      },
+      "mazzo": [
+        {
+          "nome": "Cannon",
+          "slug": "evo_cannon",
+          "costo": 3,
+          "livello": 16
+        },
+        {
+          "nome": "Valkyrie",
+          "slug": "hero_valkyrie",
+          "costo": 4,
+          "livello": 16
+        },
+        {
+          "nome": "Skeleton Army",
+          "slug": "evo_skeleton_army",
+          "costo": 3,
+          "livello": 13
+        },
+        {
+          "nome": "Goblin Barrel",
+          "slug": "goblin_barrel",
+          "costo": 3,
+          "livello": 15
+        },
+        {
+          "nome": "Princess",
+          "slug": "princess",
+          "costo": 3,
+          "livello": 14
+        },
+        {
+          "nome": "Dart Goblin",
+          "slug": "dart_goblin",
+          "costo": 3,
+          "livello": 14
+        },
+        {
+          "nome": "Ice Spirit",
+          "slug": "ice_spirit",
+          "costo": 1,
+          "livello": 16
+        },
+        {
+          "nome": "Wall Breakers",
+          "slug": "wall_breakers",
+          "costo": 2,
+          "livello": 15
+        }
+      ],
+      "mazzoMedio": 2.75,
+      "ciclo": 9,
+      "torre": {
+        "nome": "Tower Princess",
+        "slug": "tower_princess"
+      },
+      "piuUsate": [
+        {
+          "nome": "Ice Spirit",
+          "slug": "ice_spirit",
+          "volte": 29
+        },
+        {
+          "nome": "The Log",
+          "slug": "the_log",
+          "volte": 25
+        },
+        {
+          "nome": "Cannon",
+          "slug": "evo_cannon",
+          "volte": 24
+        },
+        {
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
+          "volte": 22
+        },
+        {
+          "nome": "Royal Hogs",
+          "slug": "evo_royal_hogs",
+          "volte": 21
+        },
+        {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
+          "volte": 21
+        },
+        {
+          "nome": "Earthquake",
+          "slug": "earthquake",
+          "volte": 21
+        },
+        {
+          "nome": "Skeletons",
+          "slug": "skeletons",
+          "volte": 21
+        }
+      ],
+      "forma": [
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-3"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-2"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "3-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "3-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "2-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "1-2"
+        }
+      ],
+      "percentualeRecente": 53,
+      "perModo": [
+        {
+          "modo": "Classificata",
+          "v": 13,
+          "s": 8
+        },
+        {
+          "modo": "Evento",
+          "v": 2,
+          "s": 1
+        },
+        {
+          "modo": "Duello",
+          "v": 0,
+          "s": 1
+        }
+      ],
+      "letto": "2026-11-21T14:21:41.999Z"
+    }
+  }
 };
