@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-21T14:30:13.669Z",
+  "aggiornato": "2026-11-21T17:00:14.360Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6237,
-      "vittorie": 3324,
-      "sconfitte": 2913,
+      "partite": 6241,
+      "vittorie": 3326,
+      "sconfitte": 2915,
       "percentuale": 53.3,
       "treCorone": 845,
       "maxSfida": 2,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Royal Hogs",
-        "slug": "royal_hogs"
+        "nome": "Archer Queen",
+        "slug": "archer_queen"
       },
       "mazzo": [
         {
@@ -139,45 +139,65 @@ window.ML_PUBBLICO = {
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 29
+          "volte": 30
         },
         {
           "nome": "The Log",
           "slug": "the_log",
+          "volte": 29
+        },
+        {
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
+          "volte": 26
+        },
+        {
+          "nome": "Royal Hogs",
+          "slug": "evo_royal_hogs",
+          "volte": 25
+        },
+        {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
           "volte": 25
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 24
-        },
-        {
-          "nome": "Royal Delivery",
-          "slug": "royal_delivery",
-          "volte": 22
-        },
-        {
-          "nome": "Royal Hogs",
-          "slug": "evo_royal_hogs",
-          "volte": 21
-        },
-        {
-          "nome": "Archer Queen",
-          "slug": "archer_queen",
-          "volte": 21
+          "volte": 25
         },
         {
           "nome": "Earthquake",
           "slug": "earthquake",
-          "volte": 21
+          "volte": 25
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 21
+          "volte": 25
         }
       ],
       "forma": [
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Classificata",
@@ -232,47 +252,17 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "2-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-2"
         }
       ],
-      "percentualeRecente": 53,
+      "percentualeRecente": 60,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 13,
-          "s": 8
-        },
-        {
-          "modo": "Evento",
-          "v": 2,
-          "s": 1
-        },
-        {
-          "modo": "Duello",
-          "v": 0,
-          "s": 1
+          "v": 15,
+          "s": 10
         }
       ],
-      "letto": "2026-11-21T14:30:13.420Z"
+      "letto": "2026-11-21T17:00:14.070Z"
     }
   }
 };
