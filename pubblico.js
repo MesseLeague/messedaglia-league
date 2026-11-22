@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-22T21:40:13.894Z",
+  "aggiornato": "2026-11-22T22:50:17.312Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,13 +37,13 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13000,
       "record": 13033,
-      "partite": 6269,
-      "vittorie": 3342,
-      "sconfitte": 2927,
+      "partite": 6277,
+      "vittorie": 3345,
+      "sconfitte": 2932,
       "percentuale": 53.3,
       "treCorone": 848,
       "maxSfida": 2,
-      "tornei": 59,
+      "tornei": 67,
       "donazioni": 16367,
       "anni": 4,
       "badge": 139,
@@ -76,19 +76,13 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Royal Hogs",
-        "slug": "royal_hogs"
+        "nome": "Guards",
+        "slug": "guards"
       },
       "mazzo": [
         {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "costo": 5,
-          "livello": 16
-        },
-        {
-          "nome": "Archer Queen",
-          "slug": "archer_queen",
           "costo": 5,
           "livello": 16
         },
@@ -129,7 +123,7 @@ window.ML_PUBBLICO = {
           "livello": 16
         }
       ],
-      "mazzoMedio": 2.88,
+      "mazzoMedio": 2.57,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -139,45 +133,85 @@ window.ML_PUBBLICO = {
         {
           "nome": "The Log",
           "slug": "the_log",
-          "volte": 29
-        },
-        {
-          "nome": "Royal Hogs",
-          "slug": "evo_royal_hogs",
-          "volte": 28
-        },
-        {
-          "nome": "Archer Queen",
-          "slug": "archer_queen",
-          "volte": 28
-        },
-        {
-          "nome": "Cannon",
-          "slug": "evo_cannon",
-          "volte": 28
+          "volte": 25
         },
         {
           "nome": "Earthquake",
           "slug": "earthquake",
-          "volte": 28
+          "volte": 21
+        },
+        {
+          "nome": "Royal Hogs",
+          "slug": "evo_royal_hogs",
+          "volte": 20
+        },
+        {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
+          "volte": 20
+        },
+        {
+          "nome": "Cannon",
+          "slug": "evo_cannon",
+          "volte": 20
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 28
+          "volte": 20
         },
         {
           "nome": "Royal Delivery",
           "slug": "royal_delivery",
-          "volte": 28
+          "volte": 20
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 28
+          "volte": 20
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Torneo",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Torneo",
+          "corone": "1-2"
+        },
+        {
+          "r": "V",
+          "modo": "Torneo",
+          "corone": "2-0"
+        },
+        {
+          "r": "S",
+          "modo": "Torneo",
+          "corone": "0-3"
+        },
+        {
+          "r": "S",
+          "modo": "Torneo",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Torneo",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Torneo",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Torneo",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Torneo",
@@ -212,59 +246,19 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-3"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-3"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 60,
+      "percentualeRecente": 47,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 13,
-          "s": 8
+          "v": 7,
+          "s": 6
         },
         {
           "modo": "Torneo",
-          "v": 0,
-          "s": 2
+          "v": 3,
+          "s": 7
         },
         {
           "modo": "Scalata",
@@ -272,7 +266,7 @@ window.ML_PUBBLICO = {
           "s": 2
         }
       ],
-      "letto": "2026-11-22T21:40:13.635Z"
+      "letto": "2026-11-22T22:50:16.486Z"
     }
   }
 };
