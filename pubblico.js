@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-22T18:40:13.500Z",
+  "aggiornato": "2026-11-22T21:40:13.894Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -20,7 +20,7 @@ window.ML_PUBBLICO = {
       "lega": "champion",
       "legaNome": "Campione",
       "record": 13033,
-      "trofei": 13003,
+      "trofei": 13000,
       "esito": "qual"
     }
   ],
@@ -35,20 +35,20 @@ window.ML_PUBBLICO = {
       "livello": 63,
       "clan": "REAL PARADISE™®",
       "ruolo": "Anziano",
-      "trofei": 13003,
+      "trofei": 13000,
       "record": 13033,
-      "partite": 6266,
+      "partite": 6269,
       "vittorie": 3342,
-      "sconfitte": 2924,
+      "sconfitte": 2927,
       "percentuale": 53.3,
       "treCorone": 848,
       "maxSfida": 2,
-      "tornei": 57,
+      "tornei": 59,
       "donazioni": 16367,
       "anni": 4,
       "badge": 139,
       "maestrie": 122,
-      "serie": -1,
+      "serie": -2,
       "stellaPunti": 6406,
       "lega": {
         "nome": "Gran Campione",
@@ -83,6 +83,12 @@ window.ML_PUBBLICO = {
         {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
+          "costo": 5,
+          "livello": 16
+        },
+        {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
           "costo": 5,
           "livello": 16
         },
@@ -123,7 +129,7 @@ window.ML_PUBBLICO = {
           "livello": 16
         }
       ],
-      "mazzoMedio": 2.57,
+      "mazzoMedio": 2.88,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -131,47 +137,62 @@ window.ML_PUBBLICO = {
       },
       "piuUsate": [
         {
+          "nome": "The Log",
+          "slug": "the_log",
+          "volte": 29
+        },
+        {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "volte": 30
+          "volte": 28
         },
         {
           "nome": "Archer Queen",
           "slug": "archer_queen",
-          "volte": 30
+          "volte": 28
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 30
-        },
-        {
-          "nome": "The Log",
-          "slug": "the_log",
-          "volte": 30
+          "volte": 28
         },
         {
           "nome": "Earthquake",
           "slug": "earthquake",
-          "volte": 30
+          "volte": 28
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 30
+          "volte": 28
         },
         {
           "nome": "Royal Delivery",
           "slug": "royal_delivery",
-          "volte": 30
+          "volte": 28
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 30
+          "volte": 28
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Torneo",
+          "corone": "0-2"
+        },
+        {
+          "r": "S",
+          "modo": "Torneo",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Scalata",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Scalata",
@@ -231,37 +252,27 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
       "percentualeRecente": 60,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 16,
+          "v": 13,
           "s": 8
+        },
+        {
+          "modo": "Torneo",
+          "v": 0,
+          "s": 2
         },
         {
           "modo": "Scalata",
           "v": 0,
-          "s": 1
+          "s": 2
         }
       ],
-      "letto": "2026-11-22T18:40:13.262Z"
+      "letto": "2026-11-22T21:40:13.635Z"
     }
   }
 };
