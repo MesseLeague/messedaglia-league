@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-22T17:00:13.583Z",
+  "aggiornato": "2026-11-22T18:10:14.293Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,11 +37,11 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13033,
       "record": 13033,
-      "partite": 6263,
-      "vittorie": 3341,
-      "sconfitte": 2922,
+      "partite": 6265,
+      "vittorie": 3342,
+      "sconfitte": 2923,
       "percentuale": 53.3,
-      "treCorone": 847,
+      "treCorone": 848,
       "maxSfida": 2,
       "tornei": 57,
       "donazioni": 16367,
@@ -184,6 +184,16 @@ window.ML_PUBBLICO = {
           "corone": "0-1"
         },
         {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "3-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
@@ -242,19 +252,9 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
         }
       ],
-      "percentualeRecente": 60,
+      "percentualeRecente": 63,
       "perModo": [
         {
           "modo": "Classificata",
@@ -262,7 +262,7 @@ window.ML_PUBBLICO = {
           "s": 8
         }
       ],
-      "letto": "2026-11-22T17:00:13.354Z"
+      "letto": "2026-11-22T18:10:14.002Z"
     }
   }
 };
