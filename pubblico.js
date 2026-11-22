@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-22T18:10:14.293Z",
+  "aggiornato": "2026-11-22T18:40:13.500Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -20,7 +20,7 @@ window.ML_PUBBLICO = {
       "lega": "champion",
       "legaNome": "Campione",
       "record": 13033,
-      "trofei": 13033,
+      "trofei": 13003,
       "esito": "qual"
     }
   ],
@@ -35,11 +35,11 @@ window.ML_PUBBLICO = {
       "livello": 63,
       "clan": "REAL PARADISE™®",
       "ruolo": "Anziano",
-      "trofei": 13033,
+      "trofei": 13003,
       "record": 13033,
-      "partite": 6265,
+      "partite": 6266,
       "vittorie": 3342,
-      "sconfitte": 2923,
+      "sconfitte": 2924,
       "percentuale": 53.3,
       "treCorone": 848,
       "maxSfida": 2,
@@ -48,7 +48,7 @@ window.ML_PUBBLICO = {
       "anni": 4,
       "badge": 139,
       "maestrie": 122,
-      "serie": 10,
+      "serie": -1,
       "stellaPunti": 6406,
       "lega": {
         "nome": "Gran Campione",
@@ -81,40 +81,28 @@ window.ML_PUBBLICO = {
       },
       "mazzo": [
         {
+          "nome": "Royal Hogs",
+          "slug": "evo_royal_hogs",
+          "costo": 5,
+          "livello": 16
+        },
+        {
           "nome": "Cannon",
           "slug": "evo_cannon",
           "costo": 3,
           "livello": 16
         },
         {
-          "nome": "Valkyrie",
-          "slug": "hero_valkyrie",
-          "costo": 4,
+          "nome": "The Log",
+          "slug": "the_log",
+          "costo": 2,
           "livello": 16
         },
         {
-          "nome": "Skeleton Army",
-          "slug": "evo_skeleton_army",
+          "nome": "Earthquake",
+          "slug": "earthquake",
           "costo": 3,
-          "livello": 13
-        },
-        {
-          "nome": "Goblin Barrel",
-          "slug": "goblin_barrel",
-          "costo": 3,
-          "livello": 15
-        },
-        {
-          "nome": "Princess",
-          "slug": "princess",
-          "costo": 3,
-          "livello": 14
-        },
-        {
-          "nome": "Dart Goblin",
-          "slug": "dart_goblin",
-          "costo": 3,
-          "livello": 14
+          "livello": 16
         },
         {
           "nome": "Ice Spirit",
@@ -123,14 +111,20 @@ window.ML_PUBBLICO = {
           "livello": 16
         },
         {
-          "nome": "Wall Breakers",
-          "slug": "wall_breakers",
-          "costo": 2,
-          "livello": 15
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
+          "costo": 3,
+          "livello": 16
+        },
+        {
+          "nome": "Skeletons",
+          "slug": "skeletons",
+          "costo": 1,
+          "livello": 16
         }
       ],
-      "mazzoMedio": 2.75,
-      "ciclo": 9,
+      "mazzoMedio": 2.57,
+      "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
         "slug": "tower_princess"
@@ -152,8 +146,8 @@ window.ML_PUBBLICO = {
           "volte": 30
         },
         {
-          "nome": "Ice Spirit",
-          "slug": "ice_spirit",
+          "nome": "The Log",
+          "slug": "the_log",
           "volte": 30
         },
         {
@@ -162,8 +156,8 @@ window.ML_PUBBLICO = {
           "volte": 30
         },
         {
-          "nome": "Skeletons",
-          "slug": "skeletons",
+          "nome": "Ice Spirit",
+          "slug": "ice_spirit",
           "volte": 30
         },
         {
@@ -172,12 +166,17 @@ window.ML_PUBBLICO = {
           "volte": 30
         },
         {
-          "nome": "The Log",
-          "slug": "the_log",
+          "nome": "Skeletons",
+          "slug": "skeletons",
           "volte": 30
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Scalata",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Classificata",
@@ -247,22 +246,22 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 63,
+      "percentualeRecente": 60,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 17,
+          "v": 16,
           "s": 8
+        },
+        {
+          "modo": "Scalata",
+          "v": 0,
+          "s": 1
         }
       ],
-      "letto": "2026-11-22T18:10:14.002Z"
+      "letto": "2026-11-22T18:40:13.262Z"
     }
   }
 };
