@@ -6,9 +6,9 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-23T11:42:41.880Z",
+  "aggiornato": "2026-11-23T11:43:52.670Z",
   "iscrizioni": {
-    "aperte": false,
+    "aperte": true,
     "scadenza": "sabato 3 aprile"
   },
   "totale": 1,
@@ -272,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 2
         }
       ],
-      "letto": "2026-11-23T11:42:41.461Z"
+      "letto": "2026-11-23T11:43:52.399Z"
     }
   }
 };
