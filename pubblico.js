@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-22T22:50:17.312Z",
+  "aggiornato": "2026-11-23T06:20:14.281Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,19 +37,19 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13000,
       "record": 13033,
-      "partite": 6277,
-      "vittorie": 3345,
+      "partite": 6279,
+      "vittorie": 3347,
       "sconfitte": 2932,
       "percentuale": 53.3,
       "treCorone": 848,
       "maxSfida": 2,
       "tornei": 67,
-      "donazioni": 16367,
+      "donazioni": 16375,
       "anni": 4,
       "badge": 139,
       "maestrie": 122,
       "serie": -2,
-      "stellaPunti": 6406,
+      "stellaPunti": 6414,
       "lega": {
         "nome": "Gran Campione",
         "slug": "grand_champion",
@@ -76,13 +76,19 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Guards",
-        "slug": "guards"
+        "nome": "Archer Queen",
+        "slug": "archer_queen"
       },
       "mazzo": [
         {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
+          "costo": 5,
+          "livello": 16
+        },
+        {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
           "costo": 5,
           "livello": 16
         },
@@ -123,7 +129,7 @@ window.ML_PUBBLICO = {
           "livello": 16
         }
       ],
-      "mazzoMedio": 2.57,
+      "mazzoMedio": 2.88,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -161,17 +167,27 @@ window.ML_PUBBLICO = {
           "volte": 20
         },
         {
-          "nome": "Royal Delivery",
-          "slug": "royal_delivery",
+          "nome": "Skeletons",
+          "slug": "skeletons",
           "volte": 20
         },
         {
-          "nome": "Skeletons",
-          "slug": "skeletons",
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
           "volte": 20
         }
       ],
       "forma": [
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
         {
           "r": "S",
           "modo": "Torneo",
@@ -236,19 +252,9 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "3-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
         }
       ],
-      "percentualeRecente": 47,
+      "percentualeRecente": 50,
       "perModo": [
         {
           "modo": "Classificata",
@@ -266,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 2
         }
       ],
-      "letto": "2026-11-22T22:50:16.486Z"
+      "letto": "2026-11-23T06:20:13.961Z"
     }
   }
 };
