@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-23T15:50:13.950Z",
+  "aggiornato": "2026-11-23T17:20:14.425Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -87,12 +87,6 @@ window.ML_PUBBLICO = {
           "livello": 16
         },
         {
-          "nome": "Archer Queen",
-          "slug": "archer_queen",
-          "costo": 5,
-          "livello": 16
-        },
-        {
           "nome": "Cannon",
           "slug": "evo_cannon",
           "costo": 3,
@@ -129,7 +123,7 @@ window.ML_PUBBLICO = {
           "livello": 16
         }
       ],
-      "mazzoMedio": 2.88,
+      "mazzoMedio": 2.57,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -272,7 +266,7 @@ window.ML_PUBBLICO = {
           "s": 2
         }
       ],
-      "letto": "2026-11-23T15:50:13.516Z"
+      "letto": "2026-11-23T17:20:14.091Z"
     }
   }
 };
