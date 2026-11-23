@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-23T06:20:14.281Z",
+  "aggiornato": "2026-11-23T07:30:17.353Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13000,
       "record": 13033,
-      "partite": 6279,
+      "partite": 6282,
       "vittorie": 3347,
-      "sconfitte": 2932,
+      "sconfitte": 2935,
       "percentuale": 53.3,
       "treCorone": 848,
       "maxSfida": 2,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Archer Queen",
-        "slug": "archer_queen"
+        "nome": "Royal Hogs",
+        "slug": "royal_hogs"
       },
       "mazzo": [
         {
@@ -179,6 +179,21 @@ window.ML_PUBBLICO = {
       ],
       "forma": [
         {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
@@ -237,29 +252,14 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Torneo",
           "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Scalata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Scalata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
         }
       ],
-      "percentualeRecente": 50,
+      "percentualeRecente": 40,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 7,
-          "s": 6
+          "v": 5,
+          "s": 8
         },
         {
           "modo": "Torneo",
@@ -272,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 2
         }
       ],
-      "letto": "2026-11-23T06:20:13.961Z"
+      "letto": "2026-11-23T07:30:15.494Z"
     }
   }
 };
