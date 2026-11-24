@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-24T14:50:14.316Z",
+  "aggiornato": "2026-11-24T16:00:14.290Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13000,
       "record": 13033,
-      "partite": 6298,
-      "vittorie": 3353,
-      "sconfitte": 2945,
+      "partite": 6300,
+      "vittorie": 3354,
+      "sconfitte": 2946,
       "percentuale": 53.2,
       "treCorone": 848,
       "maxSfida": 2,
@@ -139,47 +139,67 @@ window.ML_PUBBLICO = {
         {
           "nome": "The Log",
           "slug": "the_log",
-          "volte": 25
-        },
-        {
-          "nome": "Earthquake",
-          "slug": "earthquake",
-          "volte": 22
-        },
-        {
-          "nome": "Royal Hogs",
-          "slug": "evo_royal_hogs",
-          "volte": 21
-        },
-        {
-          "nome": "Archer Queen",
-          "slug": "archer_queen",
-          "volte": 21
-        },
-        {
-          "nome": "Cannon",
-          "slug": "evo_cannon",
-          "volte": 21
-        },
-        {
-          "nome": "Ice Spirit",
-          "slug": "ice_spirit",
-          "volte": 21
+          "volte": 26
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 21
+          "volte": 24
+        },
+        {
+          "nome": "Earthquake",
+          "slug": "earthquake",
+          "volte": 24
+        },
+        {
+          "nome": "Royal Hogs",
+          "slug": "evo_royal_hogs",
+          "volte": 23
+        },
+        {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
+          "volte": 23
+        },
+        {
+          "nome": "Cannon",
+          "slug": "evo_cannon",
+          "volte": 23
+        },
+        {
+          "nome": "Ice Spirit",
+          "slug": "ice_spirit",
+          "volte": 23
         },
         {
           "nome": "Royal Delivery",
           "slug": "royal_delivery",
-          "volte": 21
+          "volte": 23
         }
       ],
       "forma": [
         {
           "r": "S",
+          "modo": "Amichevole",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Amichevole",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
         },
@@ -227,26 +247,6 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         },
         {
           "r": "S",
@@ -254,20 +254,20 @@ window.ML_PUBBLICO = {
           "corone": "0-1"
         }
       ],
-      "percentualeRecente": 37,
+      "percentualeRecente": 33,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 8,
-          "s": 13
+          "v": 9,
+          "s": 14
         },
         {
-          "modo": "Torneo",
-          "v": 1,
-          "s": 3
+          "modo": "Amichevole",
+          "v": 0,
+          "s": 2
         }
       ],
-      "letto": "2026-11-24T14:50:14.018Z"
+      "letto": "2026-11-24T16:00:13.982Z"
     }
   }
 };
