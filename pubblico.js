@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-24T06:50:14.915Z",
+  "aggiornato": "2026-11-24T08:00:18.149Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,10 +37,10 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13000,
       "record": 13033,
-      "partite": 6291,
-      "vittorie": 3350,
-      "sconfitte": 2941,
-      "percentuale": 53.3,
+      "partite": 6296,
+      "vittorie": 3352,
+      "sconfitte": 2944,
+      "percentuale": 53.2,
       "treCorone": 848,
       "maxSfida": 2,
       "tornei": 67,
@@ -189,6 +189,31 @@ window.ML_PUBBLICO = {
           "corone": "1-0"
         },
         {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "1-2"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "1-2"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
@@ -227,52 +252,22 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Torneo",
-          "corone": "0-1"
         }
       ],
-      "percentualeRecente": 30,
+      "percentualeRecente": 33,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 5,
-          "s": 9
+          "v": 7,
+          "s": 12
         },
         {
           "modo": "Torneo",
-          "v": 3,
-          "s": 7
-        },
-        {
-          "modo": "Scalata",
-          "v": 0,
-          "s": 1
+          "v": 2,
+          "s": 4
         }
       ],
-      "letto": "2026-11-24T06:50:14.469Z"
+      "letto": "2026-11-24T08:00:17.349Z"
     }
   }
 };
