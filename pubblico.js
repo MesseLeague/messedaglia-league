@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-23T17:20:14.425Z",
+  "aggiornato": "2026-11-24T06:50:14.915Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13000,
       "record": 13033,
-      "partite": 6288,
-      "vittorie": 3349,
-      "sconfitte": 2939,
+      "partite": 6291,
+      "vittorie": 3350,
+      "sconfitte": 2941,
       "percentuale": 53.3,
       "treCorone": 848,
       "maxSfida": 2,
@@ -49,7 +49,7 @@ window.ML_PUBBLICO = {
       "badge": 139,
       "maestrie": 122,
       "serie": -2,
-      "stellaPunti": 6414,
+      "stellaPunti": 8414,
       "lega": {
         "nome": "Gran Campione",
         "slug": "grand_champion",
@@ -71,7 +71,7 @@ window.ML_PUBBLICO = {
       "carte": 123,
       "carte16": 14,
       "carte15": 25,
-      "carte14": 49,
+      "carte14": 50,
       "livelloMedio": 13.2,
       "evoSbloccate": 25,
       "heroSbloccati": 7,
@@ -81,49 +81,55 @@ window.ML_PUBBLICO = {
       },
       "mazzo": [
         {
-          "nome": "Royal Hogs",
-          "slug": "evo_royal_hogs",
-          "costo": 5,
+          "nome": "Royal Giant",
+          "slug": "evo_royal_giant",
+          "costo": 6,
           "livello": 16
         },
         {
-          "nome": "Cannon",
-          "slug": "evo_cannon",
-          "costo": 3,
-          "livello": 16
-        },
-        {
-          "nome": "The Log",
-          "slug": "the_log",
+          "nome": "Barbarian Barrel",
+          "slug": "hero_barbarian_barrel",
           "costo": 2,
           "livello": 16
         },
         {
-          "nome": "Earthquake",
-          "slug": "earthquake",
+          "nome": "Royal Ghost",
+          "slug": "evo_royal_ghost",
           "costo": 3,
+          "livello": 15
+        },
+        {
+          "nome": "Hunter",
+          "slug": "evo_hunter",
+          "costo": 4,
           "livello": 16
         },
         {
-          "nome": "Ice Spirit",
-          "slug": "ice_spirit",
-          "costo": 1,
-          "livello": 16
+          "nome": "Fireball",
+          "slug": "fireball",
+          "costo": 4,
+          "livello": 15
         },
         {
-          "nome": "Royal Delivery",
-          "slug": "royal_delivery",
+          "nome": "Fisherman",
+          "slug": "fisherman",
           "costo": 3,
-          "livello": 16
+          "livello": 15
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
           "costo": 1,
           "livello": 16
+        },
+        {
+          "nome": "Electro Spirit",
+          "slug": "electro_spirit",
+          "costo": 1,
+          "livello": 15
         }
       ],
-      "mazzoMedio": 2.57,
+      "mazzoMedio": 3,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -175,6 +181,21 @@ window.ML_PUBBLICO = {
         {
           "r": "S",
           "modo": "Classificata",
+          "corone": "1-2"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
           "corone": "0-1"
         },
         {
@@ -231,21 +252,6 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Torneo",
           "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Torneo",
-          "corone": "1-2"
-        },
-        {
-          "r": "V",
-          "modo": "Torneo",
-          "corone": "2-0"
-        },
-        {
-          "r": "S",
-          "modo": "Torneo",
-          "corone": "0-3"
         }
       ],
       "percentualeRecente": 30,
@@ -253,7 +259,7 @@ window.ML_PUBBLICO = {
         {
           "modo": "Classificata",
           "v": 5,
-          "s": 8
+          "s": 9
         },
         {
           "modo": "Torneo",
@@ -263,10 +269,10 @@ window.ML_PUBBLICO = {
         {
           "modo": "Scalata",
           "v": 0,
-          "s": 2
+          "s": 1
         }
       ],
-      "letto": "2026-11-23T17:20:14.091Z"
+      "letto": "2026-11-24T06:50:14.469Z"
     }
   }
 };
