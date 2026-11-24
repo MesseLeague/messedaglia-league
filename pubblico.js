@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-24T08:00:18.149Z",
+  "aggiornato": "2026-11-24T14:50:14.316Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13000,
       "record": 13033,
-      "partite": 6296,
-      "vittorie": 3352,
-      "sconfitte": 2944,
+      "partite": 6298,
+      "vittorie": 3353,
+      "sconfitte": 2945,
       "percentuale": 53.2,
       "treCorone": 848,
       "maxSfida": 2,
@@ -144,43 +144,53 @@ window.ML_PUBBLICO = {
         {
           "nome": "Earthquake",
           "slug": "earthquake",
-          "volte": 21
+          "volte": 22
         },
         {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "volte": 20
+          "volte": 21
         },
         {
           "nome": "Archer Queen",
           "slug": "archer_queen",
-          "volte": 20
+          "volte": 21
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 20
+          "volte": 21
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 20
+          "volte": 21
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 20
+          "volte": 21
         },
         {
           "nome": "Royal Delivery",
           "slug": "royal_delivery",
-          "volte": 20
+          "volte": 21
         }
       ],
       "forma": [
         {
           "r": "S",
           "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
           "corone": "1-2"
         },
         {
@@ -237,16 +247,6 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-2"
         },
         {
           "r": "S",
@@ -254,20 +254,20 @@ window.ML_PUBBLICO = {
           "corone": "0-1"
         }
       ],
-      "percentualeRecente": 33,
+      "percentualeRecente": 37,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 7,
-          "s": 12
+          "v": 8,
+          "s": 13
         },
         {
           "modo": "Torneo",
-          "v": 2,
-          "s": 4
+          "v": 1,
+          "s": 3
         }
       ],
-      "letto": "2026-11-24T08:00:17.349Z"
+      "letto": "2026-11-24T14:50:14.018Z"
     }
   }
 };
