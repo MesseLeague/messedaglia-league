@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-25T06:30:13.875Z",
+  "aggiornato": "2026-11-25T07:30:17.624Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,8 +37,8 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6305,
-      "vittorie": 3358,
+      "partite": 6306,
+      "vittorie": 3359,
       "sconfitte": 2947,
       "percentuale": 53.3,
       "treCorone": 848,
@@ -194,6 +194,11 @@ window.ML_PUBBLICO = {
           "corone": "1-0"
         },
         {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-3"
@@ -247,19 +252,14 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
         }
       ],
       "percentualeRecente": 43,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 10,
-          "s": 12
+          "v": 11,
+          "s": 11
         },
         {
           "modo": "Amichevole",
@@ -272,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 0
         }
       ],
-      "letto": "2026-11-25T06:30:13.598Z"
+      "letto": "2026-11-25T07:30:17.138Z"
     }
   }
 };
