@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-25T13:40:13.941Z",
+  "aggiornato": "2026-11-25T15:20:16.655Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,10 +37,10 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6310,
-      "vittorie": 3360,
-      "sconfitte": 2950,
-      "percentuale": 53.2,
+      "partite": 6314,
+      "vittorie": 3363,
+      "sconfitte": 2951,
+      "percentuale": 53.3,
       "treCorone": 848,
       "maxSfida": 2,
       "tornei": 67,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Archer Queen",
-        "slug": "archer_queen"
+        "nome": "Royal Hogs",
+        "slug": "royal_hogs"
       },
       "mazzo": [
         {
@@ -181,6 +181,26 @@ window.ML_PUBBLICO = {
         {
           "r": "S",
           "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
           "corone": "1-3"
         },
         {
@@ -232,34 +252,14 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Amichevole",
           "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Amichevole",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
         }
       ],
-      "percentualeRecente": 43,
+      "percentualeRecente": 50,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 10,
-          "s": 12
+          "v": 12,
+          "s": 10
         },
         {
           "modo": "Amichevole",
@@ -272,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 0
         }
       ],
-      "letto": "2026-11-25T13:40:13.520Z"
+      "letto": "2026-11-25T15:20:15.757Z"
     }
   }
 };
