@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-25T12:30:16.812Z",
+  "aggiornato": "2026-11-25T13:40:13.941Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,10 +37,10 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6308,
+      "partite": 6310,
       "vittorie": 3360,
-      "sconfitte": 2948,
-      "percentuale": 53.3,
+      "sconfitte": 2950,
+      "percentuale": 53.2,
       "treCorone": 848,
       "maxSfida": 2,
       "tornei": 67,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Royal Hogs",
-        "slug": "royal_hogs"
+        "nome": "Archer Queen",
+        "slug": "archer_queen"
       },
       "mazzo": [
         {
@@ -181,6 +181,16 @@ window.ML_PUBBLICO = {
         {
           "r": "S",
           "modo": "Classificata",
+          "corone": "1-3"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
           "corone": "0-1"
         },
         {
@@ -242,24 +252,14 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-2"
         }
       ],
       "percentualeRecente": 43,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 11,
-          "s": 11
+          "v": 10,
+          "s": 12
         },
         {
           "modo": "Amichevole",
@@ -272,7 +272,7 @@ window.ML_PUBBLICO = {
           "s": 0
         }
       ],
-      "letto": "2026-11-25T12:30:16.161Z"
+      "letto": "2026-11-25T13:40:13.520Z"
     }
   }
 };
