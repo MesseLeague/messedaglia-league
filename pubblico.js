@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-25T15:20:16.655Z",
+  "aggiornato": "2026-11-25T16:30:18.039Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,11 +37,11 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6314,
-      "vittorie": 3363,
-      "sconfitte": 2951,
-      "percentuale": 53.3,
-      "treCorone": 848,
+      "partite": 6325,
+      "vittorie": 3367,
+      "sconfitte": 2958,
+      "percentuale": 53.2,
+      "treCorone": 849,
       "maxSfida": 2,
       "tornei": 67,
       "donazioni": 16375,
@@ -181,27 +181,17 @@ window.ML_PUBBLICO = {
         {
           "r": "S",
           "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
+          "corone": "1-2"
         },
         {
           "r": "S",
           "modo": "Classificata",
-          "corone": "1-3"
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
         },
         {
           "r": "S",
@@ -221,50 +211,55 @@ window.ML_PUBBLICO = {
         {
           "r": "V",
           "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
+          "corone": "3-0"
         },
         {
           "r": "S",
           "modo": "Classificata",
-          "corone": "0-3"
-        },
-        {
-          "r": "V",
-          "modo": "Scalata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Amichevole",
           "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 50,
+      "percentualeRecente": 47,
       "perModo": [
         {
           "modo": "Classificata",
           "v": 12,
-          "s": 10
-        },
-        {
-          "modo": "Amichevole",
-          "v": 0,
-          "s": 2
+          "s": 12
         },
         {
           "modo": "Scalata",
@@ -272,7 +267,7 @@ window.ML_PUBBLICO = {
           "s": 0
         }
       ],
-      "letto": "2026-11-25T15:20:15.757Z"
+      "letto": "2026-11-25T16:30:17.105Z"
     }
   }
 };
