@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-24T16:00:14.290Z",
+  "aggiornato": "2026-11-25T06:30:13.875Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -20,7 +20,7 @@ window.ML_PUBBLICO = {
       "lega": "champion",
       "legaNome": "Campione",
       "record": 13033,
-      "trofei": 13000,
+      "trofei": 13030,
       "esito": "qual"
     }
   ],
@@ -35,12 +35,12 @@ window.ML_PUBBLICO = {
       "livello": 63,
       "clan": "REAL PARADISE™®",
       "ruolo": "Anziano",
-      "trofei": 13000,
+      "trofei": 13030,
       "record": 13033,
-      "partite": 6300,
-      "vittorie": 3354,
-      "sconfitte": 2946,
-      "percentuale": 53.2,
+      "partite": 6305,
+      "vittorie": 3358,
+      "sconfitte": 2947,
+      "percentuale": 53.3,
       "treCorone": 848,
       "maxSfida": 2,
       "tornei": 67,
@@ -48,7 +48,7 @@ window.ML_PUBBLICO = {
       "anni": 4,
       "badge": 139,
       "maestrie": 122,
-      "serie": -2,
+      "serie": 1,
       "stellaPunti": 8414,
       "lega": {
         "nome": "Gran Campione",
@@ -81,55 +81,55 @@ window.ML_PUBBLICO = {
       },
       "mazzo": [
         {
-          "nome": "Royal Giant",
-          "slug": "evo_royal_giant",
-          "costo": 6,
+          "nome": "Royal Hogs",
+          "slug": "evo_royal_hogs",
+          "costo": 5,
           "livello": 16
         },
         {
-          "nome": "Barbarian Barrel",
-          "slug": "hero_barbarian_barrel",
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
+          "costo": 5,
+          "livello": 16
+        },
+        {
+          "nome": "Cannon",
+          "slug": "evo_cannon",
+          "costo": 3,
+          "livello": 16
+        },
+        {
+          "nome": "The Log",
+          "slug": "the_log",
           "costo": 2,
           "livello": 16
         },
         {
-          "nome": "Royal Ghost",
-          "slug": "evo_royal_ghost",
+          "nome": "Earthquake",
+          "slug": "earthquake",
           "costo": 3,
-          "livello": 15
-        },
-        {
-          "nome": "Hunter",
-          "slug": "evo_hunter",
-          "costo": 4,
           "livello": 16
         },
         {
-          "nome": "Fireball",
-          "slug": "fireball",
-          "costo": 4,
-          "livello": 15
+          "nome": "Ice Spirit",
+          "slug": "ice_spirit",
+          "costo": 1,
+          "livello": 16
         },
         {
-          "nome": "Fisherman",
-          "slug": "fisherman",
+          "nome": "Royal Delivery",
+          "slug": "royal_delivery",
           "costo": 3,
-          "livello": 15
+          "livello": 16
         },
         {
           "nome": "Skeletons",
           "slug": "skeletons",
           "costo": 1,
           "livello": 16
-        },
-        {
-          "nome": "Electro Spirit",
-          "slug": "electro_spirit",
-          "costo": 1,
-          "livello": 15
         }
       ],
-      "mazzoMedio": 3,
+      "mazzoMedio": 2.88,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -137,48 +137,73 @@ window.ML_PUBBLICO = {
       },
       "piuUsate": [
         {
-          "nome": "The Log",
-          "slug": "the_log",
-          "volte": 26
-        },
-        {
           "nome": "Skeletons",
           "slug": "skeletons",
-          "volte": 24
-        },
-        {
-          "nome": "Earthquake",
-          "slug": "earthquake",
-          "volte": 24
+          "volte": 29
         },
         {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "volte": 23
+          "volte": 28
         },
         {
           "nome": "Archer Queen",
           "slug": "archer_queen",
-          "volte": 23
+          "volte": 28
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 23
+          "volte": 28
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 23
+          "volte": 28
+        },
+        {
+          "nome": "Earthquake",
+          "slug": "earthquake",
+          "volte": 28
         },
         {
           "nome": "Royal Delivery",
           "slug": "royal_delivery",
-          "volte": 23
+          "volte": 28
+        },
+        {
+          "nome": "The Log",
+          "slug": "the_log",
+          "volte": 28
         }
       ],
       "forma": [
         {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-3"
+        },
+        {
+          "r": "V",
+          "modo": "Scalata",
+          "corone": "1-0"
+        },
+        {
           "r": "S",
           "modo": "Amichevole",
           "corone": "0-1"
@@ -222,31 +247,6 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-2"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-2"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
         },
         {
           "r": "S",
@@ -254,20 +254,25 @@ window.ML_PUBBLICO = {
           "corone": "0-1"
         }
       ],
-      "percentualeRecente": 33,
+      "percentualeRecente": 43,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 9,
-          "s": 14
+          "v": 10,
+          "s": 12
         },
         {
           "modo": "Amichevole",
           "v": 0,
           "s": 2
+        },
+        {
+          "modo": "Scalata",
+          "v": 1,
+          "s": 0
         }
       ],
-      "letto": "2026-11-24T16:00:13.982Z"
+      "letto": "2026-11-25T06:30:13.598Z"
     }
   }
 };
