@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-25T16:30:18.039Z",
+  "aggiornato": "2026-11-25T17:40:14.511Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6325,
-      "vittorie": 3367,
-      "sconfitte": 2958,
+      "partite": 6330,
+      "vittorie": 3368,
+      "sconfitte": 2962,
       "percentuale": 53.2,
       "treCorone": 849,
       "maxSfida": 2,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Royal Hogs",
-        "slug": "royal_hogs"
+        "nome": "Archer Queen",
+        "slug": "archer_queen"
       },
       "mazzo": [
         {
@@ -137,47 +137,72 @@ window.ML_PUBBLICO = {
       },
       "piuUsate": [
         {
-          "nome": "Skeletons",
-          "slug": "skeletons",
-          "volte": 29
-        },
-        {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "volte": 28
+          "volte": 30
         },
         {
           "nome": "Archer Queen",
           "slug": "archer_queen",
-          "volte": 28
+          "volte": 30
         },
         {
           "nome": "Cannon",
           "slug": "evo_cannon",
-          "volte": 28
+          "volte": 30
         },
         {
           "nome": "Ice Spirit",
           "slug": "ice_spirit",
-          "volte": 28
+          "volte": 30
         },
         {
           "nome": "Earthquake",
           "slug": "earthquake",
-          "volte": 28
+          "volte": 30
+        },
+        {
+          "nome": "Skeletons",
+          "slug": "skeletons",
+          "volte": 30
         },
         {
           "nome": "Royal Delivery",
           "slug": "royal_delivery",
-          "volte": 28
+          "volte": 30
         },
         {
           "nome": "The Log",
           "slug": "the_log",
-          "volte": 28
+          "volte": 30
         }
       ],
       "forma": [
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "2-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "1-3"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
         {
           "r": "S",
           "modo": "Classificata",
@@ -227,47 +252,17 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
       "percentualeRecente": 47,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 12,
-          "s": 12
-        },
-        {
-          "modo": "Scalata",
-          "v": 1,
-          "s": 0
+          "v": 10,
+          "s": 15
         }
       ],
-      "letto": "2026-11-25T16:30:17.105Z"
+      "letto": "2026-11-25T17:40:14.227Z"
     }
   }
 };
