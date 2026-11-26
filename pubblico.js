@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-26T16:00:15.249Z",
+  "aggiornato": "2026-11-26T17:20:23.394Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -44,12 +44,12 @@ window.ML_PUBBLICO = {
       "treCorone": 849,
       "maxSfida": 2,
       "tornei": 67,
-      "donazioni": 16383,
+      "donazioni": 16391,
       "anni": 4,
       "badge": 139,
       "maestrie": 122,
       "serie": 1,
-      "stellaPunti": 6622,
+      "stellaPunti": 6630,
       "lega": {
         "nome": "Gran Campione",
         "slug": "grand_champion",
@@ -256,7 +256,7 @@ window.ML_PUBBLICO = {
           "s": 15
         }
       ],
-      "letto": "2026-11-26T16:00:14.978Z"
+      "letto": "2026-11-26T17:20:23.088Z"
     }
   }
 };
