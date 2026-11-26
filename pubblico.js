@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-26T06:20:13.894Z",
+  "aggiornato": "2026-11-26T07:30:13.075Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6339,
-      "vittorie": 3373,
-      "sconfitte": 2966,
+      "partite": 6342,
+      "vittorie": 3374,
+      "sconfitte": 2968,
       "percentuale": 53.2,
       "treCorone": 849,
       "maxSfida": 2,
@@ -76,8 +76,8 @@ window.ML_PUBBLICO = {
       "evoSbloccate": 25,
       "heroSbloccati": 7,
       "preferita": {
-        "nome": "Royal Hogs",
-        "slug": "royal_hogs"
+        "nome": "Archer Queen",
+        "slug": "archer_queen"
       },
       "mazzo": [
         {
@@ -179,6 +179,21 @@ window.ML_PUBBLICO = {
       ],
       "forma": [
         {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
@@ -237,32 +252,17 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-2"
         }
       ],
-      "percentualeRecente": 43,
+      "percentualeRecente": 40,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 10,
-          "s": 15
+          "v": 9,
+          "s": 16
         }
       ],
-      "letto": "2026-11-26T06:20:13.640Z"
+      "letto": "2026-11-26T07:30:12.770Z"
     }
   }
 };
