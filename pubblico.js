@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-26T14:20:14.777Z",
+  "aggiornato": "2026-11-26T16:00:15.249Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -49,7 +49,7 @@ window.ML_PUBBLICO = {
       "badge": 139,
       "maestrie": 122,
       "serie": 1,
-      "stellaPunti": 10022,
+      "stellaPunti": 6622,
       "lega": {
         "nome": "Gran Campione",
         "slug": "grand_champion",
@@ -256,7 +256,7 @@ window.ML_PUBBLICO = {
           "s": 15
         }
       ],
-      "letto": "2026-11-26T14:20:14.350Z"
+      "letto": "2026-11-26T16:00:14.978Z"
     }
   }
 };
