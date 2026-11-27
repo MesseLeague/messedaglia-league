@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-26T22:00:35.122Z",
+  "aggiornato": "2026-11-27T06:30:14.766Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6347,
-      "vittorie": 3377,
-      "sconfitte": 2970,
+      "partite": 6351,
+      "vittorie": 3380,
+      "sconfitte": 2971,
       "percentuale": 53.2,
       "treCorone": 849,
       "maxSfida": 2,
@@ -87,6 +87,12 @@ window.ML_PUBBLICO = {
           "livello": 16
         },
         {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
+          "costo": 5,
+          "livello": 16
+        },
+        {
           "nome": "Cannon",
           "slug": "evo_cannon",
           "costo": 3,
@@ -123,7 +129,7 @@ window.ML_PUBBLICO = {
           "livello": 16
         }
       ],
-      "mazzoMedio": 2.57,
+      "mazzoMedio": 2.88,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -180,6 +186,26 @@ window.ML_PUBBLICO = {
         {
           "r": "V",
           "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "V",
+          "modo": "Classificata",
           "corone": "2-1"
         },
         {
@@ -226,37 +252,17 @@ window.ML_PUBBLICO = {
           "r": "S",
           "modo": "Classificata",
           "corone": "1-2"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
-      "percentualeRecente": 40,
+      "percentualeRecente": 43,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 10,
-          "s": 15
+          "v": 13,
+          "s": 12
         }
       ],
-      "letto": "2026-11-26T22:00:33.447Z"
+      "letto": "2026-11-27T06:30:14.480Z"
     }
   }
 };
