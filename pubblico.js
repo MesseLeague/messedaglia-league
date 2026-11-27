@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-27T16:30:16.763Z",
+  "aggiornato": "2026-11-27T19:30:16.285Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,9 +37,9 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6353,
+      "partite": 6355,
       "vittorie": 3381,
-      "sconfitte": 2972,
+      "sconfitte": 2974,
       "percentuale": 53.2,
       "treCorone": 849,
       "maxSfida": 2,
@@ -118,7 +118,7 @@ window.ML_PUBBLICO = {
         },
         {
           "nome": "Skeletons",
-          "slug": "skeletons",
+          "slug": "evo_skeletons",
           "costo": 1,
           "livello": 16
         }
@@ -172,6 +172,16 @@ window.ML_PUBBLICO = {
         }
       ],
       "forma": [
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
+        {
+          "r": "S",
+          "modo": "Classificata",
+          "corone": "0-1"
+        },
         {
           "r": "V",
           "modo": "Classificata",
@@ -236,27 +246,17 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "0-1"
-        },
-        {
-          "r": "V",
-          "modo": "Classificata",
-          "corone": "1-0"
         }
       ],
       "percentualeRecente": 47,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 14,
-          "s": 11
+          "v": 13,
+          "s": 12
         }
       ],
-      "letto": "2026-11-27T16:30:15.903Z"
+      "letto": "2026-11-27T19:30:15.678Z"
     }
   }
 };
