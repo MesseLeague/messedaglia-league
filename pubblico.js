@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-27T14:00:22.841Z",
+  "aggiornato": "2026-11-27T15:30:13.774Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -37,8 +37,8 @@ window.ML_PUBBLICO = {
       "ruolo": "Anziano",
       "trofei": 13030,
       "record": 13033,
-      "partite": 6352,
-      "vittorie": 3380,
+      "partite": 6353,
+      "vittorie": 3381,
       "sconfitte": 2972,
       "percentuale": 53.2,
       "treCorone": 849,
@@ -87,6 +87,12 @@ window.ML_PUBBLICO = {
           "livello": 16
         },
         {
+          "nome": "Archer Queen",
+          "slug": "archer_queen",
+          "costo": 5,
+          "livello": 16
+        },
+        {
           "nome": "Cannon",
           "slug": "evo_cannon",
           "costo": 3,
@@ -123,7 +129,7 @@ window.ML_PUBBLICO = {
           "livello": 16
         }
       ],
-      "mazzoMedio": 2.57,
+      "mazzoMedio": 2.88,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -172,6 +178,11 @@ window.ML_PUBBLICO = {
         }
       ],
       "forma": [
+        {
+          "r": "V",
+          "modo": "Classificata",
+          "corone": "1-0"
+        },
         {
           "r": "S",
           "modo": "Classificata",
@@ -241,22 +252,17 @@ window.ML_PUBBLICO = {
           "r": "V",
           "modo": "Classificata",
           "corone": "1-0"
-        },
-        {
-          "r": "S",
-          "modo": "Classificata",
-          "corone": "1-2"
         }
       ],
-      "percentualeRecente": 43,
+      "percentualeRecente": 47,
       "perModo": [
         {
           "modo": "Classificata",
-          "v": 13,
-          "s": 12
+          "v": 14,
+          "s": 11
         }
       ],
-      "letto": "2026-11-27T14:00:21.027Z"
+      "letto": "2026-11-27T15:30:13.439Z"
     }
   }
 };
