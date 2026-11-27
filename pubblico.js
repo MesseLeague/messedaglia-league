@@ -6,7 +6,7 @@
 // in "profili" le statistiche di gioco (pubbliche in Clash Royale) di qualificati e aspiranti.
 // =================================================================
 window.ML_PUBBLICO = {
-  "aggiornato": "2026-11-27T15:30:13.774Z",
+  "aggiornato": "2026-11-27T16:30:16.763Z",
   "iscrizioni": {
     "aperte": true,
     "scadenza": "sabato 3 aprile"
@@ -73,7 +73,7 @@ window.ML_PUBBLICO = {
       "carte15": 25,
       "carte14": 50,
       "livelloMedio": 13.2,
-      "evoSbloccate": 26,
+      "evoSbloccate": 29,
       "heroSbloccati": 7,
       "preferita": {
         "nome": "Royal Hogs",
@@ -83,12 +83,6 @@ window.ML_PUBBLICO = {
         {
           "nome": "Royal Hogs",
           "slug": "evo_royal_hogs",
-          "costo": 5,
-          "livello": 16
-        },
-        {
-          "nome": "Archer Queen",
-          "slug": "archer_queen",
           "costo": 5,
           "livello": 16
         },
@@ -129,7 +123,7 @@ window.ML_PUBBLICO = {
           "livello": 16
         }
       ],
-      "mazzoMedio": 2.88,
+      "mazzoMedio": 2.57,
       "ciclo": 7,
       "torre": {
         "nome": "Tower Princess",
@@ -262,7 +256,7 @@ window.ML_PUBBLICO = {
           "s": 11
         }
       ],
-      "letto": "2026-11-27T15:30:13.439Z"
+      "letto": "2026-11-27T16:30:15.903Z"
     }
   }
 };
